@@ -383,3 +383,387 @@ id,data_coleta,horario_coleta,supermercado,marca,nome_produto,embalagem,cidade,u
 382,2026-03-22,13:46:18,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
 383,2026-03-22,13:46:26,Atacadão,Itaipava,Itaipava Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
 384,2026-03-22,13:46:32,Atacadão,Itaipava,Itaipava Garrafa,600ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+385,2026-03-22,14:00:11,Carrefour Mercado,Heineken,Heineken Lata,350ml,São Paulo,SP,Sudeste,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+386,2026-03-22,14:00:24,Carrefour Mercado,Heineken,Heineken Lata,269ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+387,2026-03-22,14:00:35,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+388,2026-03-22,14:00:45,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+389,2026-03-22,14:00:55,Carrefour Mercado,Heineken,Heineken 0.0,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+390,2026-03-22,14:01:06,Carrefour Mercado,Heineken,Heineken Silver,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+391,2026-03-22,14:01:17,Carrefour Mercado,Skol,Skol Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+392,2026-03-22,14:01:28,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+393,2026-03-22,14:01:38,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+394,2026-03-22,14:01:49,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+395,2026-03-22,14:01:59,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+396,2026-03-22,14:02:10,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+397,2026-03-22,14:02:20,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+398,2026-03-22,14:02:30,Carrefour Mercado,Amstel,Amstel Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+399,2026-03-22,14:02:41,Carrefour Mercado,Amstel,Amstel Ultra,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+400,2026-03-22,14:02:53,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+401,2026-03-22,14:03:03,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+402,2026-03-22,14:03:13,Carrefour Mercado,Original,Original Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+403,2026-03-22,14:03:26,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+404,2026-03-22,14:03:39,Carrefour Mercado,Heineken,Heineken Lata,350ml,Rio de Janeiro,RJ,Sudeste,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+405,2026-03-22,14:03:50,Carrefour Mercado,Heineken,Heineken Lata,269ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+406,2026-03-22,14:04:02,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+407,2026-03-22,14:04:11,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+408,2026-03-22,14:04:23,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+409,2026-03-22,14:04:33,Carrefour Mercado,Heineken,Heineken Silver,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+410,2026-03-22,14:04:43,Carrefour Mercado,Skol,Skol Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+411,2026-03-22,14:04:54,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+412,2026-03-22,14:05:04,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+413,2026-03-22,14:05:15,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+414,2026-03-22,14:05:26,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+415,2026-03-22,14:05:37,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+416,2026-03-22,14:05:48,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+417,2026-03-22,14:05:58,Carrefour Mercado,Amstel,Amstel Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+418,2026-03-22,14:06:08,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+419,2026-03-22,14:06:18,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+420,2026-03-22,14:06:29,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+421,2026-03-22,14:06:40,Carrefour Mercado,Original,Original Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+422,2026-03-22,14:06:50,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+423,2026-03-22,14:07:00,Carrefour Mercado,Heineken,Heineken Lata,350ml,Porto Alegre,RS,Sul,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+424,2026-03-22,14:07:12,Carrefour Mercado,Heineken,Heineken Lata,269ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+425,2026-03-22,14:07:23,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+426,2026-03-22,14:07:33,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+427,2026-03-22,14:07:42,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+428,2026-03-22,14:07:52,Carrefour Mercado,Heineken,Heineken Silver,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+429,2026-03-22,14:08:03,Carrefour Mercado,Skol,Skol Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+430,2026-03-22,14:08:13,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+431,2026-03-22,14:08:24,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+432,2026-03-22,14:08:34,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+433,2026-03-22,14:08:46,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+434,2026-03-22,14:08:57,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+435,2026-03-22,14:09:07,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+436,2026-03-22,14:09:18,Carrefour Mercado,Amstel,Amstel Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+437,2026-03-22,14:09:29,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+438,2026-03-22,14:09:39,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+439,2026-03-22,14:09:49,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+440,2026-03-22,14:10:00,Carrefour Mercado,Original,Original Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+441,2026-03-22,14:10:11,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+442,2026-03-22,14:10:22,Carrefour Mercado,Heineken,Heineken Lata,350ml,Curitiba,PR,Sul,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+443,2026-03-22,14:10:33,Carrefour Mercado,Heineken,Heineken Lata,269ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+444,2026-03-22,14:10:45,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+445,2026-03-22,14:10:54,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+446,2026-03-22,14:11:05,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+447,2026-03-22,14:11:16,Carrefour Mercado,Heineken,Heineken Silver,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+448,2026-03-22,14:11:27,Carrefour Mercado,Skol,Skol Lata,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+449,2026-03-22,14:11:38,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+450,2026-03-22,14:11:48,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+451,2026-03-22,14:11:59,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+452,2026-03-22,14:12:10,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+453,2026-03-22,14:12:19,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+454,2026-03-22,14:12:29,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+455,2026-03-22,14:12:40,Carrefour Mercado,Amstel,Amstel Lata,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+456,2026-03-22,14:12:51,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+457,2026-03-22,14:13:01,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+458,2026-03-22,14:13:11,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+459,2026-03-22,14:13:22,Carrefour Mercado,Original,Original Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+460,2026-03-22,14:13:32,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Curitiba,PR,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+461,2026-03-22,14:13:43,Carrefour Mercado,Heineken,Heineken Lata,350ml,Florianópolis,SC,Sul,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+462,2026-03-22,14:13:55,Carrefour Mercado,Heineken,Heineken Lata,269ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+463,2026-03-22,14:14:05,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+464,2026-03-22,14:14:17,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+465,2026-03-22,14:14:28,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+466,2026-03-22,14:14:40,Carrefour Mercado,Heineken,Heineken Silver,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+467,2026-03-22,14:14:51,Carrefour Mercado,Skol,Skol Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+468,2026-03-22,14:15:01,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+469,2026-03-22,14:15:12,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+470,2026-03-22,14:15:23,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+471,2026-03-22,14:15:34,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+472,2026-03-22,14:15:44,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+473,2026-03-22,14:15:54,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+474,2026-03-22,14:16:04,Carrefour Mercado,Amstel,Amstel Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+475,2026-03-22,14:16:14,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+476,2026-03-22,14:16:23,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+477,2026-03-22,14:16:33,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+478,2026-03-22,14:16:42,Carrefour Mercado,Original,Original Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+479,2026-03-22,14:16:52,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+480,2026-03-22,14:17:02,Carrefour Mercado,Heineken,Heineken Lata,350ml,Recife,PE,Nordeste,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+481,2026-03-22,14:17:14,Carrefour Mercado,Heineken,Heineken Lata,269ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+482,2026-03-22,14:17:25,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+483,2026-03-22,14:17:34,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+484,2026-03-22,14:17:44,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+485,2026-03-22,14:17:55,Carrefour Mercado,Heineken,Heineken Silver,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+486,2026-03-22,14:18:06,Carrefour Mercado,Skol,Skol Lata,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+487,2026-03-22,14:18:17,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+488,2026-03-22,14:18:27,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+489,2026-03-22,14:18:37,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+490,2026-03-22,14:18:48,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+491,2026-03-22,14:18:58,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+492,2026-03-22,14:19:09,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+493,2026-03-22,14:19:20,Carrefour Mercado,Amstel,Amstel Lata,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+494,2026-03-22,14:19:30,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+495,2026-03-22,14:19:41,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+496,2026-03-22,14:19:52,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+497,2026-03-22,14:20:03,Carrefour Mercado,Original,Original Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+498,2026-03-22,14:20:12,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Recife,PE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+499,2026-03-22,14:20:22,Carrefour Mercado,Heineken,Heineken Lata,350ml,Salvador,BA,Nordeste,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+500,2026-03-22,14:20:32,Carrefour Mercado,Heineken,Heineken Lata,269ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+501,2026-03-22,14:20:43,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+502,2026-03-22,14:20:53,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+503,2026-03-22,14:21:02,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+504,2026-03-22,14:21:14,Carrefour Mercado,Heineken,Heineken Silver,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+505,2026-03-22,14:21:24,Carrefour Mercado,Skol,Skol Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+506,2026-03-22,14:21:35,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+507,2026-03-22,14:21:46,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+508,2026-03-22,14:21:56,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+509,2026-03-22,14:22:07,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+510,2026-03-22,14:22:17,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+511,2026-03-22,14:22:27,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+512,2026-03-22,14:22:38,Carrefour Mercado,Amstel,Amstel Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+513,2026-03-22,14:22:48,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+514,2026-03-22,14:22:58,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+515,2026-03-22,14:23:08,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+516,2026-03-22,14:23:17,Carrefour Mercado,Original,Original Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+517,2026-03-22,14:23:29,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+518,2026-03-22,14:23:39,Carrefour Mercado,Heineken,Heineken Lata,350ml,Fortaleza,CE,Nordeste,5.99,,0,1,https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p,
+519,2026-03-22,14:23:50,Carrefour Mercado,Heineken,Heineken Lata,269ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p,preco_nao_encontrado
+520,2026-03-22,14:24:01,Carrefour Mercado,Heineken,Heineken Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p,preco_nao_encontrado
+521,2026-03-22,14:24:11,Carrefour Mercado,Heineken,Heineken Garrafa,600ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p,preco_nao_encontrado
+522,2026-03-22,14:24:21,Carrefour Mercado,Heineken,Heineken 0.0,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p,preco_nao_encontrado
+523,2026-03-22,14:24:31,Carrefour Mercado,Heineken,Heineken Silver,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p,preco_nao_encontrado
+524,2026-03-22,14:24:42,Carrefour Mercado,Skol,Skol Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+525,2026-03-22,14:24:54,Carrefour Mercado,Brahma,Brahma Chopp Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p,preco_nao_encontrado
+526,2026-03-22,14:25:04,Carrefour Mercado,Brahma,Brahma Duplo Malte,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p,preco_nao_encontrado
+527,2026-03-22,14:25:14,Carrefour Mercado,Stella Artois,Stella Artois Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p,preco_nao_encontrado
+528,2026-03-22,14:25:24,Carrefour Mercado,Stella Artois,Stella Artois Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p,preco_nao_encontrado
+529,2026-03-22,14:25:34,Carrefour Mercado,Corona,Corona Extra Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p,preco_nao_encontrado
+530,2026-03-22,14:25:43,Carrefour Mercado,Budweiser,Budweiser Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+531,2026-03-22,14:25:55,Carrefour Mercado,Amstel,Amstel Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+532,2026-03-22,14:26:06,Carrefour Mercado,Amstel,Amstel Ultra,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p,preco_nao_encontrado
+533,2026-03-22,14:26:17,Carrefour Mercado,Amstel,"Amstel 0,0",350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p,preco_nao_encontrado
+534,2026-03-22,14:26:26,Carrefour Mercado,Spaten,Spaten Pilsner Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p,preco_nao_encontrado
+535,2026-03-22,14:26:37,Carrefour Mercado,Original,Original Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p,preco_nao_encontrado
+536,2026-03-22,14:26:47,Carrefour Mercado,Itaipava,Itaipava Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+537,2026-03-22,14:26:57,Pão de Açúcar,Heineken,Heineken Lata,350ml,São Paulo,SP,Sudeste,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+538,2026-03-22,14:27:08,Pão de Açúcar,Heineken,Heineken 0.0,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+539,2026-03-22,14:27:19,Pão de Açúcar,Skol,Skol Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+540,2026-03-22,14:27:28,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+541,2026-03-22,14:27:38,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+542,2026-03-22,14:27:47,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+543,2026-03-22,14:27:57,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+544,2026-03-22,14:28:07,Pão de Açúcar,Amstel,Amstel Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+545,2026-03-22,14:28:16,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+546,2026-03-22,14:28:24,Pão de Açúcar,Original,Original Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+547,2026-03-22,14:28:33,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+548,2026-03-22,14:28:42,Pão de Açúcar,Heineken,Heineken Lata,350ml,Rio de Janeiro,RJ,Sudeste,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+549,2026-03-22,14:28:54,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+550,2026-03-22,14:29:03,Pão de Açúcar,Skol,Skol Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+551,2026-03-22,14:29:12,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+552,2026-03-22,14:29:21,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+553,2026-03-22,14:29:31,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+554,2026-03-22,14:29:40,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+555,2026-03-22,14:29:49,Pão de Açúcar,Amstel,Amstel Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+556,2026-03-22,14:29:57,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+557,2026-03-22,14:30:07,Pão de Açúcar,Original,Original Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+558,2026-03-22,14:30:16,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+559,2026-03-22,14:30:25,Pão de Açúcar,Heineken,Heineken Lata,350ml,Porto Alegre,RS,Sul,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+560,2026-03-22,14:30:36,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+561,2026-03-22,14:30:46,Pão de Açúcar,Skol,Skol Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+562,2026-03-22,14:30:55,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+563,2026-03-22,14:31:05,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+564,2026-03-22,14:31:14,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+565,2026-03-22,14:31:23,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+566,2026-03-22,14:31:32,Pão de Açúcar,Amstel,Amstel Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+567,2026-03-22,14:31:42,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+568,2026-03-22,14:31:51,Pão de Açúcar,Original,Original Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+569,2026-03-22,14:32:00,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+570,2026-03-22,14:32:10,Pão de Açúcar,Heineken,Heineken Lata,350ml,Curitiba,PR,Sul,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+571,2026-03-22,14:32:20,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+572,2026-03-22,14:32:29,Pão de Açúcar,Skol,Skol Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+573,2026-03-22,14:32:39,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+574,2026-03-22,14:32:49,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+575,2026-03-22,14:32:59,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+576,2026-03-22,14:33:08,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+577,2026-03-22,14:33:17,Pão de Açúcar,Amstel,Amstel Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+578,2026-03-22,14:33:27,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+579,2026-03-22,14:33:38,Pão de Açúcar,Original,Original Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+580,2026-03-22,14:33:46,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+581,2026-03-22,14:33:56,Pão de Açúcar,Heineken,Heineken Lata,350ml,Florianópolis,SC,Sul,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+582,2026-03-22,14:34:06,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+583,2026-03-22,14:34:17,Pão de Açúcar,Skol,Skol Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+584,2026-03-22,14:34:27,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+585,2026-03-22,14:34:36,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+586,2026-03-22,14:34:46,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+587,2026-03-22,14:34:55,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+588,2026-03-22,14:35:04,Pão de Açúcar,Amstel,Amstel Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+589,2026-03-22,14:35:14,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+590,2026-03-22,14:35:23,Pão de Açúcar,Original,Original Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+591,2026-03-22,14:35:32,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+592,2026-03-22,14:35:42,Pão de Açúcar,Heineken,Heineken Lata,350ml,Recife,PE,Nordeste,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+593,2026-03-22,14:35:52,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+594,2026-03-22,14:36:01,Pão de Açúcar,Skol,Skol Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+595,2026-03-22,14:36:09,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+596,2026-03-22,14:36:18,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+597,2026-03-22,14:36:27,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+598,2026-03-22,14:36:35,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+599,2026-03-22,14:36:44,Pão de Açúcar,Amstel,Amstel Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+600,2026-03-22,14:36:53,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+601,2026-03-22,14:37:01,Pão de Açúcar,Original,Original Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+602,2026-03-22,14:37:10,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+603,2026-03-22,14:37:20,Pão de Açúcar,Heineken,Heineken Lata,350ml,Salvador,BA,Nordeste,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+604,2026-03-22,14:37:30,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+605,2026-03-22,14:37:39,Pão de Açúcar,Skol,Skol Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+606,2026-03-22,14:37:48,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+607,2026-03-22,14:37:56,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+608,2026-03-22,14:38:05,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+609,2026-03-22,14:38:14,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+610,2026-03-22,14:38:22,Pão de Açúcar,Amstel,Amstel Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+611,2026-03-22,14:38:31,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+612,2026-03-22,14:38:40,Pão de Açúcar,Original,Original Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+613,2026-03-22,14:38:49,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+614,2026-03-22,14:38:57,Pão de Açúcar,Heineken,Heineken Lata,350ml,Fortaleza,CE,Nordeste,5.99,,0,1,https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml,
+615,2026-03-22,14:39:08,Pão de Açúcar,Heineken,Heineken 0.0,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml,preco_nao_encontrado
+616,2026-03-22,14:39:18,Pão de Açúcar,Skol,Skol Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml,preco_nao_encontrado
+617,2026-03-22,14:39:26,Pão de Açúcar,Brahma,Brahma Chopp Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml,preco_nao_encontrado
+618,2026-03-22,14:39:36,Pão de Açúcar,Stella Artois,Stella Artois Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml,preco_nao_encontrado
+619,2026-03-22,14:39:45,Pão de Açúcar,Corona,Corona Extra Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml,preco_nao_encontrado
+620,2026-03-22,14:39:55,Pão de Açúcar,Budweiser,Budweiser Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml,preco_nao_encontrado
+621,2026-03-22,14:40:04,Pão de Açúcar,Amstel,Amstel Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-amstel-350ml,preco_nao_encontrado
+622,2026-03-22,14:40:14,Pão de Açúcar,Spaten,Spaten Pilsner Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-spaten-355ml,preco_nao_encontrado
+623,2026-03-22,14:40:23,Pão de Açúcar,Original,Original Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-original-355ml,preco_nao_encontrado
+624,2026-03-22,14:40:31,Pão de Açúcar,Itaipava,Itaipava Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.paodeacucar.com/produto/cerveja-itaipava-350ml,preco_nao_encontrado
+625,2026-03-22,14:40:41,Extra,Heineken,Heineken Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+626,2026-03-22,14:40:50,Extra,Skol,Skol Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+627,2026-03-22,14:40:59,Extra,Brahma,Brahma Chopp Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+628,2026-03-22,14:41:09,Extra,Stella Artois,Stella Artois Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+629,2026-03-22,14:41:19,Extra,Corona,Corona Extra Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+630,2026-03-22,14:41:27,Extra,Budweiser,Budweiser Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+631,2026-03-22,14:41:36,Extra,Original,Original Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+632,2026-03-22,14:41:46,Extra,Heineken,Heineken Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+633,2026-03-22,14:41:56,Extra,Skol,Skol Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+634,2026-03-22,14:42:04,Extra,Brahma,Brahma Chopp Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+635,2026-03-22,14:42:14,Extra,Stella Artois,Stella Artois Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+636,2026-03-22,14:42:23,Extra,Corona,Corona Extra Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+637,2026-03-22,14:42:31,Extra,Budweiser,Budweiser Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+638,2026-03-22,14:42:40,Extra,Original,Original Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+639,2026-03-22,14:42:48,Extra,Heineken,Heineken Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+640,2026-03-22,14:42:58,Extra,Skol,Skol Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+641,2026-03-22,14:43:07,Extra,Brahma,Brahma Chopp Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+642,2026-03-22,14:43:15,Extra,Stella Artois,Stella Artois Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+643,2026-03-22,14:43:24,Extra,Corona,Corona Extra Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+644,2026-03-22,14:43:33,Extra,Budweiser,Budweiser Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+645,2026-03-22,14:43:43,Extra,Original,Original Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+646,2026-03-22,14:43:52,Extra,Heineken,Heineken Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+647,2026-03-22,14:44:01,Extra,Skol,Skol Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+648,2026-03-22,14:44:10,Extra,Brahma,Brahma Chopp Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+649,2026-03-22,14:44:19,Extra,Stella Artois,Stella Artois Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+650,2026-03-22,14:44:27,Extra,Corona,Corona Extra Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+651,2026-03-22,14:44:36,Extra,Budweiser,Budweiser Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+652,2026-03-22,14:44:45,Extra,Original,Original Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+653,2026-03-22,14:44:53,Extra,Heineken,Heineken Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+654,2026-03-22,14:45:03,Extra,Skol,Skol Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+655,2026-03-22,14:45:11,Extra,Brahma,Brahma Chopp Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+656,2026-03-22,14:45:21,Extra,Stella Artois,Stella Artois Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+657,2026-03-22,14:45:29,Extra,Corona,Corona Extra Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+658,2026-03-22,14:45:39,Extra,Budweiser,Budweiser Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+659,2026-03-22,14:45:48,Extra,Original,Original Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+660,2026-03-22,14:45:57,Extra,Heineken,Heineken Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+661,2026-03-22,14:46:07,Extra,Skol,Skol Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+662,2026-03-22,14:46:16,Extra,Brahma,Brahma Chopp Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+663,2026-03-22,14:46:24,Extra,Stella Artois,Stella Artois Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+664,2026-03-22,14:46:33,Extra,Corona,Corona Extra Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+665,2026-03-22,14:46:43,Extra,Budweiser,Budweiser Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+666,2026-03-22,14:46:53,Extra,Original,Original Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+667,2026-03-22,14:47:03,Extra,Heineken,Heineken Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+668,2026-03-22,14:47:14,Extra,Skol,Skol Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+669,2026-03-22,14:47:23,Extra,Brahma,Brahma Chopp Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+670,2026-03-22,14:47:31,Extra,Stella Artois,Stella Artois Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+671,2026-03-22,14:47:42,Extra,Corona,Corona Extra Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+672,2026-03-22,14:47:52,Extra,Budweiser,Budweiser Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+673,2026-03-22,14:48:02,Extra,Original,Original Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+674,2026-03-22,14:48:11,Extra,Heineken,Heineken Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179,preco_nao_encontrado
+675,2026-03-22,14:48:21,Extra,Skol,Skol Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+676,2026-03-22,14:48:30,Extra,Brahma,Brahma Chopp Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-brahma-chopp-350ml/p,preco_nao_encontrado
+677,2026-03-22,14:48:39,Extra,Stella Artois,Stella Artois Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+678,2026-03-22,14:48:48,Extra,Corona,Corona Extra Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+679,2026-03-22,14:48:57,Extra,Budweiser,Budweiser Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-budweiser-350ml/p,preco_nao_encontrado
+680,2026-03-22,14:49:06,Extra,Original,Original Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.extra.com.br/cerveja-original-garrafa-600ml/p,preco_nao_encontrado
+681,2026-03-22,14:49:16,Atacadão,Heineken,Heineken Lata,350ml,São Paulo,SP,Sudeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+682,2026-03-22,14:49:25,Atacadão,Heineken,Heineken 0.0,350ml,São Paulo,SP,Sudeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+683,2026-03-22,14:49:34,Atacadão,Skol,Skol Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+684,2026-03-22,14:49:41,Atacadão,Brahma,Brahma Chopp Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+685,2026-03-22,14:49:49,Atacadão,Stella Artois,Stella Artois Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+686,2026-03-22,14:49:56,Atacadão,Corona,Corona Extra Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+687,2026-03-22,14:50:04,Atacadão,Budweiser,Budweiser Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+688,2026-03-22,14:50:11,Atacadão,Amstel,Amstel Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+689,2026-03-22,14:50:19,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+690,2026-03-22,14:50:26,Atacadão,Itaipava,Itaipava Lata,350ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+691,2026-03-22,14:50:33,Atacadão,Itaipava,Itaipava Garrafa,600ml,São Paulo,SP,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+692,2026-03-22,14:50:41,Atacadão,Heineken,Heineken Lata,350ml,Rio de Janeiro,RJ,Sudeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+693,2026-03-22,14:50:49,Atacadão,Heineken,Heineken 0.0,350ml,Rio de Janeiro,RJ,Sudeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+694,2026-03-22,14:50:57,Atacadão,Skol,Skol Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+695,2026-03-22,14:51:04,Atacadão,Brahma,Brahma Chopp Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+696,2026-03-22,14:51:10,Atacadão,Stella Artois,Stella Artois Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+697,2026-03-22,14:51:17,Atacadão,Corona,Corona Extra Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+698,2026-03-22,14:51:24,Atacadão,Budweiser,Budweiser Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+699,2026-03-22,14:51:32,Atacadão,Amstel,Amstel Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+700,2026-03-22,14:51:40,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+701,2026-03-22,14:51:48,Atacadão,Itaipava,Itaipava Lata,350ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+702,2026-03-22,14:51:54,Atacadão,Itaipava,Itaipava Garrafa,600ml,Rio de Janeiro,RJ,Sudeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+703,2026-03-22,14:52:01,Atacadão,Heineken,Heineken Lata,350ml,Porto Alegre,RS,Sul,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+704,2026-03-22,14:52:10,Atacadão,Heineken,Heineken 0.0,350ml,Porto Alegre,RS,Sul,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+705,2026-03-22,14:52:17,Atacadão,Skol,Skol Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+706,2026-03-22,14:52:24,Atacadão,Brahma,Brahma Chopp Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+707,2026-03-22,14:52:32,Atacadão,Stella Artois,Stella Artois Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+708,2026-03-22,14:52:39,Atacadão,Corona,Corona Extra Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+709,2026-03-22,14:52:47,Atacadão,Budweiser,Budweiser Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+710,2026-03-22,14:52:55,Atacadão,Amstel,Amstel Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+711,2026-03-22,14:53:02,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+712,2026-03-22,14:53:09,Atacadão,Itaipava,Itaipava Lata,350ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+713,2026-03-22,14:53:17,Atacadão,Itaipava,Itaipava Garrafa,600ml,Porto Alegre,RS,Sul,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+714,2026-03-22,14:53:24,Atacadão,Heineken,Heineken Lata,350ml,Curitiba,PR,Sul,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+715,2026-03-22,14:53:31,Atacadão,Heineken,Heineken 0.0,350ml,Curitiba,PR,Sul,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+716,2026-03-22,14:53:39,Atacadão,Skol,Skol Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+717,2026-03-22,14:53:45,Atacadão,Brahma,Brahma Chopp Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+718,2026-03-22,14:53:53,Atacadão,Stella Artois,Stella Artois Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+719,2026-03-22,14:54:01,Atacadão,Corona,Corona Extra Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+720,2026-03-22,14:54:08,Atacadão,Budweiser,Budweiser Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+721,2026-03-22,14:54:15,Atacadão,Amstel,Amstel Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+722,2026-03-22,14:54:23,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+723,2026-03-22,14:54:31,Atacadão,Itaipava,Itaipava Lata,350ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+724,2026-03-22,14:54:38,Atacadão,Itaipava,Itaipava Garrafa,600ml,Curitiba,PR,Sul,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+725,2026-03-22,14:54:45,Atacadão,Heineken,Heineken Lata,350ml,Florianópolis,SC,Sul,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+726,2026-03-22,14:54:54,Atacadão,Heineken,Heineken 0.0,350ml,Florianópolis,SC,Sul,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+727,2026-03-22,14:55:02,Atacadão,Skol,Skol Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+728,2026-03-22,14:55:10,Atacadão,Brahma,Brahma Chopp Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+729,2026-03-22,14:55:17,Atacadão,Stella Artois,Stella Artois Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+730,2026-03-22,14:55:25,Atacadão,Corona,Corona Extra Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+731,2026-03-22,14:55:32,Atacadão,Budweiser,Budweiser Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+732,2026-03-22,14:55:39,Atacadão,Amstel,Amstel Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+733,2026-03-22,14:55:46,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+734,2026-03-22,14:55:53,Atacadão,Itaipava,Itaipava Lata,350ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+735,2026-03-22,14:55:59,Atacadão,Itaipava,Itaipava Garrafa,600ml,Florianópolis,SC,Sul,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+736,2026-03-22,14:56:07,Atacadão,Heineken,Heineken Lata,350ml,Recife,PE,Nordeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+737,2026-03-22,14:56:15,Atacadão,Heineken,Heineken 0.0,350ml,Recife,PE,Nordeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+738,2026-03-22,14:56:22,Atacadão,Skol,Skol Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+739,2026-03-22,14:56:30,Atacadão,Brahma,Brahma Chopp Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+740,2026-03-22,14:56:37,Atacadão,Stella Artois,Stella Artois Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+741,2026-03-22,14:56:44,Atacadão,Corona,Corona Extra Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+742,2026-03-22,14:56:51,Atacadão,Budweiser,Budweiser Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+743,2026-03-22,14:56:58,Atacadão,Amstel,Amstel Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+744,2026-03-22,14:57:05,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+745,2026-03-22,14:57:13,Atacadão,Itaipava,Itaipava Lata,350ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+746,2026-03-22,14:57:19,Atacadão,Itaipava,Itaipava Garrafa,600ml,Recife,PE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+747,2026-03-22,14:57:27,Atacadão,Heineken,Heineken Lata,350ml,Salvador,BA,Nordeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+748,2026-03-22,14:57:39,Atacadão,Heineken,Heineken 0.0,350ml,Salvador,BA,Nordeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+749,2026-03-22,14:57:48,Atacadão,Skol,Skol Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+750,2026-03-22,14:57:55,Atacadão,Brahma,Brahma Chopp Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+751,2026-03-22,14:58:02,Atacadão,Stella Artois,Stella Artois Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+752,2026-03-22,14:58:09,Atacadão,Corona,Corona Extra Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+753,2026-03-22,14:58:16,Atacadão,Budweiser,Budweiser Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+754,2026-03-22,14:58:23,Atacadão,Amstel,Amstel Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+755,2026-03-22,14:58:30,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+756,2026-03-22,14:58:36,Atacadão,Itaipava,Itaipava Lata,350ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+757,2026-03-22,14:58:44,Atacadão,Itaipava,Itaipava Garrafa,600ml,Salvador,BA,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
+758,2026-03-22,14:58:50,Atacadão,Heineken,Heineken Lata,350ml,Fortaleza,CE,Nordeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p,
+759,2026-03-22,14:58:59,Atacadão,Heineken,Heineken 0.0,350ml,Fortaleza,CE,Nordeste,4.75,,0,1,https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p,
+760,2026-03-22,14:59:06,Atacadão,Skol,Skol Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-skol-lata-350ml/p,preco_nao_encontrado
+761,2026-03-22,14:59:12,Atacadão,Brahma,Brahma Chopp Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-brahma-lata-350ml/p,preco_nao_encontrado
+762,2026-03-22,14:59:20,Atacadão,Stella Artois,Stella Artois Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-stella-artois-350ml/p,preco_nao_encontrado
+763,2026-03-22,14:59:28,Atacadão,Corona,Corona Extra Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-corona-extra-355ml/p,preco_nao_encontrado
+764,2026-03-22,14:59:34,Atacadão,Budweiser,Budweiser Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-budweiser-lata-350ml/p,preco_nao_encontrado
+765,2026-03-22,14:59:42,Atacadão,Amstel,Amstel Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-amstel-lata-350ml/p,preco_nao_encontrado
+766,2026-03-22,14:59:48,Atacadão,Spaten,Spaten Pilsner Long Neck,355ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-spaten-355ml/p,preco_nao_encontrado
+767,2026-03-22,14:59:55,Atacadão,Itaipava,Itaipava Lata,350ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-lata-350ml/p,preco_nao_encontrado
+768,2026-03-22,15:00:02,Atacadão,Itaipava,Itaipava Garrafa,600ml,Fortaleza,CE,Nordeste,,,0,0,https://www.atacadao.com.br/cerveja-itaipava-garrafa-600ml/p,preco_nao_encontrado
