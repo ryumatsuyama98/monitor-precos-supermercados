@@ -15,7 +15,6 @@ from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 DB_PATH = Path("data/precos.db")
 LOG_PATH = Path("data/coleta.log")
 
-# ─── Configuração de CEPs por cidade ─────────────────────────────────────────
 CIDADES = [
     {"cidade": "São Paulo",      "uf": "SP", "regiao": "Sudeste", "cep": "01310100"},
     {"cidade": "Rio de Janeiro", "uf": "RJ", "regiao": "Sudeste", "cep": "20040020"},
@@ -27,7 +26,6 @@ CIDADES = [
     {"cidade": "Fortaleza",      "uf": "CE", "regiao": "Nordeste","cep": "60010000"},
 ]
 
-# ─── Produtos a monitorar ─────────────────────────────────────────────────────
 PRODUTOS = [
     {"marca": "Heineken",      "nome": "Heineken Lata",           "embalagem": "350ml"},
     {"marca": "Heineken",      "nome": "Heineken Lata",           "embalagem": "269ml"},
@@ -66,8 +64,6 @@ PRODUTOS = [
     {"marca": "Itaipava",      "nome": "Itaipava Garrafa",        "embalagem": "600ml"},
 ]
 
-# ─── Links por supermercado ───────────────────────────────────────────────────
-# Formato: {nome_produto_embalagem: url}
 LINKS_CARREFOUR = {
     "Heineken Lata_350ml":           "https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p",
     "Heineken Lata_269ml":           "https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p",
@@ -129,37 +125,12 @@ LINKS_ATACADAO = {
 }
 
 SUPERMERCADOS = {
-    "Carrefour Mercado": {"links": LINKS_CARREFOUR,    "cep_method": "cookie"},
-    "Pão de Açúcar":     {"links": LINKS_PAO_DE_ACUCAR,"cep_method": "cookie"},
-    "Extra":             {"links": LINKS_EXTRA,         "cep_method": "query"},
-    "Atacadão":          {"links": LINKS_ATACADAO,      "cep_method": "cookie"},
+    "Carrefour Mercado": {"links": LINKS_CARREFOUR,     "cep_method": "cookie"},
+    "Pão de Açúcar":     {"links": LINKS_PAO_DE_ACUCAR, "cep_method": "cookie"},
+    "Extra":             {"links": LINKS_EXTRA,          "cep_method": "query"},
+    "Atacadão":          {"links": LINKS_ATACADAO,       "cep_method": "cookie"},
 }
 
-# ─── Seletores CSS por supermercado ──────────────────────────────────────────
-SELETORES = {
-    "Carrefour Mercado": {
-        "preco_atual":    "[class*='priceContainer'] [class*='sellingPrice'], .price-container .selling-price, [data-testid='price-value']",
-        "preco_original": "[class*='priceContainer'] [class*='listPrice'], .price-container .list-price",
-        "disponivel":     "[class*='BuyButton'], button[data-testid='buy-button']",
-    },
-    "Pão de Açúcar": {
-        "preco_atual":    ".product-price .sales, [class*='price-sales'], .price__sales",
-        "preco_original": ".product-price .strike, [class*='price-strike']",
-        "disponivel":     ".add-to-cart-btn, [class*='addToCart']",
-    },
-    "Extra": {
-        "preco_atual":    ".price-selling, [class*='selling-price'], .product-price",
-        "preco_original": ".price-list, [class*='list-price']",
-        "disponivel":     ".btn-buy, [class*='buyButton']",
-    },
-    "Atacadão": {
-        "preco_atual":    ".valornormal, [class*='price-best'], .price-best-price",
-        "preco_original": ".valorantigo, [class*='price-old']",
-        "disponivel":     ".adicionar, [class*='add-to-cart']",
-    },
-}
-
-# ─── Banco de dados ───────────────────────────────────────────────────────────
 def init_db():
     DB_PATH.parent.mkdir(exist_ok=True)
     con = sqlite3.connect(DB_PATH)
@@ -205,71 +176,145 @@ def inserir(con, registro):
         registro.get("url"), registro.get("erro"),
     ))
 
-# ─── Extração de preço ────────────────────────────────────────────────────────
 def extrair_preco(texto):
     if not texto:
         return None
-    numeros = re.findall(r'\d+[.,]\d{2}', texto.replace('\xa0', ''))
+    texto = texto.replace('\xa0', '').replace(' ', '')
+    numeros = re.findall(r'\d+[.,]\d{2}', texto)
     if numeros:
         return float(numeros[0].replace(',', '.'))
     return None
 
-def set_cep(page, cep, metodo):
-    """Injeta o CEP na página via cookie ou campo de input."""
+def extrair_preco_js(page):
+    """Tenta extrair preço via JavaScript procurando no DOM por padrão R$ X,XX."""
     try:
-        if metodo == "cookie":
-            page.context.add_cookies([{
-                "name": "vtex_segment", "value": "",
-                "domain": page.url.split("/")[2], "path": "/"
-            }])
-            page.evaluate(f"""
-                document.cookie = 'userPostalCode={cep}; path=/';
-            """)
-        time.sleep(1)
+        preco_texto = page.evaluate("""() => {
+            const walker = document.createTreeWalker(
+                document.body,
+                NodeFilter.SHOW_TEXT,
+                null
+            );
+            let node;
+            while (node = walker.nextNode()) {
+                const t = node.textContent.trim();
+                if (/R\$\s*\d+[.,]\d{2}/.test(t) && t.length < 30) {
+                    return t;
+                }
+            }
+            // Fallback: procura em elementos com classes de preço
+            const sels = [
+                '[class*="price"]', '[class*="Price"]', '[class*="preco"]',
+                '[class*="Preco"]', '[class*="valor"]', '[class*="Valor"]',
+                '[itemprop="price"]', '[data-price]'
+            ];
+            for (const sel of sels) {
+                const els = document.querySelectorAll(sel);
+                for (const el of els) {
+                    const t = el.textContent.trim();
+                    if (/R\$\s*\d+[.,]\d{2}/.test(t) && t.length < 30) {
+                        return t;
+                    }
+                    // Verifica atributo data-price
+                    const dp = el.getAttribute('data-price') || el.getAttribute('content');
+                    if (dp && /\d+[.,]\d{2}/.test(dp)) return dp;
+                }
+            }
+            return null;
+        }""")
+        return extrair_preco(preco_texto)
     except Exception:
-        pass
+        return None
 
-def coletar_pagina(page, url, seletores, supermercado, cep, metodo_cep):
-    resultado = {"url": url, "disponivel": False, "preco_atual": None,
-                 "preco_original": None, "em_promocao": False, "erro": None}
+def coletar_pagina(page, url, supermercado):
+    resultado = {
+        "url": url, "disponivel": False,
+        "preco_atual": None, "preco_original": None,
+        "em_promocao": False, "erro": None
+    }
     try:
         page.goto(url, wait_until="domcontentloaded", timeout=30000)
-        set_cep(page, cep, metodo_cep)
-        page.wait_for_timeout(3000)
+        # Aguarda JS carregar o preço
+        page.wait_for_timeout(4000)
 
-        # Preço atual
-        for sel in seletores["preco_atual"].split(", "):
-            el = page.query_selector(sel.strip())
+        # Estratégia específica por supermercado
+        if supermercado == "Atacadão":
+            # Atacadão: preço visível no HTML estático — R$X.XX logo após o título
+            preco = extrair_preco_js(page)
+            if not preco:
+                # Tenta seletores conhecidos do Atacadão (VTEX)
+                for sel in ["h3.valornormal", ".valornormal", ".price-best-price",
+                            "span.vtex-product-price-1-x-sellingPrice",
+                            "span[class*='sellingPrice']", "span[class*='selling']"]:
+                    el = page.query_selector(sel)
+                    if el:
+                        preco = extrair_preco(el.inner_text())
+                        if preco:
+                            break
+            resultado["preco_atual"] = preco
+
+        elif supermercado == "Pão de Açúcar":
+            # Pão de Açúcar: preço em elemento com classe sales ou similar
+            page.wait_for_timeout(2000)
+            for sel in [".sales .value", ".price__sales", "span.sales",
+                        "[class*='sales'] [class*='value']",
+                        "span[class*='sellingPrice']", ".product-price"]:
+                el = page.query_selector(sel)
+                if el:
+                    preco = extrair_preco(el.inner_text())
+                    if preco:
+                        resultado["preco_atual"] = preco
+                        break
+            if not resultado["preco_atual"]:
+                resultado["preco_atual"] = extrair_preco_js(page)
+
+        elif supermercado == "Carrefour Mercado":
+            # Carrefour: React app, precisa esperar mais
+            page.wait_for_timeout(3000)
+            for sel in ["span[class*='sellingPrice']", "span[class*='SellingPrice']",
+                        "div[class*='price'] span", "span[class*='Price']",
+                        "[data-testid='price-value']", "strong[class*='price']"]:
+                el = page.query_selector(sel)
+                if el:
+                    preco = extrair_preco(el.inner_text())
+                    if preco:
+                        resultado["preco_atual"] = preco
+                        break
+            if not resultado["preco_atual"]:
+                resultado["preco_atual"] = extrair_preco_js(page)
+
+        elif supermercado == "Extra":
+            # Extra: React app similar ao Pão de Açúcar (mesmo grupo GPA)
+            page.wait_for_timeout(2000)
+            for sel in [".sales .value", "span.sales", ".product-price .value",
+                        "span[class*='sellingPrice']", "[class*='price-selling']",
+                        "div[class*='ProductPrice']"]:
+                el = page.query_selector(sel)
+                if el:
+                    preco = extrair_preco(el.inner_text())
+                    if preco:
+                        resultado["preco_atual"] = preco
+                        break
+            if not resultado["preco_atual"]:
+                resultado["preco_atual"] = extrair_preco_js(page)
+
+        # Tenta preço original (riscado)
+        for sel in ["span[class*='listPrice']", "span[class*='ListPrice']",
+                    ".price__list", "span.list", "[class*='price-list']",
+                    "s span", "del span", "span[class*='oldPrice']"]:
+            el = page.query_selector(sel)
             if el:
-                preco = extrair_preco(el.inner_text())
-                if preco:
-                    resultado["preco_atual"] = preco
+                preco_orig = extrair_preco(el.inner_text())
+                if preco_orig:
+                    resultado["preco_original"] = preco_orig
                     break
 
-        # Preço original
-        for sel in seletores["preco_original"].split(", "):
-            el = page.query_selector(sel.strip())
-            if el:
-                preco = extrair_preco(el.inner_text())
-                if preco:
-                    resultado["preco_original"] = preco
-                    break
-
-        # Disponibilidade
-        for sel in seletores["disponivel"].split(", "):
-            el = page.query_selector(sel.strip())
-            if el and el.is_visible():
-                resultado["disponivel"] = True
-                break
-
-        # Promoção
-        if resultado["preco_atual"] and resultado["preco_original"]:
-            if resultado["preco_original"] > resultado["preco_atual"]:
+        # Disponibilidade: se achou preço, está disponível
+        if resultado["preco_atual"]:
+            resultado["disponivel"] = True
+            if resultado["preco_original"] and resultado["preco_original"] > resultado["preco_atual"]:
                 resultado["em_promocao"] = True
-
-        if not resultado["preco_atual"]:
+        else:
             resultado["erro"] = "preco_nao_encontrado"
-            resultado["disponivel"] = False
 
     except PWTimeout:
         resultado["erro"] = "timeout"
@@ -278,7 +323,6 @@ def coletar_pagina(page, url, seletores, supermercado, cep, metodo_cep):
 
     return resultado
 
-# ─── Loop principal ───────────────────────────────────────────────────────────
 def main():
     log = []
     con = init_db()
@@ -287,32 +331,34 @@ def main():
     total_erro = 0
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=True, args=["--no-sandbox"])
+        browser = pw.chromium.launch(
+            headless=True,
+            args=["--no-sandbox", "--disable-blink-features=AutomationControlled"]
+        )
 
         for sm_nome, sm_config in SUPERMERCADOS.items():
-            links    = sm_config["links"]
-            seletores = SELETORES[sm_nome]
-            metodo   = sm_config["cep_method"]
+            links = sm_config["links"]
+            print(f"\n=== {sm_nome} ===")
 
             for cidade_info in CIDADES:
                 ctx = browser.new_context(
-                    user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120.0 Safari/537.36",
+                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
                     viewport={"width": 1280, "height": 800},
                     locale="pt-BR",
+                    extra_http_headers={"Accept-Language": "pt-BR,pt;q=0.9"}
                 )
                 page = ctx.new_page()
+                # Remove webdriver flag
+                page.add_init_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
 
                 for produto in PRODUTOS:
                     chave = f"{produto['nome']}_{produto['embalagem']}"
-                    url   = links.get(chave)
+                    url = links.get(chave)
                     if not url:
                         continue
 
                     horario = datetime.now().strftime("%H:%M:%S")
-                    dados = coletar_pagina(
-                        page, url, seletores, sm_nome,
-                        cidade_info["cep"], metodo
-                    )
+                    dados = coletar_pagina(page, url, sm_nome)
 
                     registro = {
                         "data_coleta":    hoje,
@@ -339,7 +385,7 @@ def main():
                     else:
                         total_erro += 1
 
-                    time.sleep(random.uniform(1.5, 3.5))
+                    time.sleep(random.uniform(2.0, 4.0))
 
                 ctx.close()
 
@@ -349,22 +395,21 @@ def main():
     con.close()
 
     # Exportar CSV do dia
+    import csv
     csv_path = Path(f"data/coleta_{hoje}.csv")
     con2 = sqlite3.connect(DB_PATH)
     con2.row_factory = sqlite3.Row
     rows = con2.execute("SELECT * FROM precos WHERE data_coleta = ?", (hoje,)).fetchall()
     if rows:
-        import csv
         with open(csv_path, "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=rows[0].keys())
             w.writeheader()
             w.writerows([dict(r) for r in rows])
     con2.close()
 
-    # Salvar log
     with open(LOG_PATH, "a", encoding="utf-8") as f:
         f.write(f"\n=== Coleta {hoje} | OK:{total_ok} ERRO:{total_erro} ===\n")
-        f.write("\n".join(log[-50:]))
+        f.write("\n".join(log[-100:]))
 
     print(f"\nColeta finalizada: {total_ok} preços coletados, {total_erro} erros.")
 
