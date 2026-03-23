@@ -1,0 +1,32 @@
+name: Coleta Cervejas
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Todo dia às 03:00 BRT (06:00 UTC)
+  workflow_dispatch:
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependências
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+      - name: Rodar scraper — Cervejas
+        run: python scraper/scraper.py Cervejas
+      - name: Gerar dashboard
+        run: python scraper/gerar_dashboard.py
+      - name: Commit resultados
+        run: |
+          git config user.name "Monitor Bot"
+          git config user.email "bot@monitor-precos.local"
+          git add data/ docs/
+          git diff --staged --quiet || git commit -m "Cervejas: $(date '+%d/%m/%Y %H:%M')"
+          git push
