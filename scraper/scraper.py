@@ -985,10 +985,18 @@ def buscar_mateus(page, termo, max_tentativas=2):
     return resultado
 
 # ─── Loop principal ───────────────────────────────────────────────────────────
-def main():
+def main(categorias_filtro=None):
+    """
+    categorias_filtro: lista de categorias a coletar, ex: ["Cervejas"]
+                       None = coleta todas
+    """
     log, total_ok, total_erro = [], 0, 0
     con = init_db()
     hoje = date.today().isoformat()
+    if categorias_filtro:
+        print(f"Coletando categorias: {', '.join(categorias_filtro)}")
+    else:
+        print("Coletando todas as categorias")
 
     # User-agents variados para rotacionar
     USER_AGENTS = [
@@ -1019,6 +1027,8 @@ def main():
             headers_sm = HEADERS_SM.get(sm_nome, {})
 
             for cat_nome, links in cats.items():
+                if categorias_filtro and cat_nome not in categorias_filtro:
+                    continue
                 print(f"\n  [{cat_nome}]")
                 for cidade_info in CIDADES:
                     # Novo contexto por cidade + supermercado (isolamento total)
@@ -1079,6 +1089,8 @@ def main():
         # ── Mateus ────────────────────────────────────────────────────────────
         print(f"\n{'='*60}\nMateus (busca dinâmica)\n{'='*60}")
         for cat_nome, termos in BUSCA_MATEUS.items():
+            if categorias_filtro and cat_nome not in categorias_filtro:
+                continue
             print(f"\n  [{cat_nome}]")
             for cidade_info in CIDADES:
                 ua = random.choice(USER_AGENTS)
@@ -1143,4 +1155,7 @@ def main():
     print(f"Finalizado: {total_ok} OK, {total_erro} erros ({total_erro/(total_ok+total_erro)*100:.1f}%)")
 
 if __name__ == "__main__":
-    main()
+    import sys
+    # Aceita categorias como argumentos: python scraper.py Cervejas Embutidos
+    cats = sys.argv[1:] if len(sys.argv) > 1 else None
+    main(cats)
