@@ -161,14 +161,9 @@ def injetar_cep(page, supermercado, cep):
 
 # ─── Cidades ──────────────────────────────────────────────────────────────────
 CIDADES = [
-    {"cidade":"São Paulo",      "uf":"SP","regiao":"Sudeste","cep":"01310100"},
-    {"cidade":"Rio de Janeiro", "uf":"RJ","regiao":"Sudeste","cep":"20040020"},
-    {"cidade":"Porto Alegre",   "uf":"RS","regiao":"Sul",    "cep":"90010150"},
-    {"cidade":"Curitiba",       "uf":"PR","regiao":"Sul",    "cep":"80010010"},
-    {"cidade":"Florianópolis",  "uf":"SC","regiao":"Sul",    "cep":"88010001"},
-    {"cidade":"Recife",         "uf":"PE","regiao":"Nordeste","cep":"50010010"},
-    {"cidade":"Salvador",       "uf":"BA","regiao":"Nordeste","cep":"40010000"},
-    {"cidade":"Fortaleza",      "uf":"CE","regiao":"Nordeste","cep":"60010000"},
+    {"cidade":"São Paulo",    "uf":"SP","regiao":"Sudeste", "cep":"01310100"},
+    {"cidade":"Recife",       "uf":"PE","regiao":"Nordeste","cep":"50010010"},
+    {"cidade":"Porto Alegre", "uf":"RS","regiao":"Sul",     "cep":"90010150"},
 ]
 
 # ─── Produtos por categoria ───────────────────────────────────────────────────
@@ -837,8 +832,8 @@ def recuperar_url(page, nome_produto, embalagem, supermercado, con=None):
     try:
         query = f"{nome_produto} {embalagem}".replace(" ","+")
         url_busca = BUSCA_URL[supermercado].format(q=query)
-        page.goto(url_busca, wait_until="domcontentloaded", timeout=20000)
-        page.wait_for_timeout(2500)
+        page.goto(url_busca, wait_until="domcontentloaded", timeout=15000)
+        page.wait_for_timeout(1500)
         sel = LINK_SELETOR.get(supermercado, 'a[href*="/p"]')
         # Pega o primeiro link de produto válido (ignora links de categoria)
         for link in page.query_selector_all(sel):
@@ -861,7 +856,7 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         "rota_css": None, "url_recuperada": None, "tentativas": tentativa, "erro": None,
     }
     try:
-        page.goto(url, wait_until="domcontentloaded", timeout=32000)
+        page.goto(url, wait_until="domcontentloaded", timeout=18000)
 
         # Injeta CEP após carregar a página (para sites que leem do localStorage)
         scroll_e_aguarda(page, supermercado)
@@ -871,7 +866,7 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
             nova_url, origem = recuperar_url(page, nome_produto, embalagem, supermercado, con)
             if nova_url:
                 resultado["url_recuperada"] = nova_url
-                page.goto(nova_url, wait_until="domcontentloaded", timeout=28000)
+                page.goto(nova_url, wait_until="domcontentloaded", timeout=18000)
                 scroll_e_aguarda(page, supermercado)
             else:
                 resultado["erro"] = "pagina_invalida_url_nao_recuperada"
@@ -935,7 +930,7 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         resultado["erro"] = str(e)[:120]
     return resultado
 
-def coletar_com_retry(page, url, supermercado, nome_produto, embalagem, con, max_tentativas=3):
+def coletar_com_retry(page, url, supermercado, nome_produto, embalagem, con, max_tentativas=2):
     """Tenta coletar até max_tentativas vezes com backoff exponencial."""
     for tentativa in range(1, max_tentativas + 1):
         dados = coletar_pagina(page, url, supermercado, nome_produto, embalagem, con, tentativa)
@@ -957,8 +952,8 @@ def buscar_mateus(page, termo, max_tentativas=2):
     }
     for tentativa in range(1, max_tentativas + 1):
         try:
-            page.goto(url_busca, wait_until="domcontentloaded", timeout=28000)
-            page.wait_for_timeout(3000)
+            page.goto(url_busca, wait_until="domcontentloaded", timeout=18000)
+            page.wait_for_timeout(1500)
             # Encontra primeiro produto válido
             for link in page.query_selector_all('a[href*="/produto/"], a[href*="/p/"]'):
                 href = link.get_attribute("href") or ""
@@ -966,8 +961,8 @@ def buscar_mateus(page, termo, max_tentativas=2):
                 if not href.startswith("http"):
                     href = "https://mateusmais.com.br" + href
                 resultado["url"] = href
-                page.goto(href, wait_until="domcontentloaded", timeout=25000)
-                page.wait_for_timeout(3000)
+                page.goto(href, wait_until="domcontentloaded", timeout=18000)
+                page.wait_for_timeout(1500)
                 break
             for rota, fn in [(10,extrair_via_json_ld),(11,extrair_via_meta),(12,extrair_via_js)]:
                 p = fn(page)
@@ -1081,8 +1076,8 @@ def main(categorias_filtro=None):
                         total_erro += not bool(dados["preco_atual"])
 
                         # Delay humanizado — mais longo nos sites com maior bloqueio
-                        base_delay = 2.5 if sm_nome in ["Carrefour Mercado","Pão de Açúcar","Extra"] else 1.5
-                        time.sleep(random.uniform(base_delay, base_delay + 2.5))
+                        base_delay = 1.5 if sm_nome in ["Carrefour Mercado","Pão de Açúcar","Extra"] else 1.0
+                        time.sleep(random.uniform(base_delay, base_delay + 1.5))
 
                     ctx.close()
 
@@ -1129,7 +1124,7 @@ def main(categorias_filtro=None):
                     print(f"    {msg}")
                     total_ok   += bool(dados["preco_atual"])
                     total_erro += not bool(dados["preco_atual"])
-                    time.sleep(random.uniform(2.5, 5.0))
+                    time.sleep(random.uniform(1.5, 3.0))
 
                 ctx.close()
 
