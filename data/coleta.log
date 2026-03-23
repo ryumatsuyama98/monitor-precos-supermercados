@@ -151,3 +151,204 @@
 2026-03-22 | Atacadão | Spaten Pilsner Long Neck 355ml | Fortaleza | — | ERRO:preco_nao_encontrado
 2026-03-22 | Atacadão | Itaipava Lata 350ml | Fortaleza | — | ERRO:preco_nao_encontrado
 2026-03-22 | Atacadão | Itaipava Garrafa 600ml | Fortaleza | — | ERRO:preco_nao_encontrado
+=== 2026-03-23 | OK:96 ERRO:328 ===
+2026-03-23|Pão de Açúcar|Cervejas|Original Long Neck 355ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Heineken Lata 350ml|Salvador|R$5.99|OK(rota10)
+2026-03-23|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Skol Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Brahma Chopp Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Stella Artois Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Corona Extra Long Neck 355ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Budweiser Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Amstel Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Spaten Pilsner Long Neck 355ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Original Long Neck 355ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Heineken Lata 350ml|Fortaleza|R$5.99|OK(rota10)
+2026-03-23|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Skol Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Brahma Chopp Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Stella Artois Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Corona Extra Long Neck 355ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Budweiser Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Amstel Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Spaten Pilsner Long Neck 355ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Original Long Neck 355ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Rio de Janeiro|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Rio de Janeiro|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Rio de Janeiro|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Rio de Janeiro|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Rio de Janeiro|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Rio de Janeiro|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Curitiba|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Curitiba|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Curitiba|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Curitiba|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Curitiba|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Curitiba|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Florianópolis|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Florianópolis|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Florianópolis|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Florianópolis|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Florianópolis|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Florianópolis|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Salvador|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Fortaleza|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|São Paulo|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|São Paulo|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|São Paulo|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|São Paulo|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|São Paulo|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|São Paulo|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|São Paulo|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|São Paulo|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|São Paulo|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|São Paulo|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Rio de Janeiro|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Rio de Janeiro|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Rio de Janeiro|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Rio de Janeiro|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Rio de Janeiro|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Rio de Janeiro|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Rio de Janeiro|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Rio de Janeiro|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Rio de Janeiro|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Rio de Janeiro|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Porto Alegre|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Porto Alegre|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Porto Alegre|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Porto Alegre|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Porto Alegre|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Porto Alegre|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Porto Alegre|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Porto Alegre|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Porto Alegre|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Curitiba|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Curitiba|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Curitiba|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Curitiba|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Curitiba|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Curitiba|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Curitiba|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Curitiba|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Curitiba|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Curitiba|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Florianópolis|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Florianópolis|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Florianópolis|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Florianópolis|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Florianópolis|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Florianópolis|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Florianópolis|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Florianópolis|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Florianópolis|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Florianópolis|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Recife|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Recife|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Recife|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Recife|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Recife|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Recife|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Recife|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Recife|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Recife|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Recife|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Salvador|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Salvador|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Salvador|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Salvador|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Salvador|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Salvador|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Salvador|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Salvador|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Salvador|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Salvador|R$2.49|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Fortaleza|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Fortaleza|R$4.75|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Fortaleza|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Fortaleza|R$4.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Fortaleza|R$5.19|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Fortaleza|R$6.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Fortaleza|R$3.29|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Fortaleza|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Fortaleza|R$4.75|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Fortaleza|R$2.49|OK(rota10)
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Rio de Janeiro|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Rio de Janeiro|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Rio de Janeiro|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Rio de Janeiro|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Rio de Janeiro|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Rio de Janeiro|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Curitiba|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Curitiba|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Curitiba|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Curitiba|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Curitiba|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Curitiba|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Florianópolis|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Florianópolis|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Florianópolis|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Florianópolis|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Florianópolis|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Florianópolis|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Salvador|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Salvador|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Salvador|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Salvador|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Salvador|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Salvador|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
