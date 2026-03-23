@@ -19,8 +19,9 @@ from datetime import date, datetime
 from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
-DB_PATH  = Path("data/precos.db")
-LOG_PATH = Path("data/coleta.log")
+_ROOT    = Path(__file__).resolve().parent.parent
+DB_PATH  = _ROOT / "data/precos.db"
+LOG_PATH = _ROOT / "data/coleta.log"
 
 # ─── URLs de busca (Rota 0) ───────────────────────────────────────────────────
 BUSCA_URL = {
@@ -1133,7 +1134,7 @@ def main(categorias_filtro=None):
     con.close()
 
     # CSV diário
-    csv_path = Path(f"data/coleta_{hoje}.csv")
+    csv_path = _ROOT / f"data/coleta_{hoje}.csv"
     con2 = sqlite3.connect(DB_PATH); con2.row_factory = sqlite3.Row
     rows = con2.execute("SELECT * FROM precos WHERE data_coleta=?", (hoje,)).fetchall()
     if rows:
