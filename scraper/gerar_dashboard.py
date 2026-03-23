@@ -7,8 +7,9 @@ from pathlib import Path
 from datetime import date
 from collections import defaultdict
 
-DB_PATH  = Path("data/precos.db")
-OUT_PATH = Path("docs/index.html")
+_ROOT    = Path(__file__).resolve().parent.parent
+DB_PATH  = _ROOT / "data/precos.db"
+OUT_PATH = _ROOT / "docs/index.html"
 SENHA    = "ibbafb123"
 CATS     = ["Cervejas","Embutidos","Biscoitos","Massas","Mercearia"]
 
