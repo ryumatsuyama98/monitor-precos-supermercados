@@ -352,3 +352,163 @@
 2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
 2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
 2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Fortaleza|—|ERRO:preco_nao_encontrado_mateus
+=== 2026-03-23 | OK:36 ERRO:123 ===
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Lata 350ml|São Paulo|R$5.99|OK(rota10)
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Lata 269ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Long Neck 355ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Garrafa 600ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken 0.0 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Silver 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Skol Lata 269ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Brahma Chopp Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Brahma Duplo Malte 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Stella Artois Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Stella Artois Long Neck 355ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Corona Extra Long Neck 355ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel Ultra 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel 0,0 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Spaten Pilsner Long Neck 355ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Original Long Neck 355ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Itaipava Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Lata 350ml|Recife|R$5.99|OK(rota10)
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Lata 269ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Long Neck 355ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Garrafa 600ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken 0.0 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Silver 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Skol Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Skol Lata 269ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Brahma Chopp Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Brahma Duplo Malte 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Stella Artois Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Stella Artois Long Neck 355ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Corona Extra Long Neck 355ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Budweiser Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel Ultra 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel 0,0 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Spaten Pilsner Long Neck 355ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Original Long Neck 355ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Itaipava Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Lata 350ml|Porto Alegre|R$5.99|OK(rota10)
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Lata 269ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Long Neck 355ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Garrafa 600ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken 0.0 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Heineken Silver 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Skol Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Skol Lata 269ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Brahma Duplo Malte 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Stella Artois Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Stella Artois Long Neck 355ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Corona Extra Long Neck 355ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel Ultra 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Amstel 0,0 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Spaten Pilsner Long Neck 355ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Original Long Neck 355ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Carrefour Mercado|Cervejas|Itaipava Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-23|Pão de Açúcar|Cervejas|Heineken Lata 350ml|São Paulo|R$4.99|OK(rota10)
+2026-03-23|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Brahma Chopp Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Stella Artois Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Corona Extra Long Neck 355ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Amstel Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Spaten Pilsner Long Neck 355ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Original Long Neck 355ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Heineken Lata 350ml|Recife|R$4.99|OK(rota10)
+2026-03-23|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Skol Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Brahma Chopp Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Stella Artois Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Corona Extra Long Neck 355ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Budweiser Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Amstel Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Spaten Pilsner Long Neck 355ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Original Long Neck 355ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Heineken Lata 350ml|Porto Alegre|R$4.99|OK(rota10)
+2026-03-23|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Skol Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Stella Artois Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Corona Extra Long Neck 355ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Amstel Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Spaten Pilsner Long Neck 355ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Original Long Neck 355ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Heineken Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Skol Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Stella Artois Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Corona Extra Long Neck 355ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Extra|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|São Paulo|R$5.59|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|São Paulo|R$5.59|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|São Paulo|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|São Paulo|R$4.49|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|São Paulo|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|São Paulo|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|São Paulo|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|São Paulo|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|São Paulo|R$5.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|São Paulo|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Recife|R$5.59|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Recife|R$5.59|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Recife|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Recife|R$4.49|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Recife|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Recife|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Recife|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Recife|R$3.99|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Recife|R$5.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Recife|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Heineken Lata 350ml|Porto Alegre|R$5.59|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Heineken 0.0 350ml|Porto Alegre|R$5.59|OK(rota10)
+2026-03-23|Atacadão|Cervejas|Skol Lata 350ml|Porto Alegre|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|R$4.49|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Stella Artois Lata 350ml|Porto Alegre|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Corona Extra Long Neck 355ml|Porto Alegre|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Budweiser Lata 350ml|Porto Alegre|R$1.99|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Amstel Lata 350ml|Porto Alegre|R$3.99|OK(rota10) [tentativa 2]
+2026-03-23|Atacadão|Cervejas|Spaten Pilsner Long Neck 355ml|Porto Alegre|R$5.39|OK(rota12)
+2026-03-23|Atacadão|Cervejas|Itaipava Lata 350ml|Porto Alegre|R$1.99|OK(rota12)
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Heineken Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Skol Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Brahma Chopp Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Itaipava Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-23|Mateus|Cervejas|Amstel Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
