@@ -27,14 +27,14 @@ LOG_PATH = _ROOT / "data/coleta.log"
 BUSCA_URL = {
     "Carrefour Mercado": "https://mercado.carrefour.com.br/busca/{q}",
     "Pão de Açúcar":     "https://www.paodeacucar.com/busca?q={q}",
-    "Extra":             "https://www.extra.com.br/busca/{q}",
+    "Extra":             "https://www.extramercado.com.br/busca?q={q}",
     "Atacadão":          "https://www.atacadao.com.br/busca/{q}",
 }
 
 LINK_SELETOR = {
     "Carrefour Mercado": 'a[href*="/p"]',
     "Pão de Açúcar":     'a[href*="/produto/"]',
-    "Extra":             'a[href*="/p/"], a[href*="/produto/"]',
+    "Extra":             'a[href*="/produto/"]',
     "Atacadão":          'a[href*="/p"]',
 }
 
@@ -65,6 +65,7 @@ HEADERS_SM = {
         "Sec-Fetch-Dest": "document",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "pt-BR,pt;q=0.9",
+        "Origin": "https://www.extramercado.com.br",
     },
     "Atacadão": {
         "Referer": "https://www.google.com.br/",
@@ -161,35 +162,35 @@ def injetar_cep(page, supermercado, cep):
         pass
 
 # ─── Cidades ──────────────────────────────────────────────────────────────────
+# Para ativar mais cidades, descomente as linhas abaixo
 CIDADES = [
     {"cidade":"São Paulo",    "uf":"SP","regiao":"Sudeste", "cep":"01310100"},
-    {"cidade":"Recife",       "uf":"PE","regiao":"Nordeste","cep":"50010010"},
-    {"cidade":"Porto Alegre", "uf":"RS","regiao":"Sul",     "cep":"90010150"},
+    # {"cidade":"Recife",       "uf":"PE","regiao":"Nordeste","cep":"50010010"},
+    # {"cidade":"Porto Alegre", "uf":"RS","regiao":"Sul",     "cep":"90010150"},
 ]
 
 # ─── Produtos por categoria ───────────────────────────────────────────────────
 PRODUTOS = {
     "Cervejas": [
-        {"marca":"Heineken",      "nome":"Heineken Lata",           "embalagem":"350ml"},
-        {"marca":"Heineken",      "nome":"Heineken Lata",           "embalagem":"269ml"},
-        {"marca":"Heineken",      "nome":"Heineken Long Neck",      "embalagem":"355ml"},
-        {"marca":"Heineken",      "nome":"Heineken Garrafa",        "embalagem":"600ml"},
-        {"marca":"Heineken",      "nome":"Heineken 0.0",            "embalagem":"350ml"},
-        {"marca":"Heineken",      "nome":"Heineken Silver",         "embalagem":"350ml"},
-        {"marca":"Skol",          "nome":"Skol Lata",               "embalagem":"350ml"},
-        {"marca":"Skol",          "nome":"Skol Lata",               "embalagem":"269ml"},
-        {"marca":"Brahma",        "nome":"Brahma Chopp Lata",       "embalagem":"350ml"},
-        {"marca":"Brahma",        "nome":"Brahma Duplo Malte",      "embalagem":"350ml"},
-        {"marca":"Stella Artois", "nome":"Stella Artois Lata",      "embalagem":"350ml"},
-        {"marca":"Stella Artois", "nome":"Stella Artois Long Neck", "embalagem":"355ml"},
-        {"marca":"Corona",        "nome":"Corona Extra Long Neck",  "embalagem":"355ml"},
-        {"marca":"Budweiser",     "nome":"Budweiser Lata",          "embalagem":"350ml"},
-        {"marca":"Amstel",        "nome":"Amstel Lata",             "embalagem":"350ml"},
-        {"marca":"Amstel",        "nome":"Amstel Ultra",            "embalagem":"350ml"},
-        {"marca":"Amstel",        "nome":"Amstel 0,0",              "embalagem":"350ml"},
-        {"marca":"Spaten",        "nome":"Spaten Pilsner Long Neck","embalagem":"355ml"},
-        {"marca":"Original",      "nome":"Original Long Neck",      "embalagem":"355ml"},
-        {"marca":"Itaipava",      "nome":"Itaipava Lata",           "embalagem":"350ml"},
+        {"marca":"Heineken",      "nome":"Heineken Lata",              "embalagem":"350ml"},
+        {"marca":"Heineken",      "nome":"Heineken Lata",              "embalagem":"269ml"},
+        {"marca":"Heineken",      "nome":"Heineken 0.0",               "embalagem":"350ml"},
+        {"marca":"Skol",          "nome":"Skol Lata",                  "embalagem":"350ml"},
+        {"marca":"Skol",          "nome":"Skol Lata",                  "embalagem":"269ml"},
+        {"marca":"Brahma",        "nome":"Brahma Duplo Malte",         "embalagem":"350ml"},
+        {"marca":"Brahma",        "nome":"Brahma Duplo Malte",         "embalagem":"269ml"},
+        {"marca":"Stella Artois", "nome":"Stella Artois Long Neck",    "embalagem":"330ml"},
+        {"marca":"Corona",        "nome":"Corona Extra Long Neck",     "embalagem":"330ml"},
+        {"marca":"Corona",        "nome":"Corona Extra Lata",          "embalagem":"350ml"},
+        {"marca":"Budweiser",     "nome":"Budweiser Lata",             "embalagem":"350ml"},
+        {"marca":"Budweiser",     "nome":"Budweiser Lata",             "embalagem":"269ml"},
+        {"marca":"Amstel",        "nome":"Amstel Lata",                "embalagem":"350ml"},
+        {"marca":"Amstel",        "nome":"Amstel Lata",                "embalagem":"269ml"},
+        {"marca":"Spaten",        "nome":"Spaten Puro Malte Lata",     "embalagem":"350ml"},
+        {"marca":"Spaten",        "nome":"Spaten Puro Malte Lata",     "embalagem":"269ml"},
+        {"marca":"Original",      "nome":"Original Lata",              "embalagem":"350ml"},
+        {"marca":"Original",      "nome":"Original Lata",              "embalagem":"269ml"},
+        {"marca":"Itaipava",      "nome":"Itaipava Lata",              "embalagem":"350ml"},
     ],
     "Embutidos": [
         {"marca":"Sadia",    "nome":"Sadia Salsicha Hot Dog",    "embalagem":"500g"},
@@ -268,28 +269,7 @@ PRODUTOS = {
 # ─── Links verificados ────────────────────────────────────────────────────────
 LINKS = {
     "Carrefour Mercado": {
-        "Cervejas": {
-            "Heineken Lata_350ml":            "https://mercado.carrefour.com.br/cerveja-heineken-lata-sleek-350ml-3180018/p",
-            "Heineken Lata_269ml":            "https://mercado.carrefour.com.br/cerveja-heineken-lata-269ml/p",
-            "Heineken Long Neck_355ml":       "https://mercado.carrefour.com.br/cerveja-heineken-long-neck-355ml/p",
-            "Heineken Garrafa_600ml":         "https://mercado.carrefour.com.br/cerveja-heineken-garrafa-600ml/p",
-            "Heineken 0.0_350ml":             "https://mercado.carrefour.com.br/cerveja-lager-zero-alcool-heineken-lata-350ml-3180026/p",
-            "Heineken Silver_350ml":          "https://mercado.carrefour.com.br/cerveja-heineken-silver-lata-350ml/p",
-            "Skol Lata_350ml":                "https://mercado.carrefour.com.br/cerveja-skol-lata-350ml/p",
-            "Skol Lata_269ml":                "https://mercado.carrefour.com.br/cerveja-skol-lata-269ml/p",
-            "Brahma Chopp Lata_350ml":        "https://mercado.carrefour.com.br/cerveja-brahma-chopp-lata-350ml/p",
-            "Brahma Duplo Malte_350ml":       "https://mercado.carrefour.com.br/cerveja-brahma-duplo-malte-lata-350ml/p",
-            "Stella Artois Lata_350ml":       "https://mercado.carrefour.com.br/cerveja-stella-artois-lata-350ml/p",
-            "Stella Artois Long Neck_355ml":  "https://mercado.carrefour.com.br/cerveja-stella-artois-long-neck-355ml/p",
-            "Corona Extra Long Neck_355ml":   "https://mercado.carrefour.com.br/cerveja-corona-extra-long-neck-355ml/p",
-            "Budweiser Lata_350ml":           "https://mercado.carrefour.com.br/cerveja-budweiser-lata-350ml/p",
-            "Amstel Lata_350ml":              "https://mercado.carrefour.com.br/cerveja-amstel-lata-350ml/p",
-            "Amstel Ultra_350ml":             "https://mercado.carrefour.com.br/cerveja-amstel-ultra-lata-350ml/p",
-            "Amstel 0,0_350ml":               "https://mercado.carrefour.com.br/cerveja-amstel-zero-alcool-350ml/p",
-            "Spaten Pilsner Long Neck_355ml": "https://mercado.carrefour.com.br/cerveja-spaten-pilsner-long-neck-355ml/p",
-            "Original Long Neck_355ml":       "https://mercado.carrefour.com.br/cerveja-original-long-neck-355ml/p",
-            "Itaipava Lata_350ml":            "https://mercado.carrefour.com.br/cerveja-itaipava-lata-350ml/p",
-        },
+        "Cervejas": {},  # Temporariamente desativado — aguardando links
         "Embutidos": {
             "Sadia Salsicha Hot Dog_500g":        "https://mercado.carrefour.com.br/salsicha-tradicional-sadia-500g-288527/p",
             "Perdigão Salsicha Hot Dog_500g":     "https://mercado.carrefour.com.br/salsicha-tradicional-perdigao-hot-dog-500-g-3237230/p",
@@ -365,17 +345,21 @@ LINKS = {
     },
     "Pão de Açúcar": {
         "Cervejas": {
-            "Heineken Lata_350ml":            "https://www.paodeacucar.com/produto/1606865/cerveja-lager-heineken-lata-350ml",
-            "Heineken 0.0_350ml":             "https://www.paodeacucar.com/produto/462217/cerveja-lager-premium-puro-malte-zero-alcool-heineken-lata-350ml",
-            "Skol Lata_350ml":                "https://www.paodeacucar.com/produto/cerveja-skol-lata-350ml",
-            "Brahma Chopp Lata_350ml":        "https://www.paodeacucar.com/produto/cerveja-brahma-chopp-350ml",
-            "Stella Artois Lata_350ml":       "https://www.paodeacucar.com/produto/cerveja-stella-artois-350ml",
-            "Corona Extra Long Neck_355ml":   "https://www.paodeacucar.com/produto/cerveja-corona-extra-355ml",
-            "Budweiser Lata_350ml":           "https://www.paodeacucar.com/produto/cerveja-budweiser-lata-350ml",
-            "Amstel Lata_350ml":              "https://www.paodeacucar.com/produto/cerveja-amstel-350ml",
-            "Spaten Pilsner Long Neck_355ml": "https://www.paodeacucar.com/produto/cerveja-spaten-355ml",
-            "Original Long Neck_355ml":       "https://www.paodeacucar.com/produto/cerveja-original-355ml",
-            "Itaipava Lata_350ml":            "https://www.paodeacucar.com/produto/cerveja-itaipava-350ml",
+            "Heineken Lata_350ml":            "https://www.paodeacucar.com/produto/1606865/cerveja-heineken-lata-sleek-350ml",
+            "Heineken Lata_269ml":            "https://www.paodeacucar.com/produto/1376370/cerveja-lager-puro-malte-heineken-lata-269ml",
+            "Heineken 0.0_350ml":             "https://www.paodeacucar.com/produto/1606861/cerveja-heineken-zero-lata-sleek-350ml",
+            "Skol Lata_269ml":                "https://www.paodeacucar.com/produto/71229/cerveja-skol-pilsen-lata-269ml",
+            "Brahma Duplo Malte_350ml":       "https://www.paodeacucar.com/produto/462219/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
+            "Stella Artois Long Neck_330ml":  "https://www.paodeacucar.com/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
+            "Corona Extra Long Neck_330ml":   "https://www.paodeacucar.com/produto/456783/cerveja-pilsen-corona-garrafa-330ml",
+            "Budweiser Lata_269ml":           "https://www.paodeacucar.com/produto/323696/cerveja-pilsen-budweiser-lata-269ml",
+            "Amstel Lata_350ml":              "https://www.paodeacucar.com/produto/1606864/cerveja-lager-puro-malte-amstel-lata-350ml",
+            "Amstel Lata_269ml":              "https://www.paodeacucar.com/produto/339944/cerveja-lager-puro-malte-amstel-lata-269ml",
+            "Spaten Puro Malte Lata_350ml":   "https://www.paodeacucar.com/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
+            "Spaten Puro Malte Lata_269ml":   "https://www.paodeacucar.com/produto/1461013/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
+            "Original Lata_350ml":            "https://www.paodeacucar.com/produto/444042/cerveja-pilsen-antarctica-original-lata-350ml",
+            "Original Lata_269ml":            "https://www.paodeacucar.com/produto/479389/cerveja-pilsen-antarctica-original-lata-269ml",
+            "Itaipava Lata_350ml":            "https://www.paodeacucar.com/produto/112967/cerveja-pilsen-itaipava-lata-350ml",
         },
         "Embutidos": {
             "Sadia Salsicha Hot Dog_500g":    "https://www.paodeacucar.com/produto/salsicha-sadia-hot-dog-500g",
@@ -423,12 +407,24 @@ LINKS = {
     },
     "Extra": {
         "Cervejas": {
-            "Heineken Lata_350ml":           "https://www.extra.com.br/cerveja-heineken-pilsen-12-unidades-lata-350ml/p/55021179",
-            "Skol Lata_350ml":               "https://www.extra.com.br/cerveja-skol-lata-350ml/p",
-            "Brahma Chopp Lata_350ml":       "https://www.extra.com.br/cerveja-brahma-chopp-350ml/p",
-            "Stella Artois Lata_350ml":      "https://www.extra.com.br/cerveja-stella-artois-350ml/p",
-            "Corona Extra Long Neck_355ml":  "https://www.extra.com.br/cerveja-corona-extra-355ml/p",
-            "Budweiser Lata_350ml":          "https://www.extra.com.br/cerveja-budweiser-350ml/p",
+            "Heineken Lata_350ml":           "https://www.extramercado.com.br/produto/1641976/cerveja-heineken-lata-sleek-350ml",
+            "Heineken Lata_269ml":           "https://www.extramercado.com.br/produto/1440048/cerveja-lager-puro-malte-heineken-lata-269ml",
+            "Heineken 0.0_350ml":            "https://www.extramercado.com.br/produto/1641970/cerveja-heineken-zero-lata-sleek-350ml",
+            "Skol Lata_269ml":               "https://www.extramercado.com.br/produto/71229/cerveja-skol-pilsen-lata-269ml",
+            "Skol Lata_350ml":               "https://www.extramercado.com.br/produto/91224/cerveja-pilsen-skol-lata-350ml",
+            "Brahma Duplo Malte_269ml":      "https://www.extramercado.com.br/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
+            "Brahma Duplo Malte_350ml":      "https://www.extramercado.com.br/produto/485275/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
+            "Stella Artois Lata_269ml":      "https://www.extramercado.com.br/produto/71886/cerveja-stella-artois-puro-malte-269ml-lata",
+            "Corona Extra Long Neck_330ml":  "https://www.extramercado.com.br/produto/452503/cerveja-pilsen-corona-garrafa-330ml",
+            "Corona Extra Lata_350ml":       "https://www.extramercado.com.br/produto/1500760/cerveja-corona-extra-lata-350ml",
+            "Budweiser Lata_269ml":          "https://www.extramercado.com.br/produto/347007/cerveja-pilsen-budweiser-lata-269ml",
+            "Budweiser Lata_350ml":          "https://www.extramercado.com.br/produto/190773/cerveja-lager-budweiser-lata-350ml",
+            "Amstel Lata_350ml":             "https://www.extramercado.com.br/produto/1641973/cerveja-lager-puro-malte-amstel-lata-350ml",
+            "Amstel Lata_269ml":             "https://www.extramercado.com.br/produto/369620/cerveja-lager-puro-malte-amstel-lata-269ml",
+            "Spaten Puro Malte Lata_269ml":  "https://www.extramercado.com.br/produto/1500377/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
+            "Original Lata_350ml":           "https://www.extramercado.com.br/produto/434881/cerveja-pilsen-antarctica-original-lata-350ml",
+            "Original Lata_269ml":           "https://www.extramercado.com.br/produto/519820/cerveja-pilsen-antarctica-original-lata-269ml",
+            "Itaipava Lata_350ml":           "https://www.extramercado.com.br/produto/112967/cerveja-pilsen-itaipava-lata-350ml",
         },
         "Embutidos": {
             "Sadia Salsicha Hot Dog_500g":    "https://www.extra.com.br/salsicha-sadia-hot-dog-500g/p",
@@ -467,15 +463,23 @@ LINKS = {
     },
     "Atacadão": {
         "Cervejas": {
-            "Heineken Lata_350ml":            "https://www.atacadao.com.br/cerveja-heineken-sleek-86733/p",
-            "Heineken 0.0_350ml":             "https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709/p",
+            "Heineken Lata_350ml":            "https://www.atacadao.com.br/cerveja-heineken-sleek-86733-12486/p",
+            "Heineken Lata_269ml":            "https://www.atacadao.com.br/cerveja-heineken-lata-com-269ml-76983-12460/p",
+            "Heineken 0.0_350ml":             "https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709-12501/p",
+            "Skol Lata_269ml":                "https://www.atacadao.com.br/cerveja-skol-redondinha-6183-13325/p",
             "Skol Lata_350ml":                "https://www.atacadao.com.br/cerveja-skol-pilsen-18650-13267/p",
-            "Brahma Chopp Lata_350ml":        "https://www.atacadao.com.br/cerveja-brahma-extra-lager-57660-11677/p",
-            "Stella Artois Lata_350ml":       "https://www.atacadao.com.br/cerveja-stella-artois-lata-com-350ml-65730/p",
-            "Corona Extra Long Neck_355ml":   "https://www.atacadao.com.br/cerveja-corona-extra-50175/p",
+            "Brahma Duplo Malte_269ml":       "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-269ml-74794-11647/p",
+            "Brahma Duplo Malte_350ml":       "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-350ml-67653-11651/p",
+            "Stella Artois Long Neck_330ml":  "https://www.atacadao.com.br/cerveja-stella-artois-68018-13362/p",
+            "Corona Extra Long Neck_330ml":   "https://www.atacadao.com.br/cerveja-corona-long-neck-com-330ml-66884-12000/p",
+            "Budweiser Lata_269ml":           "https://www.atacadao.com.br/cerveja-budweiser-51187-11765/p",
             "Budweiser Lata_350ml":           "https://www.atacadao.com.br/cerveja-budweiser-sleek-lata-com-350ml-80258-11811/p",
             "Amstel Lata_350ml":              "https://www.atacadao.com.br/cerveja-amstel-sleek-86708-11276/p",
-            "Spaten Pilsner Long Neck_355ml": "https://www.atacadao.com.br/cerveja-spaten-puro-malte-long-neck-com-355ml-74631-13356/p",
+            "Amstel Lata_269ml":              "https://www.atacadao.com.br/cerveja-amstel-54353-11244/p",
+            "Spaten Puro Malte Lata_350ml":   "https://www.atacadao.com.br/cerveja-spaten-puro-malte-lata-com-350ml-74632-13351/p",
+            "Spaten Puro Malte Lata_269ml":   "https://www.atacadao.com.br/cerveja-puro-malte-spaten-lata-com-269ml-83458-13164/p",
+            "Original Lata_350ml":            "https://www.atacadao.com.br/cerveja-original-lata-com-350ml-65159-12864/p",
+            "Original Lata_269ml":            "https://www.atacadao.com.br/cerveja-original-lata-com-269ml-71793-12854/p",
             "Itaipava Lata_350ml":            "https://www.atacadao.com.br/cerveja-itaipava-9850-12669/p",
         },
         "Embutidos": {
@@ -530,14 +534,7 @@ LINKS = {
 
 # ─── Termos de busca Mateus ───────────────────────────────────────────────────
 BUSCA_MATEUS = {
-    "Cervejas":  {
-        "Heineken Lata_350ml":       "cerveja heineken lata 350ml",
-        "Skol Lata_350ml":           "cerveja skol lata 350ml",
-        "Brahma Chopp Lata_350ml":   "cerveja brahma chopp 350ml",
-        "Budweiser Lata_350ml":      "cerveja budweiser lata 350ml",
-        "Itaipava Lata_350ml":       "cerveja itaipava lata 350ml",
-        "Amstel Lata_350ml":         "cerveja amstel lata 350ml",
-    },
+    "Cervejas":  {},  # Temporariamente desativado
     "Embutidos": {
         "Sadia Salsicha Hot Dog_500g":   "salsicha sadia hot dog 500g",
         "Sadia Nuggets de frango_300g":  "nuggets sadia frango 300g",
@@ -572,6 +569,16 @@ BUSCA_MATEUS = {
 
 # ─── Seletores CSS expandidos por supermercado ───────────────────────────────
 SELETORES = {
+    "extramercado.com.br": [
+        # Mesmo grupo GPA/VTEX que Pão de Açúcar e Extra
+        ".sales .value",
+        "span.sales",
+        ".price__sales",
+        "[class*='sales'] [class*='value']",
+        "span[class*='sellingPrice']",
+        "[class*='ProductPrice'] [class*='selling']",
+        ".product-price",
+    ],
     "Carrefour Mercado": [
         # VTEX / React — seletores primários
         "span[class*='sellingPrice']",
@@ -597,13 +604,15 @@ SELETORES = {
         ".product-price",
     ],
     "Extra": [
-        # GPA (mesmo grupo do Pão de Açúcar)
+        # extramercado.com.br — mesmo grupo GPA/VTEX
         ".sales .value",
         "span.sales",
-        "[class*='price-selling']",
-        "div[class*='ProductPrice']",
+        ".price__sales",
+        "[class*='sales'] [class*='value']",
         "span[class*='sellingPrice']",
-        ".product-price .value",
+        "[class*='ProductPrice'] [class*='selling']",
+        ".product-price",
+        "[class*='price-selling']",
         "[class*='priceContainer'] span",
     ],
     "Atacadão": [
