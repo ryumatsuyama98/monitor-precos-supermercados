@@ -24,26 +24,56 @@ def carregar_dados():
     if not ultima:
         con.close(); return {}, {}, {}, None, []
 
-    # Todos os registros do último dia (OK + erro) para a tabela principal
-    todos = [dict(r) for r in con.execute(
-        "SELECT * FROM precos WHERE data_coleta=? ORDER BY categoria,supermercado,nome_produto", (ultima,)
-    ).fetchall()]
+    # Melhor registro por produto/supermercado/cidade no dia mais recente:
+    # - se tem preço: pega o menor preço do dia
+    # - se só tem erro: pega o mais recente
+    todos = [dict(r) for r in con.execute("""
+        SELECT p.* FROM precos p
+        INNER JOIN (
+            SELECT supermercado, categoria, nome_produto, embalagem, cidade,
+                   CASE WHEN MIN(preco_atual) IS NOT NULL
+                        THEN MIN(preco_atual)
+                        ELSE NULL END AS melhor_preco,
+                   MAX(id) AS ultimo_id
+            FROM precos
+            WHERE data_coleta=?
+            GROUP BY supermercado, categoria, nome_produto, embalagem, cidade
+        ) m ON p.supermercado=m.supermercado
+           AND p.categoria=m.categoria
+           AND p.nome_produto=m.nome_produto
+           AND p.embalagem=m.embalagem
+           AND p.cidade=m.cidade
+           AND p.data_coleta=?
+           AND (
+               (m.melhor_preco IS NOT NULL AND p.preco_atual=m.melhor_preco)
+               OR
+               (m.melhor_preco IS NULL AND p.id=m.ultimo_id)
+           )
+        GROUP BY p.supermercado, p.categoria, p.nome_produto, p.embalagem, p.cidade
+        ORDER BY p.categoria, p.supermercado, p.nome_produto
+    """, (ultima, ultima)).fetchall()]
 
-    # Erros por dia (todos os dias)
+    # Erros — só o mais recente por produto/supermercado/cidade/data
     erros = [dict(r) for r in con.execute("""
         SELECT data_coleta, supermercado, categoria, marca, nome_produto, embalagem,
                cidade, uf, url, url_recuperada, erro, rota_css
         FROM precos
         WHERE erro IS NOT NULL
+          AND id IN (
+              SELECT MAX(id) FROM precos
+              WHERE erro IS NOT NULL
+              GROUP BY data_coleta, supermercado, nome_produto, embalagem, cidade
+          )
         ORDER BY data_coleta DESC, supermercado, categoria, nome_produto
     """).fetchall()]
 
-    # Histórico por cidade (preço real coletado, sem agregação)
+    # Histórico — menor preço por data/produto/supermercado/cidade
     historico = [dict(r) for r in con.execute("""
         SELECT data_coleta, supermercado, categoria, marca, nome_produto, embalagem,
-               cidade, uf, regiao, preco_atual
+               cidade, uf, regiao, MIN(preco_atual) as preco_atual
         FROM precos
         WHERE preco_atual IS NOT NULL AND disponivel=1
+        GROUP BY data_coleta, supermercado, categoria, marca, nome_produto, embalagem, cidade
         ORDER BY data_coleta, supermercado, categoria, nome_produto, embalagem, cidade
     """).fetchall()]
 
@@ -325,10 +355,7 @@ tr:hover td{{background:#f8fafc}}
           </select>
           <label>Marca:</label>
           <select id="f-marca" onchange="filtrarTabela()"><option value="">Todas</option></select>
-          <label>UF:</label>
-          <select id="f-uf" onchange="filtrarTabela()"><option value="">Todas</option></select>
-          <label>Cidade:</label>
-          <select id="f-cidade" onchange="filtrarTabela()"><option value="">Todas</option></select>
+
           <label>Status:</label>
           <select id="f-status" onchange="filtrarTabela()">
             <option value="">Todos</option>
