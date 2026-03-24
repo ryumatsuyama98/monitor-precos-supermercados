@@ -808,3 +808,172 @@
 2026-03-24|Mateus|Embutidos|Sadia Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
 2026-03-24|Mateus|Embutidos|Sadia Mortadela fatiada 200g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
 2026-03-24|Mateus|Embutidos|Sadia Linguiça toscana 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+=== 2026-03-24 | OK:27 ERRO:141 ===
+2026-03-24|Carrefour Mercado|Mercearia|Tio João Arroz branco tipo 1 5kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Arroz branco tipo 1 5kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Feijão carioca 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Kicaldo Feijão carioca 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Feijão preto 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|União Açúcar cristal 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|União Açúcar refinado 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Anaconda Farinha de trigo 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Renata Farinha de trigo 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Dona Benta Farinha de trigo 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Pilão Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|3 Corações Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Melitta Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Café do Ponto Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Caboclo Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Tio João Arroz branco tipo 1 5kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Arroz branco tipo 1 5kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Feijão carioca 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Kicaldo Feijão carioca 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Feijão preto 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|União Açúcar cristal 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|União Açúcar refinado 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Anaconda Farinha de trigo 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Renata Farinha de trigo 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Dona Benta Farinha de trigo 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Pilão Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|3 Corações Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Melitta Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Café do Ponto Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Caboclo Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Tio João Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Feijão carioca 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Kicaldo Feijão carioca 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Camil Feijão preto 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|União Açúcar cristal 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|União Açúcar refinado 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Anaconda Farinha de trigo 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Renata Farinha de trigo 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Dona Benta Farinha de trigo 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Pilão Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|3 Corações Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Melitta Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Café do Ponto Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Mercearia|Caboclo Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Pão de Açúcar|Mercearia|Tio João Arroz branco tipo 1 5kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Arroz branco tipo 1 5kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Feijão carioca 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Kicaldo Feijão carioca 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Feijão preto 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|União Açúcar cristal 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|União Açúcar refinado 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Renata Farinha de trigo 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Pilão Café torrado e moído tradicional 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|3 Corações Café torrado e moído tradicional 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Melitta Café torrado e moído tradicional 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Tio João Arroz branco tipo 1 5kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Arroz branco tipo 1 5kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Feijão carioca 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Kicaldo Feijão carioca 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Feijão preto 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|União Açúcar cristal 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|União Açúcar refinado 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Renata Farinha de trigo 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Pilão Café torrado e moído tradicional 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|3 Corações Café torrado e moído tradicional 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Melitta Café torrado e moído tradicional 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Tio João Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Feijão carioca 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Kicaldo Feijão carioca 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Camil Feijão preto 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|União Açúcar cristal 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|União Açúcar refinado 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Renata Farinha de trigo 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Pilão Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|3 Corações Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Mercearia|Melitta Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Tio João Arroz branco tipo 1 5kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Camil Arroz branco tipo 1 5kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Camil Feijão carioca 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|União Açúcar cristal 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|União Açúcar refinado 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Renata Farinha de trigo 1kg|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Pilão Café torrado e moído tradicional 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|3 Corações Café torrado e moído tradicional 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Melitta Café torrado e moído tradicional 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Tio João Arroz branco tipo 1 5kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Camil Arroz branco tipo 1 5kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Camil Feijão carioca 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|União Açúcar cristal 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|União Açúcar refinado 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Renata Farinha de trigo 1kg|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Pilão Café torrado e moído tradicional 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|3 Corações Café torrado e moído tradicional 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Melitta Café torrado e moído tradicional 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Tio João Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Camil Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Camil Feijão carioca 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|União Açúcar cristal 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|União Açúcar refinado 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Renata Farinha de trigo 1kg|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Pilão Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|3 Corações Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Mercearia|Melitta Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Atacadão|Mercearia|Tio João Arroz branco tipo 1 5kg|São Paulo|R$27.29|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Arroz branco tipo 1 5kg|São Paulo|R$19.89|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Feijão carioca 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Kicaldo Feijão carioca 1kg|São Paulo|R$8.45|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Feijão preto 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|União Açúcar cristal 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|União Açúcar refinado 1kg|São Paulo|R$3.78|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Anaconda Farinha de trigo 1kg|São Paulo|R$3.69|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Renata Farinha de trigo 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Dona Benta Farinha de trigo 1kg|São Paulo|R$4.29|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Pilão Café torrado e moído tradicional 500g|São Paulo|R$33.98|OK(rota10)
+2026-03-24|Atacadão|Mercearia|3 Corações Café torrado e moído tradicional 500g|São Paulo|R$29.90|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Melitta Café torrado e moído tradicional 500g|São Paulo|R$30.98|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Caboclo Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Tio João Arroz branco tipo 1 5kg|Recife|R$27.29|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Arroz branco tipo 1 5kg|Recife|R$19.89|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Feijão carioca 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Kicaldo Feijão carioca 1kg|Recife|R$8.45|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Feijão preto 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|União Açúcar cristal 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|União Açúcar refinado 1kg|Recife|R$3.78|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Anaconda Farinha de trigo 1kg|Recife|R$3.69|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Renata Farinha de trigo 1kg|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Dona Benta Farinha de trigo 1kg|Recife|R$4.29|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Pilão Café torrado e moído tradicional 500g|Recife|R$33.98|OK(rota10)
+2026-03-24|Atacadão|Mercearia|3 Corações Café torrado e moído tradicional 500g|Recife|R$29.90|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Melitta Café torrado e moído tradicional 500g|Recife|R$30.98|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Caboclo Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Tio João Arroz branco tipo 1 5kg|Porto Alegre|R$27.29|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Arroz branco tipo 1 5kg|Porto Alegre|R$19.89|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Feijão carioca 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Kicaldo Feijão carioca 1kg|Porto Alegre|R$8.45|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Camil Feijão preto 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|União Açúcar cristal 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|União Açúcar refinado 1kg|Porto Alegre|R$3.78|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Anaconda Farinha de trigo 1kg|Porto Alegre|R$3.69|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Renata Farinha de trigo 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Mercearia|Dona Benta Farinha de trigo 1kg|Porto Alegre|R$4.29|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Pilão Café torrado e moído tradicional 500g|Porto Alegre|R$33.98|OK(rota10)
+2026-03-24|Atacadão|Mercearia|3 Corações Café torrado e moído tradicional 500g|Porto Alegre|R$29.90|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Melitta Café torrado e moído tradicional 500g|Porto Alegre|R$30.98|OK(rota10)
+2026-03-24|Atacadão|Mercearia|Caboclo Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Mateus|Mercearia|Tio João Arroz branco tipo 1 5kg|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Camil Arroz branco tipo 1 5kg|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Camil Feijão carioca 1kg|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|União Açúcar cristal 1kg|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Pilão Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|3 Corações Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Melitta Café torrado e moído tradicional 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Tio João Arroz branco tipo 1 5kg|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Camil Arroz branco tipo 1 5kg|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Camil Feijão carioca 1kg|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|União Açúcar cristal 1kg|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Pilão Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|3 Corações Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Melitta Café torrado e moído tradicional 500g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Tio João Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Camil Arroz branco tipo 1 5kg|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Camil Feijão carioca 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|União Açúcar cristal 1kg|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Pilão Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|3 Corações Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Mercearia|Melitta Café torrado e moído tradicional 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
