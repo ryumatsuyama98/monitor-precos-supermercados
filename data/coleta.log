@@ -672,3 +672,139 @@
 2026-03-24|Mateus|Cervejas|Budweiser Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
 2026-03-24|Mateus|Cervejas|Itaipava Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
 2026-03-24|Mateus|Cervejas|Amstel Lata 350ml|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+=== 2026-03-24 | OK:30 ERRO:105 ===
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Salsicha Hot Dog 500g|São Paulo|R$11.49|OK(rota10)
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Salsicha Hot Dog 500g|São Paulo|R$14.19|OK(rota10)
+2026-03-24|Carrefour Mercado|Embutidos|Seara Salsicha Hot Dog 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Mortadela fatiada 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Mortadela fatiada 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Presunto fatiado 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Presunto fatiado 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Linguiça toscana 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Linguiça toscana 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Linguiça toscana 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Nuggets de frango 300g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Nuggets de frango 300g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Nuggets de frango 300g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Lasanha bolonhesa 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Lasanha bolonhesa 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Lasanha bolonhesa 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Salsicha Hot Dog 500g|Recife|R$11.49|OK(rota10)
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Salsicha Hot Dog 500g|Recife|R$14.19|OK(rota10)
+2026-03-24|Carrefour Mercado|Embutidos|Seara Salsicha Hot Dog 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Mortadela fatiada 200g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Mortadela fatiada 200g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Presunto fatiado 200g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Presunto fatiado 200g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Linguiça toscana 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Linguiça toscana 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Linguiça toscana 500g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Nuggets de frango 300g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Nuggets de frango 300g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Nuggets de frango 300g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Lasanha bolonhesa 600g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Lasanha bolonhesa 600g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Lasanha bolonhesa 600g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Salsicha Hot Dog 500g|Porto Alegre|R$11.49|OK(rota10)
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Salsicha Hot Dog 500g|Porto Alegre|R$14.19|OK(rota10)
+2026-03-24|Carrefour Mercado|Embutidos|Seara Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Mortadela fatiada 200g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Mortadela fatiada 200g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Presunto fatiado 200g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Presunto fatiado 200g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Linguiça toscana 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Linguiça toscana 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Linguiça toscana 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Nuggets de frango 300g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Nuggets de frango 300g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Nuggets de frango 300g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Sadia Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Perdigão Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Carrefour Mercado|Embutidos|Seara Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Salsicha Hot Dog 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Perdigão Salsicha Hot Dog 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Seara Salsicha Hot Dog 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Mortadela fatiada 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Presunto fatiado 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Linguiça toscana 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Nuggets de frango 300g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Seara Nuggets de frango 300g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Lasanha bolonhesa 600g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Salsicha Hot Dog 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Perdigão Salsicha Hot Dog 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Seara Salsicha Hot Dog 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Mortadela fatiada 200g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Presunto fatiado 200g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Linguiça toscana 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Nuggets de frango 300g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Seara Nuggets de frango 300g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Lasanha bolonhesa 600g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Perdigão Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Seara Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Mortadela fatiada 200g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Presunto fatiado 200g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Linguiça toscana 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Nuggets de frango 300g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Seara Nuggets de frango 300g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Pão de Açúcar|Embutidos|Sadia Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Salsicha Hot Dog 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Perdigão Salsicha Hot Dog 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Mortadela fatiada 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Presunto fatiado 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Nuggets de frango 300g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Lasanha bolonhesa 600g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Salsicha Hot Dog 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Perdigão Salsicha Hot Dog 500g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Mortadela fatiada 200g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Presunto fatiado 200g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Nuggets de frango 300g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Lasanha bolonhesa 600g|Recife|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Perdigão Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Mortadela fatiada 200g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Presunto fatiado 200g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Nuggets de frango 300g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Extra|Embutidos|Sadia Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-24|Atacadão|Embutidos|Sadia Salsicha Hot Dog 500g|São Paulo|R$12.80|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Perdigão Salsicha Hot Dog 500g|São Paulo|R$10.50|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Seara Salsicha Hot Dog 500g|São Paulo|R$47.50|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Mortadela fatiada 200g|São Paulo|R$6.69|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Linguiça toscana 500g|São Paulo|R$109.00|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Nuggets de frango 300g|São Paulo|R$10.39|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Lasanha bolonhesa 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Embutidos|Perdigão Lasanha bolonhesa 600g|São Paulo|R$15.90|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Seara Lasanha bolonhesa 600g|São Paulo|R$13.90|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Salsicha Hot Dog 500g|Recife|R$12.80|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Perdigão Salsicha Hot Dog 500g|Recife|R$10.50|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Seara Salsicha Hot Dog 500g|Recife|R$47.50|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Mortadela fatiada 200g|Recife|R$6.69|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Linguiça toscana 500g|Recife|R$109.00|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Nuggets de frango 300g|Recife|R$10.39|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Lasanha bolonhesa 600g|Recife|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Embutidos|Perdigão Lasanha bolonhesa 600g|Recife|R$15.90|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Seara Lasanha bolonhesa 600g|Recife|R$13.90|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Salsicha Hot Dog 500g|Porto Alegre|R$12.80|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Perdigão Salsicha Hot Dog 500g|Porto Alegre|R$10.50|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Seara Salsicha Hot Dog 500g|Porto Alegre|R$47.50|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Mortadela fatiada 200g|Porto Alegre|R$6.69|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Linguiça toscana 500g|Porto Alegre|R$109.00|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Nuggets de frango 300g|Porto Alegre|R$10.39|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Sadia Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-24|Atacadão|Embutidos|Perdigão Lasanha bolonhesa 600g|Porto Alegre|R$15.90|OK(rota10)
+2026-03-24|Atacadão|Embutidos|Seara Lasanha bolonhesa 600g|Porto Alegre|R$13.90|OK(rota10)
+2026-03-24|Mateus|Embutidos|Sadia Salsicha Hot Dog 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Nuggets de frango 300g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Lasanha bolonhesa 600g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Mortadela fatiada 200g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Linguiça toscana 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Salsicha Hot Dog 500g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Nuggets de frango 300g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Lasanha bolonhesa 600g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Mortadela fatiada 200g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Linguiça toscana 500g|Recife|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Salsicha Hot Dog 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Nuggets de frango 300g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Lasanha bolonhesa 600g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Mortadela fatiada 200g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
+2026-03-24|Mateus|Embutidos|Sadia Linguiça toscana 500g|Porto Alegre|—|ERRO:preco_nao_encontrado_mateus
