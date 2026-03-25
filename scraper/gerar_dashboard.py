@@ -369,7 +369,7 @@ tr:hover td{{background:#f8fafc}}
             <thead><tr>
               <th>Status</th><th>Supermercado</th><th>Categoria</th>
               <th>Marca</th><th>Produto</th><th>Emb.</th>
-              <th>Cidade</th><th>UF</th>
+              <th>Data coleta</th>
               <th>Preço atual</th><th>Preço original</th><th>Desc.</th>
               <th>Rota CSS</th><th>URL recuperada</th><th>Erro</th>
             </tr></thead>
@@ -405,16 +405,14 @@ tr:hover td{{background:#f8fafc}}
             <option>Cervejas</option><option>Embutidos</option>
             <option>Biscoitos</option><option>Massas</option><option>Mercearia</option>
           </select>
-          <label>UF:</label>
-          <select id="fe-uf" onchange="filtrarErros()"><option value="">Todas</option></select>
           <label>Tipo de erro:</label>
           <select id="fe-tipo" onchange="filtrarErros()"><option value="">Todos</option></select>
         </div>
         <div class="table-wrap">
           <table>
             <thead><tr>
-              <th>Data</th><th>Supermercado</th><th>Categoria</th>
-              <th>Produto</th><th>Emb.</th><th>Cidade</th>
+              <th>Data coleta</th><th>Supermercado</th><th>Categoria</th>
+              <th>Produto</th><th>Emb.</th><th>Data</th>
               <th>Tipo de erro</th><th>URL</th><th>URL recuperada</th>
             </tr></thead>
             <tbody id="erros-body"></tbody>
@@ -574,8 +572,6 @@ function filtrarTabela(){{
     (!sm    || r.supermercado===sm) &&
     (!cat   || r.categoria===cat) &&
     (!marca || r.marca===marca) &&
-    (!uf    || r.uf===uf) &&
-    (!cid   || r.cidade===cid) &&
     (!st    || (st==="ok"?!!r.preco_atual:!r.preco_atual)) &&
     (!busca || (r.nome_produto+r.marca+r.embalagem).toLowerCase().includes(busca))
   );
@@ -635,7 +631,6 @@ function filtrarErros(){{
     (!dia  || r.data_coleta===dia) &&
     (!sm   || r.supermercado===sm) &&
     (!cat  || r.categoria===cat) &&
-    (!uf   || r.uf===uf) &&
     (!tipo || r.erro===tipo)
   );
   renderErros();
@@ -652,7 +647,7 @@ function renderErros(){{
       <td style="color:var(--muted)">${{r.categoria}}</td>
       <td>${{r.nome_produto}}</td>
       <td>${{r.embalagem}}</td>
-      <td>${{r.cidade}}</td>
+      <td style="color:var(--muted);font-size:11px">${{r.data_coleta||'—'}}</td>
       <td><span class="badge b-err">${{r.erro||""}}</span></td>
       <td>${{url_s}}</td>
       <td>${{rec}}</td>
