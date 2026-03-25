@@ -1074,3 +1074,89 @@
 2026-03-25|Mateus|Embutidos|Sadia Lasanha bolonhesa 600g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
 2026-03-25|Mateus|Embutidos|Sadia Mortadela fatiada 200g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
 2026-03-25|Mateus|Embutidos|Sadia Linguiça toscana 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+=== 2026-03-25 | OK:10 ERRO:75 ===
+2026-03-25|Carrefour Mercado|Biscoitos|Nabisco Biscoito Oreo original 144g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Bauducco Biscoito Wafer chocolate 140g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Nestlé Biscoito Passatempo 150g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Nestlé Biscoito Bono chocolate 140g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Nestlé Biscoito Prestígio 132g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Lacta Biscoito Clube Social 141g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Tostines Biscoito cream cracker 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Marilan Biscoito água e sal 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Piraquê Biscoito água e sal 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Piraquê Biscoito cream cracker 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Piraquê Biscoito Goiabinha 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Vitarella Biscoito cream cracker 350g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Vitarella Biscoito recheado chocolate 130g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Adria Biscoito cream cracker 170g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Fortaleza Biscoito Maria 200g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Fortaleza Biscoito cream cracker 350g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Biscoitos|Richester Biscoito recheado chocolate 130g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Barilla Macarrão Espaguete n°5 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Renata Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Nissin Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Barilla Macarrão Penne 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Renata Macarrão Penne 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Barilla Macarrão Fusilli 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Nissin Miojo galinha caipira 85g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Nissin Miojo carne 85g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Maggi Macarrão instantâneo frango 85g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Adria Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Adria Macarrão Penne 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Adria Macarrão Fusilli 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Vitarella Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Vitarella Macarrão Penne 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Fortaleza Macarrão Espaguete 400g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Carrefour Mercado|Massas|Isabela Macarrão Espaguete 400g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Pão de Açúcar|Biscoitos|Nabisco Biscoito Oreo original 144g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Bauducco Biscoito Wafer chocolate 140g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Nestlé Biscoito Passatempo 150g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Nestlé Biscoito Bono chocolate 140g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Lacta Biscoito Clube Social 141g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Tostines Biscoito cream cracker 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Piraquê Biscoito água e sal 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Vitarella Biscoito cream cracker 350g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Biscoitos|Adria Biscoito cream cracker 170g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Massas|Barilla Macarrão Espaguete n°5 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Massas|Renata Macarrão Espaguete 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Massas|Nissin Miojo galinha caipira 85g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Massas|Nissin Miojo carne 85g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Massas|Adria Macarrão Espaguete 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Pão de Açúcar|Massas|Vitarella Macarrão Espaguete 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Biscoitos|Nabisco Biscoito Oreo original 144g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Biscoitos|Nestlé Biscoito Passatempo 150g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Biscoitos|Nestlé Biscoito Bono chocolate 140g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Biscoitos|Lacta Biscoito Clube Social 141g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Biscoitos|Tostines Biscoito cream cracker 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Biscoitos|Piraquê Biscoito água e sal 200g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Massas|Barilla Macarrão Espaguete n°5 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Massas|Renata Macarrão Espaguete 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Massas|Nissin Miojo galinha caipira 85g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Massas|Nissin Miojo carne 85g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Extra|Massas|Adria Macarrão Espaguete 500g|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-25|Atacadão|Biscoitos|Nabisco Biscoito Oreo original 144g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Atacadão|Biscoitos|Nestlé Biscoito Passatempo 150g|São Paulo|R$3.25|OK(rota10) [tentativa 2]
+2026-03-25|Atacadão|Biscoitos|Nestlé Biscoito Prestígio 132g|São Paulo|R$4.98|OK(rota10)
+2026-03-25|Atacadão|Biscoitos|Lacta Biscoito Clube Social 141g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Atacadão|Biscoitos|Vitarella Biscoito cream cracker 350g|São Paulo|R$5.89|OK(rota10)
+2026-03-25|Atacadão|Biscoitos|Adria Biscoito cream cracker 170g|São Paulo|R$3.69|OK(rota10)
+2026-03-25|Atacadão|Biscoitos|Fortaleza Biscoito cream cracker 350g|São Paulo|R$48.90|OK(rota12)
+2026-03-25|Atacadão|Biscoitos|Richester Biscoito recheado chocolate 130g|São Paulo|R$48.90|OK(rota12)
+2026-03-25|Atacadão|Massas|Barilla Macarrão Espaguete n°5 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Atacadão|Massas|Renata Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Atacadão|Massas|Nissin Miojo galinha caipira 85g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Atacadão|Massas|Nissin Miojo carne 85g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-03-25|Atacadão|Massas|Adria Macarrão Espaguete 500g|São Paulo|R$3.65|OK(rota10)
+2026-03-25|Atacadão|Massas|Vitarella Macarrão Espaguete 500g|São Paulo|R$48.90|OK(rota12)
+2026-03-25|Atacadão|Massas|Fortaleza Macarrão Espaguete 400g|São Paulo|R$48.90|OK(rota12)
+2026-03-25|Atacadão|Massas|Isabela Macarrão Espaguete 400g|São Paulo|R$48.90|OK(rota12)
+2026-03-25|Mateus|Biscoitos|Nabisco Biscoito Oreo original 144g|São Paulo|—|ERRO:timeout
+2026-03-25|Mateus|Biscoitos|Vitarella Biscoito cream cracker 350g|São Paulo|—|ERRO:timeout
+2026-03-25|Mateus|Biscoitos|Fortaleza Biscoito cream cracker 350g|São Paulo|—|ERRO:timeout
+2026-03-25|Mateus|Biscoitos|Nestlé Biscoito Passatempo 150g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-25|Mateus|Biscoitos|Lacta Biscoito Clube Social 141g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-25|Mateus|Massas|Adria Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-25|Mateus|Massas|Vitarella Macarrão Espaguete 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-25|Mateus|Massas|Nissin Miojo galinha caipira 85g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-25|Mateus|Massas|Nissin Miojo carne 85g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
+2026-03-25|Mateus|Massas|Barilla Macarrão Espaguete n°5 500g|São Paulo|—|ERRO:preco_nao_encontrado_mateus
