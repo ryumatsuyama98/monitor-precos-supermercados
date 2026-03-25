@@ -812,14 +812,10 @@ function renderAlertasLista(){
 // ── Tabela principal ──────────────────────────────────────────────────────────
 function populaFiltros(){
   const marcas  = [...new Set(TODOS.map(r=>r.marca))].sort();
-  const cidades = [...new Set(TODOS.map(r=>r.cidade))].sort();
-  const ufs     = [...new Set(TODOS.map(r=>r.uf).filter(Boolean))].sort();
-  const m=document.getElementById("f-marca");
-  const c=document.getElementById("f-cidade");
-  const u=document.getElementById("f-uf");
-  marcas.forEach(x=>m.innerHTML+=`<option>${x}</option>`);
-  cidades.forEach(x=>c.innerHTML+=`<option>${x}</option>`);
-  ufs.forEach(x=>u.innerHTML+=`<option>${x}</option>`);
+  const sms     = [...new Set(TODOS.map(r=>r.supermercado))].sort();
+  const m = document.getElementById("f-marca");
+  if(m) marcas.forEach(x=>m.innerHTML+=`<option>${x}</option>`);
+  // f-cidade e f-uf foram removidos (só SP por enquanto)
 }
 
 let tabelaData=[];
@@ -827,8 +823,8 @@ function filtrarTabela(){
   const sm    = document.getElementById("f-sm").value;
   const cat   = document.getElementById("f-cat").value;
   const marca = document.getElementById("f-marca").value;
-  const uf    = document.getElementById("f-uf").value;
-  const cid   = document.getElementById("f-cidade").value;
+  const uf    = "";
+  const cid   = "";
   const st    = document.getElementById("f-status").value;
   const busca = document.getElementById("f-busca").value.toLowerCase();
   tabelaData = TODOS.filter(r=>
@@ -861,7 +857,7 @@ function renderTabela(){
       <td style="font-weight:500">${r.marca}</td>
       <td>${r.nome_produto} ${url_short}</td>
       <td>${r.embalagem}</td>
-      <td>${r.cidade}</td><td>${r.uf}</td>
+
       <td style="font-weight:700;color:${r.em_promocao?"var(--green)":"inherit"}">${fmt(r.preco_atual)} ${promo}</td>
       <td style="color:var(--muted);text-decoration:line-through">${fmt(r.preco_original)}</td>
       <td>${desc!=="—"?`<span class="badge b-promo">${desc}</span>`:"—"}</td>
