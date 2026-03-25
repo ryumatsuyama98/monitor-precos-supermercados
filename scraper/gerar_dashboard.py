@@ -563,13 +563,13 @@ function populaFiltros(){{
 
 let tabelaData=[];
 function filtrarTabela(){{
-  const sm    = document.getElementById("f-sm").value;
-  const cat   = document.getElementById("f-cat").value;
-  const marca = document.getElementById("f-marca").value;
+  const sm    = (document.getElementById("f-sm")||{{}}).value||"";
+  const cat   = (document.getElementById("f-cat")||{{}}).value||"";
+  const marca = (document.getElementById("f-marca")||{{}}).value||"";
   const uf    = "";
   const cid   = "";
-  const st    = document.getElementById("f-status").value;
-  const busca = document.getElementById("f-busca").value.toLowerCase();
+  const st    = (document.getElementById("f-status")||{{}}).value||"";
+  const busca = ((document.getElementById("f-busca")||{{}}).value||"").toLowerCase();
   tabelaData = TODOS.filter(r=>
     (!sm    || r.supermercado===sm) &&
     (!cat   || r.categoria===cat) &&
@@ -584,6 +584,7 @@ function filtrarTabela(){{
 
 function renderTabela(){{
   const body=document.getElementById("tabela-body");
+  if(!body) return;
   body.innerHTML=tabelaData.slice(0,2000).map(r=>{{
     const status = r.preco_atual
       ? `<span class="badge b-ok">✅ OK</span>`
@@ -617,22 +618,19 @@ function renderTabela(){{
 function populaFiltrosErros(){{
   const dias  = [...new Set(ERROS_H.map(r=>r.data_coleta))].sort().reverse();
   const tipos = [...new Set(ERROS_H.map(r=>r.erro).filter(Boolean))].sort();
-  const ufs   = [...new Set(ERROS_H.map(r=>r.uf).filter(Boolean))].sort();
   const d=document.getElementById("fe-dia");
   const t=document.getElementById("fe-tipo");
-  const u=document.getElementById("fe-uf");
-  dias.forEach(x=>d.innerHTML+=`<option>${{x}}</option>`);
-  tipos.forEach(x=>t.innerHTML+=`<option>${{x}}</option>`);
-  ufs.forEach(x=>u.innerHTML+=`<option>${{x}}</option>`);
+  if(d) dias.forEach(x=>d.innerHTML+=`<option>${{x}}</option>`);
+  if(t) tipos.forEach(x=>t.innerHTML+=`<option>${{x}}</option>`);
 }}
 
 let errosData=[];
 function filtrarErros(){{
-  const dia  = document.getElementById("fe-dia").value;
-  const sm   = document.getElementById("fe-sm").value;
-  const cat  = document.getElementById("fe-cat").value;
-  const uf   = document.getElementById("fe-uf").value;
-  const tipo = document.getElementById("fe-tipo").value;
+  const dia  = (document.getElementById("fe-dia")||{{}}).value||"";
+  const sm   = (document.getElementById("fe-sm")||{{}}).value||"";
+  const cat  = (document.getElementById("fe-cat")||{{}}).value||"";
+  const uf   = "";
+  const tipo = (document.getElementById("fe-tipo")||{{}}).value||"";
   errosData = ERROS_H.filter(r=>
     (!dia  || r.data_coleta===dia) &&
     (!sm   || r.supermercado===sm) &&
