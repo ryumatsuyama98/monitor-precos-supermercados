@@ -690,7 +690,6 @@ function initCatPages(){{
   ["Cervejas","Embutidos","Biscoitos","Massas","Mercearia"].forEach(cat=>{{
     popularChkProd(cat);
     popularChkSM(cat);
-    popularCidadeSel(cat);
     renderGraficoCat(cat);
   }});
 }}
@@ -726,14 +725,7 @@ function popularChkSM(cat){{
     </label>`).join("");
 }}
 
-// ── Select de cidade ──────────────────────────────────────────────────────────
-function popularCidadeSel(cat){{
-  const sel = document.getElementById("sel-cidade-"+cat);
-  if(!sel) return;
-  const cidades = [...new Set(HIST.filter(r=>r.categoria===cat).map(r=>r.cidade))].sort();
-  sel.innerHTML = `<option value="">Todas (média)</option>` +
-    cidades.map(c=>`<option>${{c}}</option>`).join("");
-}}
+
 
 // ── Marcar/desmarcar todos ────────────────────────────────────────────────────
 function toggleTodos(containerId, marcar, cat){{
@@ -776,7 +768,7 @@ function getPeriodoDatas(cat, todasDatas){{
 function renderGraficoCat(cat){{
   const prodsSel  = getChecked("chk-prod-"+cat);
   const smsSel    = getChecked("chk-sm-"+cat);
-  const cidadeSel = document.getElementById("sel-cidade-"+cat)?.value || "";
+  const cidadeSel = "";  // Apenas SP — filtro de cidade removido
 
   let dados = HIST.filter(r=>r.categoria===cat);
   if(prodsSel.length)  dados=dados.filter(r=>prodsSel.some(p=>{{
@@ -920,7 +912,7 @@ def gerar_aba_cat(cat):
       <div class="section">
         <div class="section-head">
           <span class="section-title">{nome_display} — Monitoramento de preços</span>
-          <span style="font-size:11px;color:var(--muted)">Preço médio entre as cidades coletadas</span>
+          <span style="font-size:11px;color:var(--muted)">São Paulo — SP</span>
         </div>
 
         <!-- Controles do gráfico -->
@@ -974,15 +966,6 @@ def gerar_aba_cat(cat):
                   style="font-size:11px;border:1px solid var(--border);border-radius:5px;padding:4px 6px">
               </div>
             </div>
-          </div>
-
-          <!-- Cidade -->
-          <div>
-            <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px">Cidade</div>
-            <select id="sel-cidade-{cat}" onchange="renderGraficoCat('{cat}')"
-              style="font-size:11px;border:1px solid var(--border);border-radius:6px;padding:5px 8px;width:155px">
-              <option value="">Todas (média)</option>
-            </select>
           </div>
 
         </div>
