@@ -29,4 +29,5 @@ jobs:
           git config user.email "bot@monitor-precos.local"
           git add data/ docs/
           git diff --staged --quiet || git commit -m "Biscoitos+Massas: $(date '+%d/%m/%Y %H:%M')"
+          git pull --rebase origin main
           git push
