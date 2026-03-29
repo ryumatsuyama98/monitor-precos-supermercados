@@ -2,7 +2,7 @@ name: Coleta Biscoitos e Massas
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Todo dia às 05:00 BRT (08:00 UTC)
+    - cron: '0 8 * * *'  # 05:00 BRT
   workflow_dispatch:
 
 jobs:
@@ -19,11 +19,11 @@ jobs:
         run: |
           pip install playwright
           playwright install chromium --with-deps
-      - name: Rodar scraper — Biscoitos e Massas
+      - name: Coletar Biscoitos e Massas
         run: python scraper/scraper.py Biscoitos Massas
       - name: Gerar dashboard
         run: python scraper/gerar_dashboard.py
-      - name: Commit resultados
+      - name: Commit
         run: |
           git config user.name "Monitor Bot"
           git config user.email "bot@monitor-precos.local"
