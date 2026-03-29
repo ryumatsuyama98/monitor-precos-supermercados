@@ -81,11 +81,12 @@ print(f"Total removido: {total_antes - total_depois}")
 # Resumo do que sobrou
 print("\n=== Histórico restante por categoria ===")
 rows = con.execute("""
-    SELECT categoria, supermercado, COUNT(*) as n, MIN(data_coleta), MAX(data_coleta)
+    SELECT coalesce(categoria,'NULL'), coalesce(supermercado,'NULL'),
+           COUNT(*) as n, MIN(data_coleta), MAX(data_coleta)
     FROM precos GROUP BY categoria, supermercado ORDER BY categoria, supermercado
 """).fetchall()
 for r in rows:
-    print(f"  {r[0]:15} | {r[1]:20} | {r[2]:4} registros | {r[3]} → {r[4]}")
+    print(f"  {str(r[0]):15} | {str(r[1]):20} | {r[2]:4} registros | {r[3]} → {r[4]}")
 
 con.close()
 print("\nConcluído.")
