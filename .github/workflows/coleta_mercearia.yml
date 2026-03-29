@@ -2,7 +2,7 @@ name: Coleta Mercearia
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Todo dia às 06:00 BRT (09:00 UTC)
+    - cron: '0 9 * * *'  # 06:00 BRT
   workflow_dispatch:
 
 jobs:
@@ -19,11 +19,11 @@ jobs:
         run: |
           pip install playwright
           playwright install chromium --with-deps
-      - name: Rodar scraper — Mercearia
+      - name: Coletar Mercearia
         run: python scraper/scraper.py Mercearia
       - name: Gerar dashboard
         run: python scraper/gerar_dashboard.py
-      - name: Commit resultados
+      - name: Commit
         run: |
           git config user.name "Monitor Bot"
           git config user.email "bot@monitor-precos.local"
