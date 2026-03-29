@@ -344,7 +344,7 @@ tr:hover td{{background:#f8fafc}}
           <label>Supermercado:</label>
           <select id="f-sm" onchange="filtrarTabela()">
             <option value="">Todos</option>
-            <option>Carrefour Mercado</option><option>Pão de Açúcar</option>
+            <option>Pão de Açúcar</option>
             <option>Extra</option><option>Atacadão</option><option>Mateus</option>
           </select>
           <label>Categoria:</label>
@@ -396,7 +396,7 @@ tr:hover td{{background:#f8fafc}}
           <label>Supermercado:</label>
           <select id="fe-sm" onchange="filtrarErros()">
             <option value="">Todos</option>
-            <option>Carrefour Mercado</option><option>Pão de Açúcar</option>
+            <option>Pão de Açúcar</option>
             <option>Extra</option><option>Atacadão</option><option>Mateus</option>
           </select>
           <label>Categoria:</label>
@@ -448,7 +448,7 @@ const ERROS_H = {erros_j};
 const HIST    = {hist_j};
 const ALERTAS = {alertas_j};
 
-const SM_BADGE = {{"Carrefour Mercado":"b-cf","Pão de Açúcar":"b-pa","Extra":"b-ex","Atacadão":"b-at","Mateus":"b-mt"}};
+const SM_BADGE = {{"Pão de Açúcar":"b-pa","Extra":"b-ex","Atacadão":"b-at","Mateus":"b-mt"}};
 const AL_ICON  = {{critico:"🔴",aviso:"🟡",info:"🔵"}};
 const AL_LABEL = {{critico:"Crítico",aviso:"Aviso",info:"Info"}};
 const CORES    = ["#1a56db","#0e9f6e","#e02424","#c27803","#7e3af2","#0694a2","#ff8a4c","#84cc16"];
