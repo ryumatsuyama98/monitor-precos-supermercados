@@ -25,14 +25,12 @@ LOG_PATH = _ROOT / "data/coleta.log"
 
 # ─── URLs de busca (Rota 0) ───────────────────────────────────────────────────
 BUSCA_URL = {
-    "Carrefour Mercado": "https://mercado.carrefour.com.br/busca/{q}",
     "Pão de Açúcar":     "https://www.paodeacucar.com/busca?q={q}",
     "Extra":             "https://www.extramercado.com.br/busca?q={q}",
     "Atacadão":          "https://www.atacadao.com.br/busca/{q}",
 }
 
 LINK_SELETOR = {
-    "Carrefour Mercado": 'a[href*="/p"]',
     "Pão de Açúcar":     'a[href*="/produto/"]',
     "Extra":             'a[href*="/produto/"]',
     "Atacadão":          'a[href*="/p"]',
@@ -40,16 +38,6 @@ LINK_SELETOR = {
 
 # ─── Headers realistas por supermercado ──────────────────────────────────────
 HEADERS_SM = {
-    "Carrefour Mercado": {
-        "Referer": "https://www.google.com.br/",
-        "Sec-Fetch-Site": "cross-site",
-        "Sec-Fetch-Mode": "navigate",
-        "Sec-Fetch-Dest": "document",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8",
-        "Cache-Control": "no-cache",
-        "Pragma": "no-cache",
-    },
     "Pão de Açúcar": {
         "Referer": "https://www.google.com.br/",
         "Sec-Fetch-Site": "cross-site",
@@ -138,7 +126,6 @@ def injetar_cep(page, supermercado, cep):
     """Injeta CEP via cookie e localStorage antes de acessar o produto."""
     try:
         dominio = {
-            "Carrefour Mercado": ".carrefour.com.br",
             "Pão de Açúcar":     ".paodeacucar.com",
             "Extra":             ".extra.com.br",
             "Atacadão":          ".atacadao.com.br",
@@ -349,10 +336,14 @@ LINKS = {
             "Heineken Lata_269ml":            "https://www.paodeacucar.com/produto/1376370/cerveja-lager-puro-malte-heineken-lata-269ml",
             "Heineken 0.0_350ml":             "https://www.paodeacucar.com/produto/1606861/cerveja-heineken-zero-lata-sleek-350ml",
             "Skol Lata_269ml":                "https://www.paodeacucar.com/produto/71229/cerveja-skol-pilsen-lata-269ml",
+            "Skol Lata_350ml":                "https://www.paodeacucar.com/produto/91224/cerveja-pilsen-skol-lata-350ml",
+            "Brahma Duplo Malte_269ml":       "https://www.paodeacucar.com/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
             "Brahma Duplo Malte_350ml":       "https://www.paodeacucar.com/produto/462219/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
             "Stella Artois Long Neck_330ml":  "https://www.paodeacucar.com/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
             "Corona Extra Long Neck_330ml":   "https://www.paodeacucar.com/produto/456783/cerveja-pilsen-corona-garrafa-330ml",
+            "Corona Extra Lata_350ml":        "https://www.paodeacucar.com/produto/1500760/cerveja-corona-extra-lata-350ml",
             "Budweiser Lata_269ml":           "https://www.paodeacucar.com/produto/323696/cerveja-pilsen-budweiser-lata-269ml",
+            "Budweiser Lata_350ml":           "https://www.paodeacucar.com/produto/190773/cerveja-lager-budweiser-lata-350ml",
             "Amstel Lata_350ml":              "https://www.paodeacucar.com/produto/1606864/cerveja-lager-puro-malte-amstel-lata-350ml",
             "Amstel Lata_269ml":              "https://www.paodeacucar.com/produto/339944/cerveja-lager-puro-malte-amstel-lata-269ml",
             "Spaten Puro Malte Lata_350ml":   "https://www.paodeacucar.com/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
@@ -414,13 +405,14 @@ LINKS = {
             "Skol Lata_350ml":               "https://www.extramercado.com.br/produto/91224/cerveja-pilsen-skol-lata-350ml",
             "Brahma Duplo Malte_269ml":      "https://www.extramercado.com.br/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
             "Brahma Duplo Malte_350ml":      "https://www.extramercado.com.br/produto/485275/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
-            "Stella Artois Lata_269ml":      "https://www.extramercado.com.br/produto/71886/cerveja-stella-artois-puro-malte-269ml-lata",
+            "Stella Artois Long Neck_330ml": "https://www.extramercado.com.br/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
             "Corona Extra Long Neck_330ml":  "https://www.extramercado.com.br/produto/452503/cerveja-pilsen-corona-garrafa-330ml",
             "Corona Extra Lata_350ml":       "https://www.extramercado.com.br/produto/1500760/cerveja-corona-extra-lata-350ml",
             "Budweiser Lata_269ml":          "https://www.extramercado.com.br/produto/347007/cerveja-pilsen-budweiser-lata-269ml",
             "Budweiser Lata_350ml":          "https://www.extramercado.com.br/produto/190773/cerveja-lager-budweiser-lata-350ml",
             "Amstel Lata_350ml":             "https://www.extramercado.com.br/produto/1641973/cerveja-lager-puro-malte-amstel-lata-350ml",
             "Amstel Lata_269ml":             "https://www.extramercado.com.br/produto/369620/cerveja-lager-puro-malte-amstel-lata-269ml",
+            "Spaten Puro Malte Lata_350ml":  "https://www.extramercado.com.br/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
             "Spaten Puro Malte Lata_269ml":  "https://www.extramercado.com.br/produto/1500377/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
             "Original Lata_350ml":           "https://www.extramercado.com.br/produto/434881/cerveja-pilsen-antarctica-original-lata-350ml",
             "Original Lata_269ml":           "https://www.extramercado.com.br/produto/519820/cerveja-pilsen-antarctica-original-lata-269ml",
@@ -471,7 +463,6 @@ LINKS = {
             "Brahma Duplo Malte_269ml":       "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-269ml-74794-11647/p",
             "Brahma Duplo Malte_350ml":       "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-350ml-67653-11651/p",
             "Stella Artois Long Neck_330ml":  "https://www.atacadao.com.br/cerveja-stella-artois-68018-13362/p",
-            "Corona Extra Long Neck_330ml":   "https://www.atacadao.com.br/cerveja-corona-long-neck-com-330ml-66884-12000/p",
             "Budweiser Lata_269ml":           "https://www.atacadao.com.br/cerveja-budweiser-51187-11765/p",
             "Budweiser Lata_350ml":           "https://www.atacadao.com.br/cerveja-budweiser-sleek-lata-com-350ml-80258-11811/p",
             "Amstel Lata_350ml":              "https://www.atacadao.com.br/cerveja-amstel-sleek-86708-11276/p",
@@ -569,29 +560,6 @@ BUSCA_MATEUS = {
 
 # ─── Seletores CSS expandidos por supermercado ───────────────────────────────
 SELETORES = {
-    "extramercado.com.br": [
-        # Mesmo grupo GPA/VTEX que Pão de Açúcar e Extra
-        ".sales .value",
-        "span.sales",
-        ".price__sales",
-        "[class*='sales'] [class*='value']",
-        "span[class*='sellingPrice']",
-        "[class*='ProductPrice'] [class*='selling']",
-        ".product-price",
-    ],
-    "Carrefour Mercado": [
-        # VTEX / React — seletores primários
-        "span[class*='sellingPrice']",
-        "span[class*='SellingPrice']",
-        # Seletores alternativos encontrados em SPAs da VTEX
-        "[class*='price-selling'] [class*='integer']",
-        "div[class*='priceBox'] span",
-        # data-testid patterns
-        "[data-testid='price-value']",
-        "[data-testid*='selling']",
-        # Genéricos de preço
-        "[class*='Price']:not([class*='list']):not([class*='List'])",
-    ],
     "Pão de Açúcar": [
         # GPA / VTEX IO
         ".sales .value",
@@ -786,7 +754,6 @@ def scroll_e_aguarda(page, supermercado):
 
     # Espera por seletor de preço específico (mais confiável que timeout fixo)
     seletores_espera = {
-        "Carrefour Mercado": "span[class*='sellingPrice'], [data-testid='price-value']",
         "Pão de Açúcar":     ".sales .value, span[class*='sellingPrice']",
         "Extra":             ".sales .value, span[class*='sellingPrice']",
         "Atacadão":          "span[class*='sellingPrice'], .valornormal, .price-best-price",
@@ -859,7 +826,7 @@ def recuperar_url(page, nome_produto, embalagem, supermercado, con=None):
     except Exception: pass
     return None, None
 
-def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=None, tentativa=1):
+def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=None, tentativa=1, categoria=""):
     resultado = {
         "url": url, "disponivel": False, "preco_atual": None,
         "preco_original": None, "em_promocao": False,
@@ -927,12 +894,25 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
                         resultado["preco_original"] = p; break
             except Exception: continue
 
+        # Filtro de sanidade — preço absurdo indica captura de pack/fardo
+        PRECO_MAX = {
+            "Cervejas": 20.0, "Embutidos": 60.0, "Biscoitos": 30.0,
+            "Massas": 30.0, "Mercearia": 80.0,
+        }
+        if resultado["preco_atual"]:
+            cat_max = PRECO_MAX.get(categoria, 200.0)
+            if resultado["preco_atual"] > cat_max:
+                resultado["erro"] = f"preco_absurdo_{resultado['preco_atual']:.2f}_max_{cat_max}"
+                resultado["preco_atual"] = None
+                resultado["rota_css"] = None
+
         if resultado["preco_atual"]:
             resultado["disponivel"] = True
             if resultado["preco_original"] and resultado["preco_original"] > resultado["preco_atual"]:
                 resultado["em_promocao"] = True
         else:
-            resultado["erro"] = "preco_nao_encontrado_todas_rotas"
+            if not resultado["erro"]:
+                resultado["erro"] = "preco_nao_encontrado_todas_rotas"
 
     except PWTimeout:
         resultado["erro"] = "timeout"
@@ -940,10 +920,10 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         resultado["erro"] = str(e)[:120]
     return resultado
 
-def coletar_com_retry(page, url, supermercado, nome_produto, embalagem, con, max_tentativas=2):
+def coletar_com_retry(page, url, supermercado, nome_produto, embalagem, con, max_tentativas=2, categoria=""):
     """Tenta coletar até max_tentativas vezes com backoff exponencial."""
     for tentativa in range(1, max_tentativas + 1):
-        dados = coletar_pagina(page, url, supermercado, nome_produto, embalagem, con, tentativa)
+        dados = coletar_pagina(page, url, supermercado, nome_produto, embalagem, con, tentativa, categoria)
         if dados["preco_atual"]:
             return dados
         if tentativa < max_tentativas:
@@ -1062,7 +1042,8 @@ def main(categorias_filtro=None):
                         horario = datetime.now().strftime("%H:%M:%S")
                         dados = coletar_com_retry(
                             page, url, sm_nome,
-                            produto["nome"], produto["embalagem"], con
+                            produto["nome"], produto["embalagem"], con,
+                            categoria=cat_nome
                         )
                         reg = {
                             "data_coleta": hoje, "horario_coleta": horario,
@@ -1086,7 +1067,7 @@ def main(categorias_filtro=None):
                         total_erro += not bool(dados["preco_atual"])
 
                         # Delay humanizado — mais longo nos sites com maior bloqueio
-                        base_delay = 1.5 if sm_nome in ["Carrefour Mercado","Pão de Açúcar","Extra"] else 1.0
+                        base_delay = 1.5 if sm_nome in ["Pão de Açúcar","Extra"] else 1.0
                         time.sleep(random.uniform(base_delay, base_delay + 1.5))
 
                     ctx.close()
