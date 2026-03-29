@@ -1,0 +1,32 @@
+name: Coleta Carnes
+
+on:
+  schedule:
+    - cron: '0 7 * * *'  # 04:00 BRT
+  workflow_dispatch:
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependências
+        run: |
+          pip install playwright
+          playwright install chromium --with-deps
+      - name: Coletar Carnes
+        run: python scraper/scraper.py Carnes
+      - name: Gerar dashboard
+        run: python scraper/gerar_dashboard.py
+      - name: Commit
+        run: |
+          git config user.name "Monitor Bot"
+          git config user.email "bot@monitor-precos.local"
+          git add data/ docs/
+          git diff --staged --quiet || git commit -m "Carnes: $(date '+%d/%m/%Y %H:%M')"
+          git push
