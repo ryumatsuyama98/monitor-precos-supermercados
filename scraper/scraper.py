@@ -156,6 +156,15 @@ CIDADES = [
     # {"cidade":"Porto Alegre", "uf":"RS","regiao":"Sul",     "cep":"90010150"},
 ]
 
+# Mapeamento categoria → grupo do dashboard
+CAT_GRUPO = {
+    "Cervejas":  "Cervejas",
+    "Carnes":    "Carnes, Processados e Preparados",
+    "Biscoitos": "Mercearias Secas",
+    "Massas":    "Mercearias Secas",
+    "Mercearia": "Mercearias Secas",
+}
+
 # ─── Produtos por categoria ───────────────────────────────────────────────────
 PRODUTOS = {
     "Cervejas": [
@@ -179,221 +188,154 @@ PRODUTOS = {
         {"marca":"Original",      "nome":"Original Lata",              "embalagem":"269ml"},
         {"marca":"Itaipava",      "nome":"Itaipava Lata",              "embalagem":"350ml"},
     ],
-    "Embutidos": [
-        {"marca":"Sadia",    "nome":"Sadia Salsicha Hot Dog",    "embalagem":"500g"},
-        {"marca":"Perdigão", "nome":"Perdigão Salsicha Hot Dog", "embalagem":"500g"},
-        {"marca":"Seara",    "nome":"Seara Salsicha Hot Dog",    "embalagem":"500g"},
-        {"marca":"Sadia",    "nome":"Sadia Mortadela fatiada",   "embalagem":"200g"},
-        {"marca":"Perdigão", "nome":"Perdigão Mortadela fatiada","embalagem":"200g"},
-        {"marca":"Sadia",    "nome":"Sadia Presunto fatiado",    "embalagem":"200g"},
-        {"marca":"Perdigão", "nome":"Perdigão Presunto fatiado", "embalagem":"200g"},
-        {"marca":"Sadia",    "nome":"Sadia Linguiça toscana",    "embalagem":"500g"},
-        {"marca":"Perdigão", "nome":"Perdigão Linguiça toscana", "embalagem":"500g"},
-        {"marca":"Seara",    "nome":"Seara Linguiça toscana",    "embalagem":"500g"},
-        {"marca":"Sadia",    "nome":"Sadia Nuggets de frango",   "embalagem":"300g"},
-        {"marca":"Perdigão", "nome":"Perdigão Nuggets de frango","embalagem":"300g"},
-        {"marca":"Seara",    "nome":"Seara Nuggets de frango",   "embalagem":"300g"},
-        {"marca":"Sadia",    "nome":"Sadia Lasanha bolonhesa",   "embalagem":"600g"},
-        {"marca":"Perdigão", "nome":"Perdigão Lasanha bolonhesa","embalagem":"600g"},
-        {"marca":"Seara",    "nome":"Seara Lasanha bolonhesa",   "embalagem":"600g"},
+    "Carnes": [
+        {"marca":"Sadia",       "nome":"Salsicha Hot Dog 500g Sadia",      "embalagem":"500g"},
+        {"marca":"Perdigão",    "nome":"Salsicha Hot Dog 500g Perdigão",   "embalagem":"500g"},
+        {"marca":"Seara",       "nome":"Salsicha Hot Dog 500g Seara",      "embalagem":"500g"},
+        {"marca":"Sadia",       "nome":"Linguiça Toscana 700g Sadia",      "embalagem":"700g"},
+        {"marca":"Perdigão",    "nome":"Linguiça Toscana 700g Perdigão",   "embalagem":"700g"},
+        {"marca":"Swift",       "nome":"Linguiça Toscana 700g Swift",      "embalagem":"700g"},
+        {"marca":"Sadia",       "nome":"Nuggets de Frango 300g Sadia",     "embalagem":"300g"},
+        {"marca":"Sadia",       "nome":"Lasanha Bolonhesa 600g Sadia",     "embalagem":"600g"},
+        {"marca":"Perdigão",    "nome":"Lasanha Bolonhesa 600g Perdigão",  "embalagem":"600g"},
+        {"marca":"Seara",       "nome":"Lasanha Bolonhesa 600g Seara",     "embalagem":"600g"},
+        {"marca":"Sadia",       "nome":"Peito de Frango 1kg Sadia",        "embalagem":"1kg"},
+        {"marca":"Swift",       "nome":"Peito de Frango 1kg Swift",        "embalagem":"1kg"},
+        {"marca":"Seara",       "nome":"Peito de Frango 1kg Seara",        "embalagem":"1kg"},
+        {"marca":"Sadia",       "nome":"Coxa de Frango 1kg Sadia",         "embalagem":"1kg"},
+        {"marca":"Swift",       "nome":"Coxa de Frango 1kg Swift",         "embalagem":"1kg"},
+        {"marca":"Seara",       "nome":"Coxa de Frango 1kg Seara",         "embalagem":"1kg"},
+        {"marca":"Swift",       "nome":"Asa de Frango 1kg Swift",          "embalagem":"1kg"},
+        {"marca":"Sadia",       "nome":"Asa de Frango 1kg Sadia",          "embalagem":"1kg"},
+        {"marca":"Bassi",       "nome":"Fraldinha 1kg Bassi",              "embalagem":"1kg"},
+        {"marca":"Bassi",       "nome":"Picanha 1kg Bassi",                "embalagem":"1kg"},
+        {"marca":"Friboi",      "nome":"Picanha 1kg Friboi",               "embalagem":"1kg"},
+        {"marca":"Estância 92", "nome":"Picanha 1kg Estância 92",          "embalagem":"1kg"},
+        {"marca":"Swift",       "nome":"Carne Moida 1kg Swift",            "embalagem":"1kg"},
     ],
     "Biscoitos": [
-        {"marca":"Nabisco",   "nome":"Nabisco Biscoito Oreo original",       "embalagem":"144g"},
-        {"marca":"Bauducco",  "nome":"Bauducco Biscoito Wafer chocolate",    "embalagem":"140g"},
-        {"marca":"Nestlé",    "nome":"Nestlé Biscoito Passatempo",           "embalagem":"150g"},
-        {"marca":"Nestlé",    "nome":"Nestlé Biscoito Bono chocolate",       "embalagem":"140g"},
-        {"marca":"Nestlé",    "nome":"Nestlé Biscoito Prestígio",            "embalagem":"132g"},
-        {"marca":"Lacta",     "nome":"Lacta Biscoito Clube Social",          "embalagem":"141g"},
-        {"marca":"Tostines",  "nome":"Tostines Biscoito cream cracker",      "embalagem":"200g"},
-        {"marca":"Marilan",   "nome":"Marilan Biscoito água e sal",          "embalagem":"200g"},
-        {"marca":"Piraquê",   "nome":"Piraquê Biscoito água e sal",          "embalagem":"200g"},
-        {"marca":"Piraquê",   "nome":"Piraquê Biscoito cream cracker",       "embalagem":"200g"},
-        {"marca":"Piraquê",   "nome":"Piraquê Biscoito Goiabinha",           "embalagem":"200g"},
-        {"marca":"Vitarella", "nome":"Vitarella Biscoito cream cracker",     "embalagem":"350g"},
-        {"marca":"Vitarella", "nome":"Vitarella Biscoito recheado chocolate","embalagem":"130g"},
-        {"marca":"Adria",     "nome":"Adria Biscoito cream cracker",         "embalagem":"170g"},
-        {"marca":"Fortaleza", "nome":"Fortaleza Biscoito Maria",             "embalagem":"200g"},
-        {"marca":"Fortaleza", "nome":"Fortaleza Biscoito cream cracker",     "embalagem":"350g"},
-        {"marca":"Richester", "nome":"Richester Biscoito recheado chocolate","embalagem":"130g"},
+        {"marca":"Marilan",  "nome":"Água e Sal 300g Marilan",           "embalagem":"300g"},
+        {"marca":"Mabel",    "nome":"Água e Sal 300g Mabel",             "embalagem":"300g"},
+        {"marca":"Vitarella","nome":"Água e Sal 350g Vitarella",         "embalagem":"350g"},
+        {"marca":"Adria",    "nome":"Água e Sal 170g Adria",             "embalagem":"170g"},
+        {"marca":"Piraquê",  "nome":"Água e Sal 184g Piraque",           "embalagem":"184g"},
+        {"marca":"Marilan",  "nome":"Cream Cracker 300g Marilan",        "embalagem":"300g"},
+        {"marca":"Mabel",    "nome":"Cream Cracker 300g Mabel",          "embalagem":"300g"},
+        {"marca":"Vitarella","nome":"Cream Cracker 350g Vitarella",      "embalagem":"350g"},
+        {"marca":"Piraquê",  "nome":"Cream Cracker 184g Piraque",        "embalagem":"184g"},
+        {"marca":"Marilan",  "nome":"Cream Cracker 140g Marilan",        "embalagem":"140g"},
+        {"marca":"Bauducco", "nome":"Cream Cracker 165g Bauducco",       "embalagem":"165g"},
+        {"marca":"Adria",    "nome":"Cream Cracker 170g Adria",          "embalagem":"170g"},
+        {"marca":"Mondelez", "nome":"Oreo 90g Mondelez",                 "embalagem":"90g"},
+        {"marca":"Nestlé",   "nome":"Passatempo 150g Nestlé",            "embalagem":"150g"},
+        {"marca":"Bauducco", "nome":"Recheado Chocolate 140g Bauducco",  "embalagem":"140g"},
+        {"marca":"Piraquê",  "nome":"Recheado Chocolate 100g Piraque",   "embalagem":"100g"},
     ],
     "Massas": [
-        {"marca":"Barilla",   "nome":"Barilla Macarrão Espaguete n°5","embalagem":"500g"},
-        {"marca":"Renata",    "nome":"Renata Macarrão Espaguete",     "embalagem":"500g"},
-        {"marca":"Nissin",    "nome":"Nissin Macarrão Espaguete",     "embalagem":"500g"},
-        {"marca":"Barilla",   "nome":"Barilla Macarrão Penne",        "embalagem":"500g"},
-        {"marca":"Renata",    "nome":"Renata Macarrão Penne",         "embalagem":"500g"},
-        {"marca":"Barilla",   "nome":"Barilla Macarrão Fusilli",      "embalagem":"500g"},
-        {"marca":"Nissin",    "nome":"Nissin Miojo galinha caipira",  "embalagem":"85g"},
-        {"marca":"Nissin",    "nome":"Nissin Miojo carne",            "embalagem":"85g"},
-        {"marca":"Maggi",     "nome":"Maggi Macarrão instantâneo frango","embalagem":"85g"},
-        {"marca":"Adria",     "nome":"Adria Macarrão Espaguete",      "embalagem":"500g"},
-        {"marca":"Adria",     "nome":"Adria Macarrão Penne",          "embalagem":"500g"},
-        {"marca":"Adria",     "nome":"Adria Macarrão Fusilli",        "embalagem":"500g"},
-        {"marca":"Vitarella", "nome":"Vitarella Macarrão Espaguete",  "embalagem":"500g"},
-        {"marca":"Vitarella", "nome":"Vitarella Macarrão Penne",      "embalagem":"500g"},
-        {"marca":"Fortaleza", "nome":"Fortaleza Macarrão Espaguete",  "embalagem":"400g"},
-        {"marca":"Isabela",   "nome":"Isabela Macarrão Espaguete",    "embalagem":"400g"},
+        {"marca":"Barilla",    "nome":"Macarrão Espaguete 500g Barilla",    "embalagem":"500g"},
+        {"marca":"Adria",      "nome":"Macarrão Espaguete 500g Adria",      "embalagem":"500g"},
+        {"marca":"Camil",      "nome":"Macarrão Espaguete 500g Camil",      "embalagem":"500g"},
+        {"marca":"Dona Benta", "nome":"Macarrão Espaguete 500g Dona Benta", "embalagem":"500g"},
+        {"marca":"Nissin",     "nome":"Miojo Carne 85g Nissin",             "embalagem":"85g"},
     ],
     "Mercearia": [
-        {"marca":"Tio João",    "nome":"Tio João Arroz branco tipo 1",                  "embalagem":"5kg"},
-        {"marca":"Camil",       "nome":"Camil Arroz branco tipo 1",                     "embalagem":"5kg"},
-        {"marca":"Camil",       "nome":"Camil Feijão carioca",                          "embalagem":"1kg"},
-        {"marca":"Kicaldo",     "nome":"Kicaldo Feijão carioca",                        "embalagem":"1kg"},
-        {"marca":"Camil",       "nome":"Camil Feijão preto",                            "embalagem":"1kg"},
-        {"marca":"União",       "nome":"União Açúcar cristal",                          "embalagem":"1kg"},
-        {"marca":"União",       "nome":"União Açúcar refinado",                         "embalagem":"1kg"},
-        {"marca":"Anaconda",    "nome":"Anaconda Farinha de trigo",                     "embalagem":"1kg"},
-        {"marca":"Renata",      "nome":"Renata Farinha de trigo",                       "embalagem":"1kg"},
-        {"marca":"Dona Benta",  "nome":"Dona Benta Farinha de trigo",                   "embalagem":"1kg"},
-        {"marca":"Pilão",       "nome":"Pilão Café torrado e moído tradicional",        "embalagem":"500g"},
-        {"marca":"3 Corações",  "nome":"3 Corações Café torrado e moído tradicional",   "embalagem":"500g"},
-        {"marca":"Melitta",     "nome":"Melitta Café torrado e moído tradicional",      "embalagem":"500g"},
-        {"marca":"Café do Ponto","nome":"Café do Ponto Café torrado e moído tradicional","embalagem":"500g"},
-        {"marca":"Caboclo",     "nome":"Caboclo Café torrado e moído tradicional",      "embalagem":"500g"},
+        {"marca":"Tio João",        "nome":"Arroz Branco 5kg Tio João",                    "embalagem":"5kg"},
+        {"marca":"Camil",           "nome":"Arroz Branco 5kg Camil",                       "embalagem":"5kg"},
+        {"marca":"Camil",           "nome":"Feijão Carioca 1kg Camil",                     "embalagem":"1kg"},
+        {"marca":"Kicaldo",         "nome":"Feijão Carioca 1kg Kicaldo",                   "embalagem":"1kg"},
+        {"marca":"União",           "nome":"Açúcar Refinado 1kg União",                    "embalagem":"1kg"},
+        {"marca":"Caravelas",       "nome":"Açúcar Refinado 1kg Caravelas",                "embalagem":"1kg"},
+        {"marca":"Da Barra",        "nome":"Açúcar Refinado 1kg Da Barra",                 "embalagem":"1kg"},
+        {"marca":"Guarani",         "nome":"Açúcar Refinado 1kg Guarani",                  "embalagem":"1kg"},
+        {"marca":"Dona Benta",      "nome":"Farinha de Trigo 1kg Dona Benta",              "embalagem":"1kg"},
+        {"marca":"Venturelli",      "nome":"Farinha de Trigo 1kg Venturelli",              "embalagem":"1kg"},
+        {"marca":"Sol",             "nome":"Farinha de Trigo 1kg Sol",                     "embalagem":"1kg"},
+        {"marca":"Pilão",           "nome":"Café Torrado e Moído 500g Pilão",              "embalagem":"500g"},
+        {"marca":"3 Corações",      "nome":"Café Torrado e Moído 500g 3 Corações",         "embalagem":"500g"},
+        {"marca":"Melitta",         "nome":"Café Torrado e Moído 500g Melitta",            "embalagem":"500g"},
+        {"marca":"Café Brasileiro", "nome":"Café Torrado e Moído 500g Café Brasileiro",    "embalagem":"500g"},
+        {"marca":"União",           "nome":"Café Torrado e Moído 500g União",              "embalagem":"500g"},
     ],
 }
 
 # ─── Links verificados ────────────────────────────────────────────────────────
 LINKS = {
-    "Carrefour Mercado": {
-        "Cervejas": {},  # Temporariamente desativado — aguardando links
-        "Embutidos": {
-            "Sadia Salsicha Hot Dog_500g":        "https://mercado.carrefour.com.br/salsicha-tradicional-sadia-500g-288527/p",
-            "Perdigão Salsicha Hot Dog_500g":     "https://mercado.carrefour.com.br/salsicha-tradicional-perdigao-hot-dog-500-g-3237230/p",
-            "Seara Salsicha Hot Dog_500g":        "https://mercado.carrefour.com.br/salsicha-hot-dog-seara-500g/p",
-            "Sadia Mortadela fatiada_200g":       "https://mercado.carrefour.com.br/mortadela-sadia-fatiada-200g/p",
-            "Perdigão Mortadela fatiada_200g":    "https://mercado.carrefour.com.br/mortadela-perdigao-fatiada-200g/p",
-            "Sadia Presunto fatiado_200g":        "https://mercado.carrefour.com.br/presunto-sadia-fatiado-200g/p",
-            "Perdigão Presunto fatiado_200g":     "https://mercado.carrefour.com.br/presunto-perdigao-fatiado-200g/p",
-            "Sadia Linguiça toscana_500g":        "https://mercado.carrefour.com.br/linguica-toscana-sadia-500g/p",
-            "Perdigão Linguiça toscana_500g":     "https://mercado.carrefour.com.br/linguica-toscana-perdigao-500g/p",
-            "Seara Linguiça toscana_500g":        "https://mercado.carrefour.com.br/linguica-toscana-seara-500g/p",
-            "Sadia Nuggets de frango_300g":       "https://mercado.carrefour.com.br/nuggets-de-frango-sadia-300g/p",
-            "Perdigão Nuggets de frango_300g":    "https://mercado.carrefour.com.br/nuggets-de-frango-perdigao-300g/p",
-            "Seara Nuggets de frango_300g":       "https://mercado.carrefour.com.br/nuggets-de-frango-seara-300g/p",
-            "Sadia Lasanha bolonhesa_600g":       "https://mercado.carrefour.com.br/lasanha-bolonhesa-sadia-600g/p",
-            "Perdigão Lasanha bolonhesa_600g":    "https://mercado.carrefour.com.br/lasanha-bolonhesa-perdigao-600g/p",
-            "Seara Lasanha bolonhesa_600g":       "https://mercado.carrefour.com.br/lasanha-bolonhesa-seara-600g/p",
-        },
-        "Biscoitos": {
-            "Nabisco Biscoito Oreo original_144g":        "https://mercado.carrefour.com.br/biscoito-oreo-original-144g/p",
-            "Bauducco Biscoito Wafer chocolate_140g":     "https://mercado.carrefour.com.br/biscoito-wafer-bauducco-chocolate-140g/p",
-            "Nestlé Biscoito Passatempo_150g":            "https://mercado.carrefour.com.br/biscoito-passatempo-nestle-150g/p",
-            "Nestlé Biscoito Bono chocolate_140g":        "https://mercado.carrefour.com.br/biscoito-bono-chocolate-nestle-140g/p",
-            "Nestlé Biscoito Prestígio_132g":             "https://mercado.carrefour.com.br/biscoito-prestigio-nestle-132g/p",
-            "Lacta Biscoito Clube Social_141g":           "https://mercado.carrefour.com.br/biscoito-clube-social-lacta-141g/p",
-            "Tostines Biscoito cream cracker_200g":       "https://mercado.carrefour.com.br/biscoito-cream-cracker-tostines-200g/p",
-            "Marilan Biscoito água e sal_200g":           "https://mercado.carrefour.com.br/biscoito-agua-sal-marilan-200g/p",
-            "Piraquê Biscoito água e sal_200g":           "https://mercado.carrefour.com.br/biscoito-agua-sal-piraque-200g/p",
-            "Piraquê Biscoito cream cracker_200g":        "https://mercado.carrefour.com.br/biscoito-cream-cracker-piraque-200g/p",
-            "Piraquê Biscoito Goiabinha_200g":            "https://mercado.carrefour.com.br/biscoito-goiabinha-piraque-200g/p",
-            "Vitarella Biscoito cream cracker_350g":      "https://mercado.carrefour.com.br/biscoito-cream-cracker-vitarella-350g/p",
-            "Vitarella Biscoito recheado chocolate_130g": "https://mercado.carrefour.com.br/biscoito-recheado-chocolate-vitarella-130g/p",
-            "Adria Biscoito cream cracker_170g":          "https://mercado.carrefour.com.br/biscoito-cream-cracker-adria-170g/p",
-            "Fortaleza Biscoito Maria_200g":              "https://mercado.carrefour.com.br/biscoito-maria-fortaleza-200g/p",
-            "Fortaleza Biscoito cream cracker_350g":      "https://mercado.carrefour.com.br/biscoito-cream-cracker-fortaleza-350g/p",
-            "Richester Biscoito recheado chocolate_130g": "https://mercado.carrefour.com.br/biscoito-recheado-chocolate-richester-130g/p",
-        },
-        "Massas": {
-            "Barilla Macarrão Espaguete n°5_500g":   "https://mercado.carrefour.com.br/macarrao-espaguete-barilla-n5-500g/p",
-            "Renata Macarrão Espaguete_500g":         "https://mercado.carrefour.com.br/macarrao-espaguete-renata-500g/p",
-            "Nissin Macarrão Espaguete_500g":         "https://mercado.carrefour.com.br/macarrao-espaguete-nissin-500g/p",
-            "Barilla Macarrão Penne_500g":            "https://mercado.carrefour.com.br/macarrao-penne-barilla-500g/p",
-            "Renata Macarrão Penne_500g":             "https://mercado.carrefour.com.br/macarrao-penne-renata-500g/p",
-            "Barilla Macarrão Fusilli_500g":          "https://mercado.carrefour.com.br/macarrao-fusilli-barilla-500g/p",
-            "Nissin Miojo galinha caipira_85g":       "https://mercado.carrefour.com.br/miojo-nissin-galinha-caipira-85g/p",
-            "Nissin Miojo carne_85g":                 "https://mercado.carrefour.com.br/miojo-nissin-carne-85g/p",
-            "Maggi Macarrão instantâneo frango_85g":  "https://mercado.carrefour.com.br/macarrao-instantaneo-maggi-frango-85g/p",
-            "Adria Macarrão Espaguete_500g":          "https://mercado.carrefour.com.br/macarrao-espaguete-adria-500g/p",
-            "Adria Macarrão Penne_500g":              "https://mercado.carrefour.com.br/macarrao-penne-adria-500g/p",
-            "Adria Macarrão Fusilli_500g":            "https://mercado.carrefour.com.br/macarrao-fusilli-adria-500g/p",
-            "Vitarella Macarrão Espaguete_500g":      "https://mercado.carrefour.com.br/macarrao-espaguete-vitarella-500g/p",
-            "Vitarella Macarrão Penne_500g":          "https://mercado.carrefour.com.br/macarrao-penne-vitarella-500g/p",
-            "Fortaleza Macarrão Espaguete_400g":      "https://mercado.carrefour.com.br/macarrao-espaguete-fortaleza-400g/p",
-            "Isabela Macarrão Espaguete_400g":        "https://mercado.carrefour.com.br/macarrao-espaguete-isabela-400g/p",
-        },
-        "Mercearia": {
-            "Tio João Arroz branco tipo 1_5kg":                  "https://mercado.carrefour.com.br/arroz-branco-longofino-tipo-1-tio-joao-5-kg/p",
-            "Camil Arroz branco tipo 1_5kg":                     "https://mercado.carrefour.com.br/arroz-branco-tipo-1-camil-5kg/p",
-            "Camil Feijão carioca_1kg":                          "https://mercado.carrefour.com.br/feijao-carioca-camil-1kg/p",
-            "Kicaldo Feijão carioca_1kg":                        "https://mercado.carrefour.com.br/feijao-carioca-kicaldo-1kg/p",
-            "Camil Feijão preto_1kg":                            "https://mercado.carrefour.com.br/feijao-preto-camil-1kg/p",
-            "União Açúcar cristal_1kg":                          "https://mercado.carrefour.com.br/acucar-cristal-uniao-1kg/p",
-            "União Açúcar refinado_1kg":                         "https://mercado.carrefour.com.br/acucar-refinado-uniao-1kg/p",
-            "Anaconda Farinha de trigo_1kg":                     "https://mercado.carrefour.com.br/farinha-de-trigo-anaconda-1kg/p",
-            "Renata Farinha de trigo_1kg":                       "https://mercado.carrefour.com.br/farinha-de-trigo-renata-1kg/p",
-            "Dona Benta Farinha de trigo_1kg":                   "https://mercado.carrefour.com.br/farinha-de-trigo-dona-benta-1kg/p",
-            "Pilão Café torrado e moído tradicional_500g":       "https://mercado.carrefour.com.br/cafe-torrado-e-moido-tradicional-pilao-500g/p",
-            "3 Corações Café torrado e moído tradicional_500g":  "https://mercado.carrefour.com.br/cafe-torrado-moido-3-coracoes-tradicional-500g/p",
-            "Melitta Café torrado e moído tradicional_500g":     "https://mercado.carrefour.com.br/cafe-torrado-e-moido-tradicional-melitta-500g/p",
-            "Café do Ponto Café torrado e moído tradicional_500g":"https://mercado.carrefour.com.br/cafe-do-ponto-torrado-moido-500g/p",
-            "Caboclo Café torrado e moído tradicional_500g":     "https://mercado.carrefour.com.br/cafe-caboclo-torrado-moido-500g/p",
-        },
-    },
     "Pão de Açúcar": {
         "Cervejas": {
-            "Heineken Lata_350ml":            "https://www.paodeacucar.com/produto/1606865/cerveja-heineken-lata-sleek-350ml",
-            "Heineken Lata_269ml":            "https://www.paodeacucar.com/produto/1376370/cerveja-lager-puro-malte-heineken-lata-269ml",
-            "Heineken 0.0_350ml":             "https://www.paodeacucar.com/produto/1606861/cerveja-heineken-zero-lata-sleek-350ml",
-            "Skol Lata_269ml":                "https://www.paodeacucar.com/produto/71229/cerveja-skol-pilsen-lata-269ml",
-            "Skol Lata_350ml":                "https://www.paodeacucar.com/produto/91224/cerveja-pilsen-skol-lata-350ml",
-            "Brahma Duplo Malte_269ml":       "https://www.paodeacucar.com/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
-            "Brahma Duplo Malte_350ml":       "https://www.paodeacucar.com/produto/462219/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
-            "Stella Artois Long Neck_330ml":  "https://www.paodeacucar.com/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
-            "Corona Extra Long Neck_330ml":   "https://www.paodeacucar.com/produto/456783/cerveja-pilsen-corona-garrafa-330ml",
-            "Corona Extra Lata_350ml":        "https://www.paodeacucar.com/produto/1500760/cerveja-corona-extra-lata-350ml",
-            "Budweiser Lata_269ml":           "https://www.paodeacucar.com/produto/323696/cerveja-pilsen-budweiser-lata-269ml",
-            "Budweiser Lata_350ml":           "https://www.paodeacucar.com/produto/190773/cerveja-lager-budweiser-lata-350ml",
-            "Amstel Lata_350ml":              "https://www.paodeacucar.com/produto/1606864/cerveja-lager-puro-malte-amstel-lata-350ml",
-            "Amstel Lata_269ml":              "https://www.paodeacucar.com/produto/339944/cerveja-lager-puro-malte-amstel-lata-269ml",
-            "Spaten Puro Malte Lata_350ml":   "https://www.paodeacucar.com/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
-            "Spaten Puro Malte Lata_269ml":   "https://www.paodeacucar.com/produto/1461013/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
-            "Original Lata_350ml":            "https://www.paodeacucar.com/produto/444042/cerveja-pilsen-antarctica-original-lata-350ml",
-            "Original Lata_269ml":            "https://www.paodeacucar.com/produto/479389/cerveja-pilsen-antarctica-original-lata-269ml",
-            "Itaipava Lata_350ml":            "https://www.paodeacucar.com/produto/112967/cerveja-pilsen-itaipava-lata-350ml",
+            "Heineken Lata_350ml":           "https://www.paodeacucar.com/produto/1606865/cerveja-heineken-lata-sleek-350ml",
+            "Heineken Lata_269ml":           "https://www.paodeacucar.com/produto/1376370/cerveja-lager-puro-malte-heineken-lata-269ml",
+            "Heineken 0.0_350ml":            "https://www.paodeacucar.com/produto/1606861/cerveja-heineken-zero-lata-sleek-350ml",
+            "Skol Lata_350ml":               "https://www.paodeacucar.com/produto/91224/cerveja-pilsen-skol-lata-350ml",
+            "Skol Lata_269ml":               "https://www.paodeacucar.com/produto/71229/cerveja-skol-pilsen-lata-269ml",
+            "Brahma Duplo Malte_350ml":      "https://www.paodeacucar.com/produto/462219/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
+            "Brahma Duplo Malte_269ml":      "https://www.paodeacucar.com/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
+            "Stella Artois Long Neck_330ml": "https://www.paodeacucar.com/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
+            "Corona Extra Long Neck_330ml":  "https://www.paodeacucar.com/produto/456783/cerveja-pilsen-corona-garrafa-330ml",
+            "Corona Extra Lata_350ml":       "https://www.paodeacucar.com/produto/1500760/cerveja-corona-extra-lata-350ml",
+            "Budweiser Lata_350ml":          "https://www.paodeacucar.com/produto/190773/cerveja-lager-budweiser-lata-350ml",
+            "Budweiser Lata_269ml":          "https://www.paodeacucar.com/produto/323696/cerveja-pilsen-budweiser-lata-269ml",
+            "Amstel Lata_350ml":             "https://www.paodeacucar.com/produto/1606864/cerveja-lager-puro-malte-amstel-lata-350ml",
+            "Amstel Lata_269ml":             "https://www.paodeacucar.com/produto/339944/cerveja-lager-puro-malte-amstel-lata-269ml",
+            "Spaten Puro Malte Lata_350ml":  "https://www.paodeacucar.com/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
+            "Spaten Puro Malte Lata_269ml":  "https://www.paodeacucar.com/produto/1461013/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
+            "Original Lata_350ml":           "https://www.paodeacucar.com/produto/444042/cerveja-pilsen-antarctica-original-lata-350ml",
+            "Original Lata_269ml":           "https://www.paodeacucar.com/produto/479389/cerveja-pilsen-antarctica-original-lata-269ml",
+            "Itaipava Lata_350ml":           "https://www.paodeacucar.com/produto/112967/cerveja-pilsen-itaipava-lata-350ml",
         },
-        "Embutidos": {
-            "Sadia Salsicha Hot Dog_500g":    "https://www.paodeacucar.com/produto/salsicha-sadia-hot-dog-500g",
-            "Perdigão Salsicha Hot Dog_500g": "https://www.paodeacucar.com/produto/salsicha-perdigao-hot-dog-500g",
-            "Seara Salsicha Hot Dog_500g":    "https://www.paodeacucar.com/produto/salsicha-seara-hot-dog-500g",
-            "Sadia Mortadela fatiada_200g":   "https://www.paodeacucar.com/produto/mortadela-sadia-fatiada-200g",
-            "Sadia Presunto fatiado_200g":    "https://www.paodeacucar.com/produto/presunto-sadia-fatiado-200g",
-            "Sadia Linguiça toscana_500g":    "https://www.paodeacucar.com/produto/linguica-toscana-sadia-500g",
-            "Sadia Nuggets de frango_300g":   "https://www.paodeacucar.com/produto/nuggets-sadia-hot-300g",
-            "Seara Nuggets de frango_300g":   "https://www.paodeacucar.com/produto/nuggets-seara-300g",
-            "Sadia Lasanha bolonhesa_600g":   "https://www.paodeacucar.com/produto/lasanha-sadia-bolonhesa-600g",
+        "Carnes": {
+            "Salsicha Hot Dog 500g Sadia_500g":      "https://www.paodeacucar.com/produto/114859/salsicha-hot-dog-sadia-500g-10-unidades",
+            "Salsicha Hot Dog 500g Perdigão_500g":   "https://www.paodeacucar.com/produto/113887/salsicha-hot-dog-perdigao-500g-12-unidades",
+            "Salsicha Hot Dog 500g Seara_500g":      "https://www.paodeacucar.com/produto/21730/salsicha-hot-dog-seara-500g",
+            "Linguiça Toscana 700g Sadia_700g":      "https://www.paodeacucar.com/produto/1614047/linguica-toscana-sadia-700g",
+            "Linguiça Toscana 700g Perdigão_700g":   "https://www.paodeacucar.com/produto/1638980/linguica-toscana-perdigao-na-brasa-700g",
+            "Linguiça Toscana 700g Swift_700g":      "https://www.paodeacucar.com/produto/434959/linguica-toscana-swift-700g",
+            "Nuggets de Frango 300g Sadia_300g":     "https://www.paodeacucar.com/produto/142969/empanado-de-frango-peito-crocante-sadia-nuggets-pacote-300g",
+            "Lasanha Bolonhesa 600g Sadia_600g":     "https://www.paodeacucar.com/produto/344410/lasanha-bolonhesa-sadia-pacote-600g",
+            "Lasanha Bolonhesa 600g Perdigão_600g":  "https://www.paodeacucar.com/produto/391814/lasanha-bolonhesa-perdigao-nosso-menu-pacote-600g",
+            "Lasanha Bolonhesa 600g Seara_600g":     "https://www.paodeacucar.com/produto/113511/lasanha-bolonhesa-seara-600g",
+            "Peito de Frango 1kg Sadia_1kg":         "https://www.paodeacucar.com/produto/65885/file-de-peito-de-frango-congelado-sem-pele-sem-osso-sadia-1kg",
+            "Peito de Frango 1kg Swift_1kg":         "https://www.paodeacucar.com/produto/445611/file-de-peito-de-frango-swift-do-campo-1kg",
+            "Peito de Frango 1kg Seara_1kg":         "https://www.paodeacucar.com/produto/217037/coxa-de-frango-congelada-seara-1kg",
+            "Coxa de Frango 1kg Swift_1kg":          "https://www.paodeacucar.com/produto/445594/coxa-de-frango-swift-1kg",
+            "Asa de Frango 1kg Swift_1kg":           "https://www.paodeacucar.com/produto/452777/asa-de-frango-swift-bandeja-1kg",
+            "Fraldinha 1kg Bassi_1kg":               "https://www.paodeacucar.com/produto/114843/fraldinha-extra-limpa-bovina-bassi-1,2kg",
+            "Picanha 1kg Bassi_1kg":                 "https://www.paodeacucar.com/produto/115631/picanha-bovina-extra-limpa-pedaco-bassi-a vacuo-1,4kg",
+            "Picanha 1kg Friboi_1kg":                "https://www.paodeacucar.com/produto/164337/picanha-resfriada-maturatta-friboi-1,7kg",
+            "Picanha 1kg Estância 92_1kg":           "https://www.paodeacucar.com/produto/1574780/picanha-estancia-92-resfriado-1,3kg",
+            "Carne Moida 1kg Swift_1kg":             "https://www.paodeacucar.com/produto/1616628/carne-moida-swift-1kg",
         },
         "Biscoitos": {
-            "Nabisco Biscoito Oreo original_144g":    "https://www.paodeacucar.com/produto/biscoito-oreo-original-144g",
-            "Bauducco Biscoito Wafer chocolate_140g": "https://www.paodeacucar.com/produto/biscoito-wafer-bauducco-chocolate-140g",
-            "Nestlé Biscoito Passatempo_150g":        "https://www.paodeacucar.com/produto/biscoito-passatempo-nestle-150g",
-            "Nestlé Biscoito Bono chocolate_140g":    "https://www.paodeacucar.com/produto/biscoito-bono-chocolate-nestle-140g",
-            "Lacta Biscoito Clube Social_141g":       "https://www.paodeacucar.com/produto/biscoito-clube-social-141g",
-            "Tostines Biscoito cream cracker_200g":   "https://www.paodeacucar.com/produto/biscoito-cream-cracker-tostines-200g",
-            "Piraquê Biscoito água e sal_200g":       "https://www.paodeacucar.com/produto/biscoito-agua-sal-piraque-200g",
-            "Vitarella Biscoito cream cracker_350g":  "https://www.paodeacucar.com/produto/biscoito-cream-cracker-vitarella-350g",
-            "Adria Biscoito cream cracker_170g":      "https://www.paodeacucar.com/produto/biscoito-cream-cracker-adria-170g",
+            "Água e Sal 300g Marilan_300g":          "https://www.paodeacucar.com/produto/1639482/biscoito-agua-e-sal-marilan-300g",
+            "Água e Sal 300g Mabel_300g":            "https://www.paodeacucar.com/produto/1616940/biscoito-agua-e-sal-mabel-pacote-300g",
+            "Água e Sal 350g Vitarella_350g":        "https://www.paodeacucar.com/produto/1286774/biscoito-agua-e-sal-tradicional-vitarella-pacote-350g",
+            "Cream Cracker 300g Marilan_300g":       "https://www.paodeacucar.com/produto/1639385/biscoito-cream-cracker-marilan-300g",
+            "Cream Cracker 300g Mabel_300g":         "https://www.paodeacucar.com/produto/1616942/biscoito-cream-cracker-mabel-300g",
+            "Cream Cracker 184g Piraque_184g":       "https://www.paodeacucar.com/produto/1606433/biscoito-cream-cracker-piraque-pacote-184g",
+            "Cream Cracker 140g Marilan_140g":       "https://www.paodeacucar.com/produto/1448576/biscoito-cream-cracker-marilan-pacote-170g",
+            "Cream Cracker 165g Bauducco_165g":      "https://www.paodeacucar.com/produto/1629268/biscoito-cream-cracker-tradicional-bauducco-pacote-165g",
+            "Cream Cracker 170g Adria_170g":         "https://www.paodeacucar.com/produto/1602912/biscoito-cream-cracker-folhado-manteiga-adria-folhata-pacote-170g",
+            "Oreo 90g Mondelez_90g":                 "https://www.paodeacucar.com/produto/301575/biscoito-original-oreo-pacote-90g",
+            "Passatempo 150g Nestlé_150g":           "https://www.paodeacucar.com/produto/177670/biscoito-recheio-chocolate-passatempo-pacote-130g",
+            "Recheado Chocolate 140g Bauducco_140g": "https://www.paodeacucar.com/produto/310906/biscoito-wafer-recheio-chocolate-bauducco-pacote-140g",
+            "Recheado Chocolate 100g Piraque_100g":  "https://www.paodeacucar.com/produto/1386461/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
         },
         "Massas": {
-            "Barilla Macarrão Espaguete n°5_500g": "https://www.paodeacucar.com/produto/macarrao-espaguete-barilla-500g",
-            "Renata Macarrão Espaguete_500g":       "https://www.paodeacucar.com/produto/macarrao-espaguete-renata-500g",
-            "Nissin Miojo galinha caipira_85g":     "https://www.paodeacucar.com/produto/miojo-nissin-galinha-caipira-85g",
-            "Nissin Miojo carne_85g":               "https://www.paodeacucar.com/produto/miojo-nissin-carne-85g",
-            "Adria Macarrão Espaguete_500g":        "https://www.paodeacucar.com/produto/macarrao-espaguete-adria-500g",
-            "Vitarella Macarrão Espaguete_500g":    "https://www.paodeacucar.com/produto/macarrao-espaguete-vitarella-500g",
+            "Macarrão Espaguete 500g Barilla_500g":  "https://www.paodeacucar.com/produto/279928/macarrao-com-ovos-espaguete-8-barilla-pacote-500g",
+            "Macarrão Espaguete 500g Adria_500g":    "https://www.paodeacucar.com/produto/111375/macarrao-adria-com-ovos-espaguete---8-500g",
+            "Miojo Carne 85g Nissin_85g":            "https://www.paodeacucar.com/produto/169902/macarrao-instantaneo-de-carne-nissin-miojo-lamen-pacote-85g",
         },
         "Mercearia": {
-            "Tio João Arroz branco tipo 1_5kg":                  "https://www.paodeacucar.com/produto/arroz-tio-joao-branco-5kg",
-            "Camil Arroz branco tipo 1_5kg":                     "https://www.paodeacucar.com/produto/arroz-camil-branco-5kg",
-            "Camil Feijão carioca_1kg":                          "https://www.paodeacucar.com/produto/feijao-carioca-camil-1kg",
-            "Kicaldo Feijão carioca_1kg":                        "https://www.paodeacucar.com/produto/feijao-carioca-kicaldo-1kg",
-            "Camil Feijão preto_1kg":                            "https://www.paodeacucar.com/produto/feijao-preto-camil-1kg",
-            "União Açúcar cristal_1kg":                          "https://www.paodeacucar.com/produto/acucar-cristal-uniao-1kg",
-            "União Açúcar refinado_1kg":                         "https://www.paodeacucar.com/produto/acucar-refinado-uniao-1kg",
-            "Renata Farinha de trigo_1kg":                       "https://www.paodeacucar.com/produto/farinha-trigo-renata-1kg",
-            "Pilão Café torrado e moído tradicional_500g":       "https://www.paodeacucar.com/produto/cafe-pilao-tradicional-500g",
-            "3 Corações Café torrado e moído tradicional_500g":  "https://www.paodeacucar.com/produto/cafe-3-coracoes-tradicional-500g",
-            "Melitta Café torrado e moído tradicional_500g":     "https://www.paodeacucar.com/produto/cafe-melitta-tradicional-500g",
+            "Arroz Branco 5kg Tio João_5kg":                    "https://www.paodeacucar.com/produto/138068/arroz-agulhinha-tipo-1-tio-joao-pacote-5kg",
+            "Arroz Branco 5kg Camil_5kg":                       "https://www.paodeacucar.com/produto/41329/arroz-agulhinha-tipo-1-camil-pacote-5kg",
+            "Feijão Carioca 1kg Camil_1kg":                     "https://www.paodeacucar.com/produto/9461/feijao-carioca-tipo-1-camil-pacote-1kg",
+            "Feijão Carioca 1kg Kicaldo_1kg":                   "https://www.paodeacucar.com/produto/109209/feijao-carioca-tipo-1-kicaldo-pacote-1kg",
+            "Açúcar Refinado 1kg União_1kg":                    "https://www.paodeacucar.com/produto/74215/acucar-refinado-uniao-pacote-1kg",
+            "Açúcar Refinado 1kg Caravelas_1kg":                "https://www.paodeacucar.com/produto/61474/acucar-refinado-caravelas-pacote-1kg",
+            "Açúcar Refinado 1kg Da Barra_1kg":                 "https://www.paodeacucar.com/produto/10669/acucar-refinado-da-barra-pacote-1kg",
+            "Farinha de Trigo 1kg Dona Benta_1kg":              "https://www.paodeacucar.com/produto/43619/farinha-de-trigo-tradicional-dona-benta-pacote-1kg",
+            "Café Torrado e Moído 500g Pilão_500g":             "https://www.paodeacucar.com/produto/152052/cafe-torrado-e-moido-tradicional-pilao-pacote-500g",
+            "Café Torrado e Moído 500g Café Brasileiro_500g":   "https://www.paodeacucar.com/produto/62071/cafe-torrado-e-moido-tradicional-cafe-brasileiro-pacote-500g",
+            "Café Torrado e Moído 500g União_500g":             "https://www.paodeacucar.com/produto/1376191/cafe-torrado-e-moido-tradicional-uniao-pacote-500g",
         },
     },
     "Extra": {
@@ -401,15 +343,15 @@ LINKS = {
             "Heineken Lata_350ml":           "https://www.extramercado.com.br/produto/1641976/cerveja-heineken-lata-sleek-350ml",
             "Heineken Lata_269ml":           "https://www.extramercado.com.br/produto/1440048/cerveja-lager-puro-malte-heineken-lata-269ml",
             "Heineken 0.0_350ml":            "https://www.extramercado.com.br/produto/1641970/cerveja-heineken-zero-lata-sleek-350ml",
-            "Skol Lata_269ml":               "https://www.extramercado.com.br/produto/71229/cerveja-skol-pilsen-lata-269ml",
             "Skol Lata_350ml":               "https://www.extramercado.com.br/produto/91224/cerveja-pilsen-skol-lata-350ml",
-            "Brahma Duplo Malte_269ml":      "https://www.extramercado.com.br/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
+            "Skol Lata_269ml":               "https://www.extramercado.com.br/produto/71229/cerveja-skol-pilsen-lata-269ml",
             "Brahma Duplo Malte_350ml":      "https://www.extramercado.com.br/produto/485275/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
+            "Brahma Duplo Malte_269ml":      "https://www.extramercado.com.br/produto/869637/cerveja-pilsner-duplo-malte-brahma-lata-269ml",
             "Stella Artois Long Neck_330ml": "https://www.extramercado.com.br/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
             "Corona Extra Long Neck_330ml":  "https://www.extramercado.com.br/produto/452503/cerveja-pilsen-corona-garrafa-330ml",
             "Corona Extra Lata_350ml":       "https://www.extramercado.com.br/produto/1500760/cerveja-corona-extra-lata-350ml",
-            "Budweiser Lata_269ml":          "https://www.extramercado.com.br/produto/347007/cerveja-pilsen-budweiser-lata-269ml",
             "Budweiser Lata_350ml":          "https://www.extramercado.com.br/produto/190773/cerveja-lager-budweiser-lata-350ml",
+            "Budweiser Lata_269ml":          "https://www.extramercado.com.br/produto/347007/cerveja-pilsen-budweiser-lata-269ml",
             "Amstel Lata_350ml":             "https://www.extramercado.com.br/produto/1641973/cerveja-lager-puro-malte-amstel-lata-350ml",
             "Amstel Lata_269ml":             "https://www.extramercado.com.br/produto/369620/cerveja-lager-puro-malte-amstel-lata-269ml",
             "Spaten Puro Malte Lata_350ml":  "https://www.extramercado.com.br/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
@@ -418,145 +360,140 @@ LINKS = {
             "Original Lata_269ml":           "https://www.extramercado.com.br/produto/519820/cerveja-pilsen-antarctica-original-lata-269ml",
             "Itaipava Lata_350ml":           "https://www.extramercado.com.br/produto/112967/cerveja-pilsen-itaipava-lata-350ml",
         },
-        "Embutidos": {
-            "Sadia Salsicha Hot Dog_500g":    "https://www.extra.com.br/salsicha-sadia-hot-dog-500g/p",
-            "Perdigão Salsicha Hot Dog_500g": "https://www.extra.com.br/salsicha-perdigao-hot-dog-500g/p",
-            "Sadia Mortadela fatiada_200g":   "https://www.extra.com.br/mortadela-sadia-fatiada-200g/p",
-            "Sadia Presunto fatiado_200g":    "https://www.extra.com.br/presunto-sadia-fatiado-200g/p",
-            "Sadia Nuggets de frango_300g":   "https://www.extra.com.br/nuggets-sadia-hot-300g/p",
-            "Sadia Lasanha bolonhesa_600g":   "https://www.extra.com.br/lasanha-sadia-bolonhesa-600g/p",
+        "Carnes": {
+            "Salsicha Hot Dog 500g Sadia_500g":      "https://www.extramercado.com.br/produto/114859/salsicha-hot-dog-sadia-500g-10-unidades",
+            "Salsicha Hot Dog 500g Perdigão_500g":   "https://www.extramercado.com.br/produto/113887/salsicha-hot-dog-perdigao-500g-12-unidades",
+            "Salsicha Hot Dog 500g Seara_500g":      "https://www.extramercado.com.br/produto/21730/salsicha-hot-dog-seara-500g",
+            "Linguiça Toscana 700g Sadia_700g":      "https://www.extramercado.com.br/produto/1649350/linguica-toscana-sadia-700g",
+            "Linguiça Toscana 700g Perdigão_700g":   "https://www.extramercado.com.br/produto/1667071/linguica-toscana-perdigao-na-brasa-700g",
+            "Linguiça Toscana 700g Swift_700g":      "https://www.extramercado.com.br/produto/422282/linguica-toscana-swift-700g",
+            "Nuggets de Frango 300g Sadia_300g":     "https://www.extramercado.com.br/produto/142969/empanado-de-frango-peito-crocante-sadia-nuggets-pacote-300g",
+            "Lasanha Bolonhesa 600g Sadia_600g":     "https://www.extramercado.com.br/produto/374206/lasanha-bolonhesa-sadia-pacote-600g",
+            "Lasanha Bolonhesa 600g Perdigão_600g":  "https://www.extramercado.com.br/produto/392502/lasanha-bolonhesa-perdigao-nosso-menu-pacote-600g",
+            "Lasanha Bolonhesa 600g Seara_600g":     "https://www.extramercado.com.br/produto/113511/lasanha-bolonhesa-seara-600g",
+            "Peito de Frango 1kg Sadia_1kg":         "https://www.extramercado.com.br/produto/65885/file-de-peito-de-frango-congelado-sem-pele-sem-osso-sadia-1kg",
+            "Peito de Frango 1kg Swift_1kg":         "https://www.extramercado.com.br/produto/422487/file-de-peito-de-frango-swift-do-campo-1kg",
+            "Coxa de Frango 1kg Sadia_1kg":          "https://www.extramercado.com.br/produto/66810/coxa-de-frango-congelada-sadia-1kg",
+            "Coxa de Frango 1kg Swift_1kg":          "https://www.extramercado.com.br/produto/422468/coxa-de-frango-swift-1kg",
+            "Coxa de Frango 1kg Seara_1kg":          "https://www.extramercado.com.br/produto/217037/coxa-de-frango-congelada-seara-1kg",
+            "Asa de Frango 1kg Swift_1kg":           "https://www.extramercado.com.br/produto/463439/asa-de-frango-swift-bandeja-1kg",
+            "Fraldinha 1kg Bassi_1kg":               "https://www.extramercado.com.br/produto/114843/fraldinha-extra-limpa-bovina-bassi-1,2kg",
+            "Picanha 1kg Bassi_1kg":                 "https://www.extramercado.com.br/produto/115631/picanha-bovina-extra-limpa-pedaco-bassi-a%C2%A0vacuo-1,4kg",
+            "Picanha 1kg Estância 92_1kg":           "https://www.extramercado.com.br/produto/1613858/picanha-estancia-92-resfriado-1,3kg",
+            "Carne Moida 1kg Swift_1kg":             "https://www.extramercado.com.br/produto/1651983/carne-moida-swift-1kg",
         },
         "Biscoitos": {
-            "Nabisco Biscoito Oreo original_144g":  "https://www.extra.com.br/biscoito-oreo-original-144g/p",
-            "Nestlé Biscoito Passatempo_150g":      "https://www.extra.com.br/biscoito-passatempo-nestle-150g/p",
-            "Nestlé Biscoito Bono chocolate_140g":  "https://www.extra.com.br/biscoito-bono-chocolate-140g/p",
-            "Lacta Biscoito Clube Social_141g":     "https://www.extra.com.br/biscoito-clube-social-141g/p",
-            "Tostines Biscoito cream cracker_200g": "https://www.extra.com.br/biscoito-cream-cracker-tostines-200g/p",
-            "Piraquê Biscoito água e sal_200g":     "https://www.extra.com.br/biscoito-agua-sal-piraque-200g/p",
+            "Água e Sal 300g Marilan_300g":          "https://www.extramercado.com.br/produto/1667484/biscoito-agua-e-sal-marilan-300g",
+            "Água e Sal 350g Vitarella_350g":        "https://www.extramercado.com.br/produto/1376440/biscoito-agua-e-sal-tradicional-vitarella-pacote-350g",
+            "Água e Sal 170g Adria_170g":            "https://www.extramercado.com.br/produto/1642405/biscoito-agua-e-sal-adria-pacote-170g",
+            "Água e Sal 184g Piraque_184g":          "https://www.extramercado.com.br/produto/1641546/biscoito-agua-e-sal-piraque-pacote-184g",
+            "Cream Cracker 300g Marilan_300g":       "https://www.extramercado.com.br/produto/1667380/biscoito-cream-cracker-marilan-300g",
+            "Cream Cracker 350g Vitarella_350g":     "https://www.extramercado.com.br/produto/1376439/biscoito-cream-cracker-amanteigado-tradicional-vitarella-pacote-350g",
+            "Cream Cracker 184g Piraque_184g":       "https://www.extramercado.com.br/produto/1641542/biscoito-cream-cracker-piraque-pacote-184g",
+            "Cream Cracker 140g Marilan_140g":       "https://www.extramercado.com.br/produto/1667384/biscoito-cream-cracker-marilan-pacote-140g",
+            "Cream Cracker 165g Bauducco_165g":      "https://www.extramercado.com.br/produto/1660610/biscoito-cream-cracker-tradicional-bauducco-pacote-165g",
+            "Cream Cracker 170g Adria_170g":         "https://www.extramercado.com.br/produto/1638049/biscoito-cream-cracker-folhado-manteiga-adria-folhata-pacote-170g",
+            "Oreo 90g Mondelez_90g":                 "https://www.extramercado.com.br/produto/323114/biscoito-original-oreo-pacote-90g",
+            "Passatempo 150g Nestlé_150g":           "https://www.extramercado.com.br/produto/177670/biscoito-recheio-chocolate-passatempo-pacote-130g",
+            "Recheado Chocolate 140g Bauducco_140g": "https://www.extramercado.com.br/produto/335660/biscoito-wafer-recheio-chocolate-bauducco-pacote-140g",
+            "Recheado Chocolate 100g Piraque_100g":  "https://www.extramercado.com.br/produto/1404804/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
         },
         "Massas": {
-            "Barilla Macarrão Espaguete n°5_500g": "https://www.extra.com.br/macarrao-espaguete-barilla-500g/p",
-            "Renata Macarrão Espaguete_500g":       "https://www.extra.com.br/macarrao-espaguete-renata-500g/p",
-            "Nissin Miojo galinha caipira_85g":     "https://www.extra.com.br/miojo-nissin-galinha-caipira-85g/p",
-            "Nissin Miojo carne_85g":               "https://www.extra.com.br/miojo-nissin-carne-85g/p",
-            "Adria Macarrão Espaguete_500g":        "https://www.extra.com.br/macarrao-espaguete-adria-500g/p",
+            "Macarrão Espaguete 500g Barilla_500g":  "https://www.extramercado.com.br/produto/305593/macarrao-com-ovos-espaguete-8-barilla-pacote-500g",
+            "Macarrão Espaguete 500g Adria_500g":    "https://www.extramercado.com.br/produto/111375/macarrao-adria-com-ovos-espaguete---8-500g",
+            "Macarrão Espaguete 500g Dona Benta_500g":"https://www.extramercado.com.br/produto/5789/macarrao-de-semola-com-ovos-linguine-dona-benta-pacote-500g",
+            "Miojo Carne 85g Nissin_85g":            "https://www.extramercado.com.br/produto/169902/macarrao-instantaneo-de-carne-nissin-miojo-lamen-pacote-85g",
         },
         "Mercearia": {
-            "Tio João Arroz branco tipo 1_5kg":                  "https://www.extra.com.br/arroz-tio-joao-branco-tipo-1-5kg/p",
-            "Camil Arroz branco tipo 1_5kg":                     "https://www.extra.com.br/arroz-camil-branco-tipo-1-5kg/p",
-            "Camil Feijão carioca_1kg":                          "https://www.extra.com.br/feijao-carioca-camil-1kg/p",
-            "União Açúcar cristal_1kg":                          "https://www.extra.com.br/acucar-cristal-uniao-1kg/p",
-            "União Açúcar refinado_1kg":                         "https://www.extra.com.br/acucar-refinado-uniao-1kg/p",
-            "Renata Farinha de trigo_1kg":                       "https://www.extra.com.br/farinha-trigo-renata-1kg/p",
-            "Pilão Café torrado e moído tradicional_500g":       "https://www.extra.com.br/cafe-pilao-torrado-moido-tradicional-500g/p",
-            "3 Corações Café torrado e moído tradicional_500g":  "https://www.extra.com.br/cafe-3-coracoes-tradicional-500g/p",
-            "Melitta Café torrado e moído tradicional_500g":     "https://www.extra.com.br/cafe-melitta-tradicional-500g/p",
+            "Arroz Branco 5kg Tio João_5kg":                   "https://www.extramercado.com.br/produto/138068/arroz-agulhinha-tipo-1-tio-joao-pacote-5kg",
+            "Arroz Branco 5kg Camil_5kg":                      "https://www.extramercado.com.br/produto/41329/arroz-agulhinha-tipo-1-camil-pacote-5kg",
+            "Feijão Carioca 1kg Camil_1kg":                    "https://www.extramercado.com.br/produto/9461/feijao-carioca-tipo-1-camil-pacote-1kg",
+            "Feijão Carioca 1kg Kicaldo_1kg":                  "https://www.extramercado.com.br/produto/109209/feijao-carioca-tipo-1-kicaldo-pacote-1kg",
+            "Açúcar Refinado 1kg União_1kg":                   "https://www.extramercado.com.br/produto/74215/acucar-refinado-uniao-pacote-1kg",
+            "Açúcar Refinado 1kg Caravelas_1kg":               "https://www.extramercado.com.br/produto/61474/acucar-refinado-caravelas-pacote-1kg",
+            "Açúcar Refinado 1kg Guarani_1kg":                 "https://www.extramercado.com.br/produto/359075/acucar-refinado-guarani-pacote-1kg",
+            "Farinha de Trigo 1kg Sol_1kg":                    "https://www.extramercado.com.br/produto/359075/farinha-de-trigo-sol-1kg",
+            "Café Torrado e Moído 500g Pilão_500g":            "https://www.extramercado.com.br/produto/152052/cafe-torrado-e-moido-tradicional-pilao-pacote-500g",
+            "Café Torrado e Moído 500g Melitta_500g":          "https://www.extramercado.com.br/produto/345621/cafe-torrado-e-moido-tradicional-melitta-pacote-500g",
+            "Café Torrado e Moído 500g Café Brasileiro_500g":  "https://www.extramercado.com.br/produto/62071/cafe-torrado-e-moido-tradicional-cafe-brasileiro-pacote-500g",
+            "Café Torrado e Moído 500g União_500g":            "https://www.extramercado.com.br/produto/1442268/cafe-torrado-e-moido-tradicional-uniao-pacote-500g",
         },
     },
     "Atacadão": {
         "Cervejas": {
-            "Heineken Lata_350ml":            "https://www.atacadao.com.br/cerveja-heineken-sleek-86733-12486/p",
-            "Heineken Lata_269ml":            "https://www.atacadao.com.br/cerveja-heineken-lata-com-269ml-76983-12460/p",
-            "Heineken 0.0_350ml":             "https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709-12501/p",
-            "Skol Lata_269ml":                "https://www.atacadao.com.br/cerveja-skol-redondinha-6183-13325/p",
-            "Skol Lata_350ml":                "https://www.atacadao.com.br/cerveja-skol-pilsen-18650-13267/p",
-            "Brahma Duplo Malte_269ml":       "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-269ml-74794-11647/p",
-            "Brahma Duplo Malte_350ml":       "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-350ml-67653-11651/p",
-            "Stella Artois Long Neck_330ml":  "https://www.atacadao.com.br/cerveja-stella-artois-68018-13362/p",
-            "Budweiser Lata_269ml":           "https://www.atacadao.com.br/cerveja-budweiser-51187-11765/p",
-            "Budweiser Lata_350ml":           "https://www.atacadao.com.br/cerveja-budweiser-sleek-lata-com-350ml-80258-11811/p",
-            "Amstel Lata_350ml":              "https://www.atacadao.com.br/cerveja-amstel-sleek-86708-11276/p",
-            "Amstel Lata_269ml":              "https://www.atacadao.com.br/cerveja-amstel-54353-11244/p",
-            "Spaten Puro Malte Lata_350ml":   "https://www.atacadao.com.br/cerveja-spaten-puro-malte-lata-com-350ml-74632-13351/p",
-            "Spaten Puro Malte Lata_269ml":   "https://www.atacadao.com.br/cerveja-puro-malte-spaten-lata-com-269ml-83458-13164/p",
-            "Original Lata_350ml":            "https://www.atacadao.com.br/cerveja-original-lata-com-350ml-65159-12864/p",
-            "Original Lata_269ml":            "https://www.atacadao.com.br/cerveja-original-lata-com-269ml-71793-12854/p",
-            "Itaipava Lata_350ml":            "https://www.atacadao.com.br/cerveja-itaipava-9850-12669/p",
+            "Heineken Lata_350ml":           "https://www.atacadao.com.br/cerveja-heineken-sleek-86733-12486/p",
+            "Heineken Lata_269ml":           "https://www.atacadao.com.br/cerveja-heineken-lata-com-269ml-76983-12460/p",
+            "Heineken 0.0_350ml":            "https://www.atacadao.com.br/cerveja-heineken-zero-sleek-86709-12501/p",
+            "Skol Lata_350ml":               "https://www.atacadao.com.br/cerveja-skol-pilsen-18650-13267/p",
+            "Skol Lata_269ml":               "https://www.atacadao.com.br/cerveja-skol-redondinha-6183-13325/p",
+            "Brahma Duplo Malte_350ml":      "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-350ml-67653-11651/p",
+            "Brahma Duplo Malte_269ml":      "https://www.atacadao.com.br/cerveja-brahma-duplo-malte-lata-com-269ml-74794-11647/p",
+            "Stella Artois Long Neck_330ml": "https://www.atacadao.com.br/cerveja-stella-artois-68018-13362/p",
+            "Corona Extra Long Neck_330ml":  "https://www.atacadao.com.br/cerveja-corona-long-neck-com-330ml-66884-12000/p",
+            "Budweiser Lata_350ml":          "https://www.atacadao.com.br/cerveja-budweiser-sleek-lata-com-350ml-80258-11811/p",
+            "Budweiser Lata_269ml":          "https://www.atacadao.com.br/cerveja-budweiser-51187-11765/p",
+            "Amstel Lata_350ml":             "https://www.atacadao.com.br/cerveja-amstel-sleek-86708-11276/p",
+            "Amstel Lata_269ml":             "https://www.atacadao.com.br/cerveja-amstel-54353-11244/p",
+            "Spaten Puro Malte Lata_350ml":  "https://www.atacadao.com.br/cerveja-spaten-puro-malte-lata-com-350ml-74632-13351/p",
+            "Spaten Puro Malte Lata_269ml":  "https://www.atacadao.com.br/cerveja-puro-malte-spaten-lata-com-269ml-83458-13164/p",
+            "Original Lata_350ml":           "https://www.atacadao.com.br/cerveja-original-lata-com-350ml-65159-12864/p",
+            "Original Lata_269ml":           "https://www.atacadao.com.br/cerveja-original-lata-com-269ml-71793-12854/p",
+            "Itaipava Lata_350ml":           "https://www.atacadao.com.br/cerveja-itaipava-9850-12669/p",
         },
-        "Embutidos": {
-            "Sadia Salsicha Hot Dog_500g":    "https://www.atacadao.com.br/salsicha-hot-dog-sadia-resfriada-49270/p",
-            "Perdigão Salsicha Hot Dog_500g": "https://www.atacadao.com.br/salsicha-hot-dog-perdigao-resfriada-5970/p",
-            "Seara Salsicha Hot Dog_500g":    "https://www.atacadao.com.br/salsicha-seara-congelada-37028/p",
-            "Sadia Mortadela fatiada_200g":   "https://www.atacadao.com.br/mortadela-defumada-sadia-fatiado-84464/p",
-            "Sadia Linguiça toscana_500g":    "https://www.atacadao.com.br/linguica-toscana-sadia-congelada-22113/p",
-            "Sadia Nuggets de frango_300g":   "https://www.atacadao.com.br/nuggets-de-frango-sadia-tradicional-19580/p",
-            "Sadia Lasanha bolonhesa_600g":   "https://www.atacadao.com.br/lasanha-sadia-congelada-bolonhesa-embalagem-com-600g-54196/p",
-            "Perdigão Lasanha bolonhesa_600g":"https://www.atacadao.com.br/lasanha-perdigao-congelada-bolonhesa-58251/p",
-            "Seara Lasanha bolonhesa_600g":   "https://www.atacadao.com.br/lasanha-seara-congelada-bolonhesa-32549/p",
+        "Carnes": {
+            "Salsicha Hot Dog 500g Sadia_500g":      "https://www.atacadao.com.br/salsicha-hot-dog-sadia-resfriada-49270-17530/p",
+            "Salsicha Hot Dog 500g Perdigão_500g":   "https://www.atacadao.com.br/salsicha-hot-dog-perdigao-resfriada-5970-17504/p",
+            "Salsicha Hot Dog 500g Seara_500g":      "https://www.atacadao.com.br/salsicha-hot-dog-seara-resfriada-62542-17547/p",
+            "Linguiça Toscana 700g Sadia_700g":      "https://www.atacadao.com.br/linguica-toscana-sadia-congelada-86374-36784/p",
+            "Linguiça Toscana 700g Perdigão_700g":   "https://www.atacadao.com.br/linguica-toscana-perdigao-nabrasa-9975-59299/p",
+            "Nuggets de Frango 300g Sadia_300g":     "https://www.atacadao.com.br/nuggets-de-frango-sadia-crocante-19582-15758/p",
+            "Lasanha Bolonhesa 600g Sadia_600g":     "https://www.atacadao.com.br/lasanha-sadia-congelada-bolonhesa-54196-29612/p",
+            "Lasanha Bolonhesa 600g Perdigão_600g":  "https://www.atacadao.com.br/lasanha-perdigao-congelada-bolonhesa-58251-29563/p",
+            "Lasanha Bolonhesa 600g Seara_600g":     "https://www.atacadao.com.br/lasanha-seara-congelada-bolonhesa-32549-29633/p",
+            "Peito de Frango 1kg Sadia_1kg":         "https://www.atacadao.com.br/file-de-peito-de-frango-sadia-congelado-bifes-3499-56449/p",
+            "Peito de Frango 1kg Seara_1kg":         "https://www.atacadao.com.br/file-de-peito-de-frango-seara-congelado-37849-12021/p",
+            "Coxa de Frango 1kg Sadia_1kg":          "https://www.atacadao.com.br/coxas-de-frango-sadia-congelado-assa-facil-47388-26263/p",
+            "Asa de Frango 1kg Sadia_1kg":           "https://www.atacadao.com.br/asa-de-frango-sadia-congelada-15062-15376/p",
         },
         "Biscoitos": {
-            "Nabisco Biscoito Oreo original_144g":        "https://www.atacadao.com.br/biscoito-recheado-oreo-original-61657/p",
-            "Nestlé Biscoito Passatempo_150g":            "https://www.atacadao.com.br/biscoito-passatempo-nestle-leite-25728/p",
-            "Nestlé Biscoito Prestígio_132g":             "https://www.atacadao.com.br/biscoito-recheado-nestle-prestigio-38279/p",
-            "Lacta Biscoito Clube Social_141g":           "https://www.atacadao.com.br/biscoito-club-social-original-54629/p",
-            "Vitarella Biscoito cream cracker_350g":      "https://www.atacadao.com.br/biscoito-cream-cracker-vitarella-tradicional-75658/p",
-            "Adria Biscoito cream cracker_170g":          "https://www.atacadao.com.br/biscoito-adria-cream-cracker-86314/p",
-            "Fortaleza Biscoito cream cracker_350g":      "https://www.atacadao.com.br/biscoito-fortaleza-cream-cracker-pacote-com-350g-75661/p",
-            "Richester Biscoito recheado chocolate_130g": "https://www.atacadao.com.br/biscoito-richester-cream-cracker-pacote-com-350g-75676/p",
+            "Água e Sal 300g Marilan_300g":          "https://www.atacadao.com.br/biscoito-marilan-agua-e-sal-12305-61201/p",
+            "Água e Sal 300g Mabel_300g":            "https://www.atacadao.com.br/biscoito-mabel-agua-e-sal-90091-40582/p",
+            "Água e Sal 350g Vitarella_350g":        "https://www.atacadao.com.br/biscoito-vitarella-agua-e-sal-pacote-com-350g-75654-31551/p",
+            "Água e Sal 170g Adria_170g":            "https://www.atacadao.com.br/biscoito-adria-agua-e-sal-86312-24062/p",
+            "Cream Cracker 300g Mabel_300g":         "https://www.atacadao.com.br/biscoito-mabel-cream-cracker-90090-40581/p",
+            "Cream Cracker 350g Vitarella_350g":     "https://www.atacadao.com.br/biscoito-cream-cracker-vitarella-tradicional-75658-25458/p",
+            "Cream Cracker 140g Marilan_140g":       "https://www.atacadao.com.br/biscoito-marilan-cream-cracker-12307-61182/p",
+            "Cream Cracker 170g Adria_170g":         "https://www.atacadao.com.br/biscoito-adria-cream-cracker-86314-24086/p",
+            "Oreo 90g Mondelez_90g":                 "https://www.atacadao.com.br/biscoito-recheado-oreo-original-49265-28699/p",
+            "Passatempo 150g Nestlé_150g":           "https://www.atacadao.com.br/biscoito-recheado-passatempo-nestle-chocolate-pacote-com-130g-55979-28839/p",
+            "Recheado Chocolate 140g Bauducco_140g": "https://www.atacadao.com.br/biscoito-wafer-bauducco-chocolate-39393-31872/p",
+            "Recheado Chocolate 100g Piraque_100g":  "https://www.atacadao.com.br/biscoito-wafer-piraque-chocolate-pacote-com-100g-76847-32707/p",
         },
         "Massas": {
-            "Barilla Macarrão Espaguete n°5_500g": "https://www.atacadao.com.br/macarrao-espaguete-barilla-500g/p",
-            "Renata Macarrão Espaguete_500g":       "https://www.atacadao.com.br/macarrao-espaguete-renata-500g/p",
-            "Nissin Miojo galinha caipira_85g":     "https://www.atacadao.com.br/miojo-nissin-galinha-caipira-85g/p",
-            "Nissin Miojo carne_85g":               "https://www.atacadao.com.br/miojo-nissin-carne-85g/p",
-            "Adria Macarrão Espaguete_500g":        "https://www.atacadao.com.br/macarrao-com-ovos-adria-espaguete-furado-34563/p",
-            "Vitarella Macarrão Espaguete_500g":    "https://www.atacadao.com.br/macarrao-comum-vitarella-espaguete-fino-9870/p",
-            "Fortaleza Macarrão Espaguete_400g":    "https://www.atacadao.com.br/macarrao-de-semola-fortaleza-espaguete-85114/p",
-            "Isabela Macarrão Espaguete_400g":      "https://www.atacadao.com.br/macarrao-de-semola-isabela-espaguete-85652/p",
+            "Macarrão Espaguete 500g Barilla_500g":   "https://www.atacadao.com.br/macarrao-com-ovos-barilla-espaguete-8-74384-1093/p",
+            "Macarrão Espaguete 500g Adria_500g":     "https://www.atacadao.com.br/macarrao-com-ovos-adria-espaguete-34028-1061/p",
+            "Macarrão Espaguete 500g Camil_500g":     "https://www.atacadao.com.br/macarrao-com-ovos-camil-espaguete-94005-44267/p",
+            "Macarrão Espaguete 500g Dona Benta_500g":"https://www.atacadao.com.br/macarrao-com-ovos-dona-benta-espaguete-pacote-com-500g-1998-1187/p",
+            "Miojo Carne 85g Nissin_85g":             "https://www.atacadao.com.br/macarrao-instantaneo-nissin-lamen-carne-5612-3297/p",
         },
         "Mercearia": {
-            "Tio João Arroz branco tipo 1_5kg":                  "https://www.atacadao.com.br/arroz-tio-joao-agulhinha---tipo-1-5148-15022/p",
-            "Camil Arroz branco tipo 1_5kg":                     "https://www.atacadao.com.br/arroz-camil-agulhinha---tipo-1-pacote-com-5kg-12658-13743/p",
-            "Camil Feijão carioca_1kg":                          "https://www.atacadao.com.br/feijao-carioca-camil-tipo-1-pacote-com-1kg-7382-9742/p",
-            "Kicaldo Feijão carioca_1kg":                        "https://www.atacadao.com.br/feijao-carioca-kicaldo-tipo-1-pacote-com-1kg-11874/p",
-            "Camil Feijão preto_1kg":                            "https://www.atacadao.com.br/feijao-preto-camil-1kg/p",
-            "União Açúcar cristal_1kg":                          "https://www.atacadao.com.br/acucar-uniao-cristal-1kg/p",
-            "União Açúcar refinado_1kg":                         "https://www.atacadao.com.br/acucar-uniao-refinado-21176-2371/p",
-            "Anaconda Farinha de trigo_1kg":                     "https://www.atacadao.com.br/farinha-de-trigo-anaconda-tipo-1-6852/p",
-            "Renata Farinha de trigo_1kg":                       "https://www.atacadao.com.br/farinha-de-trigo-renata-1kg/p",
-            "Dona Benta Farinha de trigo_1kg":                   "https://www.atacadao.com.br/farinha-de-trigo-dona-benta-tipo-1-pacote-com-1kg-23162-8563/p",
-            "Pilão Café torrado e moído tradicional_500g":       "https://www.atacadao.com.br/cafe-pilao-vacuo-18437/p",
-            "3 Corações Café torrado e moído tradicional_500g":  "https://www.atacadao.com.br/cafe-3-coracoes-tradicional-23371-915/p",
-            "Melitta Café torrado e moído tradicional_500g":     "https://www.atacadao.com.br/cafe-melitta-tradicional-vacuo-caixeta-com-500g-18816/p",
-            "Caboclo Café torrado e moído tradicional_500g":     "https://www.atacadao.com.br/cafe-caboclo-tradicional-500g/p",
+            "Arroz Branco 5kg Tio João_5kg":                   "https://www.atacadao.com.br/arroz-tio-joao-agulhinha---tipo-1-5148-15022/p",
+            "Arroz Branco 5kg Camil_5kg":                      "https://www.atacadao.com.br/arroz-camil-agulhinha---tipo-1-pacote-com-5kg-12658-13743/p",
+            "Feijão Carioca 1kg Camil_1kg":                    "https://www.atacadao.com.br/feijao-carioca-camil-tipo-1-7382-9742/p",
+            "Feijão Carioca 1kg Kicaldo_1kg":                  "https://www.atacadao.com.br/feijao-carioca-kicaldo-tipo-1-pacote-com-1kg-11874-9925/p",
+            "Açúcar Refinado 1kg União_1kg":                   "https://www.atacadao.com.br/acucar-uniao-refinado-21176-2371/p",
+            "Açúcar Refinado 1kg Caravelas_1kg":               "https://www.atacadao.com.br/acucar-caravelas-refinado-25668-1517/p",
+            "Açúcar Refinado 1kg Da Barra_1kg":                "https://www.atacadao.com.br/acucar-da-barra-refinado-pacote-com-1kg-15604-1814/p",
+            "Farinha de Trigo 1kg Dona Benta_1kg":             "https://www.atacadao.com.br/farinha-de-trigo-dona-benta-tipo-1-pacote-com-1kg-23162-8563/p",
+            "Farinha de Trigo 1kg Venturelli_1kg":             "https://www.atacadao.com.br/farinha-de-trigo-venturelli-tipo-1-pacote-com-1kg-66335-9230/p",
+            "Café Torrado e Moído 500g Pilão_500g":            "https://www.atacadao.com.br/cafe-pilao-almofada-4959-3014/p",
+            "Café Torrado e Moído 500g 3 Corações_500g":       "https://www.atacadao.com.br/cafe-3-coracoes-tradicional-23371-915/p",
+            "Café Torrado e Moído 500g Melitta_500g":          "https://www.atacadao.com.br/cafe-melitta-tradicional-vacuo-caixeta-com-500g-18816-2617/p",
+            "Café Torrado e Moído 500g União_500g":            "https://www.atacadao.com.br/cafe-uniao-tradicional-76123-3853/p",
         },
     },
 }
 
-# ─── Termos de busca Mateus ───────────────────────────────────────────────────
-BUSCA_MATEUS = {
-    "Cervejas":  {},  # Temporariamente desativado
-    "Embutidos": {
-        "Sadia Salsicha Hot Dog_500g":   "salsicha sadia hot dog 500g",
-        "Sadia Nuggets de frango_300g":  "nuggets sadia frango 300g",
-        "Sadia Lasanha bolonhesa_600g":  "lasanha sadia bolonhesa 600g",
-        "Sadia Mortadela fatiada_200g":  "mortadela sadia fatiada 200g",
-        "Sadia Linguiça toscana_500g":   "linguica toscana sadia 500g",
-    },
-    "Biscoitos": {
-        "Nabisco Biscoito Oreo original_144g":    "biscoito oreo 144g",
-        "Vitarella Biscoito cream cracker_350g":  "biscoito cream cracker vitarella",
-        "Fortaleza Biscoito cream cracker_350g":  "biscoito cream cracker fortaleza",
-        "Nestlé Biscoito Passatempo_150g":        "biscoito passatempo nestle 150g",
-        "Lacta Biscoito Clube Social_141g":       "biscoito clube social 141g",
-    },
-    "Massas": {
-        "Adria Macarrão Espaguete_500g":     "macarrao espaguete adria 500g",
-        "Vitarella Macarrão Espaguete_500g": "macarrao espaguete vitarella 500g",
-        "Nissin Miojo galinha caipira_85g":  "miojo nissin galinha caipira",
-        "Nissin Miojo carne_85g":            "miojo nissin carne",
-        "Barilla Macarrão Espaguete n°5_500g": "macarrao espaguete barilla 500g",
-    },
-    "Mercearia": {
-        "Tio João Arroz branco tipo 1_5kg":                  "arroz tio joao branco 5kg",
-        "Camil Arroz branco tipo 1_5kg":                     "arroz camil branco tipo 1 5kg",
-        "Camil Feijão carioca_1kg":                          "feijao carioca camil 1kg",
-        "União Açúcar cristal_1kg":                          "acucar cristal uniao 1kg",
-        "Pilão Café torrado e moído tradicional_500g":       "cafe pilao tradicional 500g",
-        "3 Corações Café torrado e moído tradicional_500g":  "cafe 3 coracoes tradicional 500g",
-        "Melitta Café torrado e moído tradicional_500g":     "cafe melitta tradicional 500g",
-    },
-}
 
 # ─── Seletores CSS expandidos por supermercado ───────────────────────────────
 SELETORES = {
@@ -614,6 +551,7 @@ def init_db():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         data_coleta TEXT NOT NULL, horario_coleta TEXT NOT NULL,
         supermercado TEXT NOT NULL, categoria TEXT NOT NULL,
+        grupo TEXT NOT NULL DEFAULT '',
         marca TEXT NOT NULL, nome_produto TEXT NOT NULL, embalagem TEXT NOT NULL,
         cidade TEXT NOT NULL, uf TEXT NOT NULL, regiao TEXT NOT NULL,
         preco_atual REAL, preco_original REAL,
@@ -621,7 +559,7 @@ def init_db():
         url TEXT, url_recuperada TEXT, rota_css INTEGER, tentativas INTEGER DEFAULT 1, erro TEXT
     )""")
     cols = [r[1] for r in con.execute("PRAGMA table_info(precos)").fetchall()]
-    for col, typ in [("categoria","TEXT"),("rota_css","INTEGER"),
+    for col, typ in [("categoria","TEXT"),("grupo","TEXT"),("rota_css","INTEGER"),
                      ("url_recuperada","TEXT"),("tentativas","INTEGER")]:
         if col not in cols:
             con.execute(f"ALTER TABLE precos ADD COLUMN {col} {typ}")
@@ -637,11 +575,11 @@ def init_db():
 
 def inserir(con, r):
     con.execute("""INSERT INTO precos
-        (data_coleta,horario_coleta,supermercado,categoria,marca,nome_produto,
+        (data_coleta,horario_coleta,supermercado,categoria,grupo,marca,nome_produto,
          embalagem,cidade,uf,regiao,preco_atual,preco_original,
          em_promocao,disponivel,url,url_recuperada,rota_css,tentativas,erro)
-        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", (
-        r["data_coleta"],r["horario_coleta"],r["supermercado"],r["categoria"],
+        VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""", (
+        r["data_coleta"],r["horario_coleta"],r["supermercado"],r["categoria"],r.get("grupo",""),
         r["marca"],r["nome_produto"],r["embalagem"],r["cidade"],r["uf"],r["regiao"],
         r.get("preco_atual"),r.get("preco_original"),
         int(r.get("em_promocao",False)),int(r.get("disponivel",True)),
@@ -933,41 +871,6 @@ def coletar_com_retry(page, url, supermercado, nome_produto, embalagem, con, max
             time.sleep(espera)
     return dados  # retorna o último (com erro)
 
-def buscar_mateus(page, termo, max_tentativas=2):
-    url_busca = f"https://mateusmais.com.br/busca?q={termo.replace(' ','+')}"
-    resultado = {
-        "url": url_busca, "disponivel": False, "preco_atual": None,
-        "preco_original": None, "em_promocao": False,
-        "rota_css": None, "url_recuperada": None, "tentativas": 1, "erro": None,
-    }
-    for tentativa in range(1, max_tentativas + 1):
-        try:
-            page.goto(url_busca, wait_until="domcontentloaded", timeout=18000)
-            page.wait_for_timeout(1500)
-            # Encontra primeiro produto válido
-            for link in page.query_selector_all('a[href*="/produto/"], a[href*="/p/"]'):
-                href = link.get_attribute("href") or ""
-                if not href: continue
-                if not href.startswith("http"):
-                    href = "https://mateusmais.com.br" + href
-                resultado["url"] = href
-                page.goto(href, wait_until="domcontentloaded", timeout=18000)
-                page.wait_for_timeout(1500)
-                break
-            for rota, fn in [(10,extrair_via_json_ld),(11,extrair_via_meta),(12,extrair_via_js)]:
-                p = fn(page)
-                if p and 0.5 < p < 10000:
-                    resultado.update(preco_atual=p, rota_css=rota, disponivel=True, tentativas=tentativa)
-                    return resultado
-            if tentativa < max_tentativas:
-                time.sleep(5)
-        except PWTimeout:
-            resultado["erro"] = "timeout"
-        except Exception as e:
-            resultado["erro"] = str(e)[:120]
-    if not resultado["preco_atual"]:
-        resultado["erro"] = resultado.get("erro") or "preco_nao_encontrado_mateus"
-    return resultado
 
 # ─── Loop principal ───────────────────────────────────────────────────────────
 def main(categorias_filtro=None):
@@ -1048,6 +951,7 @@ def main(categorias_filtro=None):
                         reg = {
                             "data_coleta": hoje, "horario_coleta": horario,
                             "supermercado": sm_nome, "categoria": cat_nome,
+                            "grupo": CAT_GRUPO.get(cat_nome, ""),
                             "marca": produto["marca"], "nome_produto": produto["nome"],
                             "embalagem": produto["embalagem"],
                             "cidade": cidade_info["cidade"], "uf": cidade_info["uf"],
@@ -1072,52 +976,6 @@ def main(categorias_filtro=None):
 
                     ctx.close()
 
-        # ── Mateus ────────────────────────────────────────────────────────────
-        print(f"\n{'='*60}\nMateus (busca dinâmica)\n{'='*60}")
-        for cat_nome, termos in BUSCA_MATEUS.items():
-            if categorias_filtro and cat_nome not in categorias_filtro:
-                continue
-            print(f"\n  [{cat_nome}]")
-            for cidade_info in CIDADES:
-                ua = random.choice(USER_AGENTS)
-                ctx = browser.new_context(
-                    user_agent=ua,
-                    viewport={"width":1280,"height":800},
-                    locale="pt-BR",
-                    timezone_id="America/Sao_Paulo",
-                )
-                page = ctx.new_page()
-                page.add_init_script(STEALTH_JS)
-
-                for chave, termo in termos.items():
-                    nome, emb = chave.rsplit("_", 1)
-                    prod = next(
-                        (p for p in PRODUTOS[cat_nome] if p["nome"]==nome and p["embalagem"]==emb),
-                        {"marca": nome.split()[0], "nome": nome, "embalagem": emb}
-                    )
-                    horario = datetime.now().strftime("%H:%M:%S")
-                    dados = buscar_mateus(page, termo)
-                    reg = {
-                        "data_coleta": hoje, "horario_coleta": horario,
-                        "supermercado": "Mateus", "categoria": cat_nome,
-                        "marca": prod["marca"], "nome_produto": prod["nome"],
-                        "embalagem": prod["embalagem"],
-                        "cidade": cidade_info["cidade"], "uf": cidade_info["uf"],
-                        "regiao": cidade_info["regiao"], **dados,
-                    }
-                    inserir(con, reg)
-                    con.commit()
-
-                    status = f"OK(rota{dados['rota_css']})" if dados["preco_atual"] else f"ERRO:{dados['erro']}"
-                    preco_s = f"R${dados['preco_atual']:.2f}" if dados["preco_atual"] else "—"
-                    msg = f"{hoje}|Mateus|{cat_nome}|{nome} {emb}|{cidade_info['cidade']}|{preco_s}|{status}"
-                    log.append(msg)
-                    print(f"    {msg}")
-                    total_ok   += bool(dados["preco_atual"])
-                    total_erro += not bool(dados["preco_atual"])
-                    time.sleep(random.uniform(1.5, 3.0))
-
-                ctx.close()
 
         browser.close()
 
