@@ -61,9 +61,8 @@ def testar_url(page, nome, url):
         }""")
         print("   ✓ Endereço injetado no localStorage")
 
-        # Navega para o produto
-        page.goto(url, wait_until="domcontentloaded", timeout=25000)
-        page.wait_for_timeout(2000)
+        # Navega para o produto — espera networkidle para garantir hidratação do React
+        page.goto(url, wait_until="networkidle", timeout=30000)
         print(f"   ✓ Página carregada | título: {page.title()[:60]}")
 
         # Fecha modal do produto
@@ -76,6 +75,13 @@ def testar_url(page, nome, url):
                     print("   ✓ Modal produto fechado")
                     break
             except: pass
+
+        # Aguarda o elemento de preço aparecer (React precisa hidratar após o modal fechar)
+        try:
+            page.wait_for_selector('[data-testid="product-price"]', timeout=10000)
+            print("   ✓ Elemento de preço encontrado no DOM")
+        except Exception:
+            print("   ⚠️  Timeout aguardando preço — tentando mesmo assim")
 
         # Tenta extrair preço via JS
         preco_txt = page.evaluate("""() => {
