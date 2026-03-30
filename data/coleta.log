@@ -2673,3 +2673,73 @@
 2026-03-30|Zé Delivery|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
 2026-03-30|Zé Delivery|Cervejas|Original Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
 2026-03-30|Zé Delivery|Cervejas|Original Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+=== 2026-03-30 | OK:51 ERRO:18 ===
+2026-03-30|Pão de Açúcar|Cervejas|Heineken Lata 350ml|São Paulo|R$4.38|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Heineken Lata 269ml|São Paulo|R$3.58|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|São Paulo|R$4.38|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Skol Lata 269ml|São Paulo|R$2.29|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Brahma Duplo Malte 350ml|São Paulo|R$4.19|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Stella Artois Long Neck 330ml|São Paulo|R$6.99|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Corona Extra Long Neck 330ml|São Paulo|R$5.69|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Budweiser Lata 269ml|São Paulo|R$2.69|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Amstel Lata 350ml|São Paulo|R$2.99|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Amstel Lata 269ml|São Paulo|R$2.59|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Spaten Puro Malte Lata 350ml|São Paulo|R$3.79|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|R$3.79|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Original Lata 350ml|São Paulo|—|ERRO:pagina_invalida_url_nao_recuperada
+2026-03-30|Pão de Açúcar|Cervejas|Original Lata 269ml|São Paulo|R$2.89|OK(rota10)
+2026-03-30|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|São Paulo|R$2.99|OK(rota10)
+2026-03-30|Extra|Cervejas|Antarctica Lata 350ml|São Paulo|R$3.69|OK(rota10)
+2026-03-30|Extra|Cervejas|Heineken Lata 350ml|São Paulo|R$4.38|OK(rota10)
+2026-03-30|Extra|Cervejas|Heineken Lata 269ml|São Paulo|R$3.58|OK(rota10)
+2026-03-30|Extra|Cervejas|Heineken 0.0 350ml|São Paulo|R$4.38|OK(rota10)
+2026-03-30|Extra|Cervejas|Skol Lata 350ml|São Paulo|R$3.69|OK(rota10)
+2026-03-30|Extra|Cervejas|Skol Lata 269ml|São Paulo|R$2.49|OK(rota12)
+2026-03-30|Extra|Cervejas|Brahma Duplo Malte 350ml|São Paulo|R$4.19|OK(rota10)
+2026-03-30|Extra|Cervejas|Brahma Duplo Malte 269ml|São Paulo|R$3.29|OK(rota10)
+2026-03-30|Extra|Cervejas|Corona Extra Long Neck 330ml|São Paulo|R$3.99|OK(rota12)
+2026-03-30|Extra|Cervejas|Corona Extra Lata 350ml|São Paulo|R$5.29|OK(rota10)
+2026-03-30|Extra|Cervejas|Budweiser Lata 350ml|São Paulo|R$3.99|OK(rota12)
+2026-03-30|Extra|Cervejas|Budweiser Lata 269ml|São Paulo|R$2.69|OK(rota10)
+2026-03-30|Extra|Cervejas|Amstel Lata 350ml|São Paulo|R$3.29|OK(rota10)
+2026-03-30|Extra|Cervejas|Amstel Lata 269ml|São Paulo|R$2.59|OK(rota10)
+2026-03-30|Extra|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|R$3.79|OK(rota10)
+2026-03-30|Extra|Cervejas|Original Lata 350ml|São Paulo|R$4.79|OK(rota10)
+2026-03-30|Extra|Cervejas|Original Lata 269ml|São Paulo|R$2.89|OK(rota10)
+2026-03-30|Extra|Cervejas|Itaipava Lata 350ml|São Paulo|R$2.99|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Antarctica Lata 350ml|São Paulo|R$3.08|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Heineken Lata 350ml|São Paulo|R$4.89|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Heineken Lata 269ml|São Paulo|R$3.89|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Heineken 0.0 350ml|São Paulo|R$4.89|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Skol Lata 350ml|São Paulo|R$3.05|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Skol Lata 269ml|São Paulo|R$2.48|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Brahma Duplo Malte 350ml|São Paulo|R$4.49|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Brahma Duplo Malte 269ml|São Paulo|R$3.39|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Stella Artois Long Neck 330ml|São Paulo|R$6.09|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Corona Extra Long Neck 330ml|São Paulo|R$7.39|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Budweiser Lata 350ml|São Paulo|R$4.29|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Budweiser Lata 269ml|São Paulo|R$2.98|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Amstel Lata 350ml|São Paulo|R$3.19|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Amstel Lata 269ml|São Paulo|R$2.89|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Spaten Puro Malte Lata 350ml|São Paulo|R$3.88|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|R$2.85|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Original Lata 350ml|São Paulo|R$3.78|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Original Lata 269ml|São Paulo|R$2.98|OK(rota10)
+2026-03-30|Atacadão|Cervejas|Itaipava Lata 350ml|São Paulo|R$2.39|OK(rota10)
+2026-03-30|Zé Delivery|Cervejas|Antarctica Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Heineken Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Heineken Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Heineken 0.0 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Skol Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Skol Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Brahma Duplo Malte 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Brahma Duplo Malte 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Corona Extra Long Neck 330ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Corona Extra Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Budweiser Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Amstel Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Spaten Puro Malte Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Original Lata 350ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
+2026-03-30|Zé Delivery|Cervejas|Original Lata 269ml|São Paulo|—|ERRO:ze_preco_nao_encontrado
