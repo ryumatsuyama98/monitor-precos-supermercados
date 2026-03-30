@@ -491,32 +491,6 @@ LINKS = {
             "Café Torrado e Moído 500g União_500g":             "https://www.atacadao.com.br/cafe-uniao-tradicional-76123-3853/p",
         },
     },
-    "Zé Delivery": {
-        "Cervejas": {
-            "Amstel Lata_350ml":             "https://www.ze.delivery/entrega-produto/27292/amstel-350ml",
-            "Antarctica Lata_350ml":         "https://www.ze.delivery/entrega-produto/8522/antarctica-pilsen-350ml",
-            "Brahma Duplo Malte_269ml":      "https://www.ze.delivery/entrega-produto/16468/brahma-duplo-malte-269ml",
-            "Brahma Duplo Malte_350ml":      "https://www.ze.delivery/entrega-produto/10266/brahma-duplo-malte-350ml",
-            "Budweiser Lata_269ml":          "https://www.ze.delivery/entrega-produto/8577/budweiser-269ml",
-            "Budweiser Lata_350ml":          "https://www.ze.delivery/entrega-produto/8579/budweiser-350ml",
-            "Corona Extra Lata_350ml":       "https://www.ze.delivery/entrega-produto/17540/corona-350ml",
-            "Corona Extra Long Neck_330ml":  "https://www.ze.delivery/entrega-produto/9870/cerveja-corona-extra-330ml",
-            "Heineken 0.0_350ml":            "https://www.ze.delivery/entrega-produto/17090/heineken-zero-350ml",
-            "Heineken Lata_269ml":           "https://www.ze.delivery/entrega-produto/20997/heineken-269ml",
-            "Heineken Lata_350ml":           "https://www.ze.delivery/entrega-produto/9991/heineken-350ml",
-            "Original Lata_269ml":           "https://www.ze.delivery/entrega-produto/13477/original-269ml",
-            "Original Lata_350ml":           "https://www.ze.delivery/entrega-produto/9746/original-350ml",
-            "Skol Lata_269ml":               "https://www.ze.delivery/entrega-produto/8502/skol-269ml",
-            "Skol Lata_350ml":               "https://www.ze.delivery/entrega-produto/8504/skol-350ml",
-            "Spaten Puro Malte Lata_269ml":  "https://www.ze.delivery/entrega-produto/19749/spaten-269ml",
-            "Spaten Puro Malte Lata_350ml":  "https://www.ze.delivery/entrega-produto/12884/spaten-350ml",
-            "Stella Artois Lata_269ml":      "https://www.ze.delivery/entrega-produto/8583/stella-artois-269ml",
-        },
-        "Carnes":    {},
-        "Biscoitos": {},
-        "Massas":    {},
-        "Mercearia": {},
-    },
 }
 
 SELETORES = {
@@ -703,137 +677,6 @@ def extrair_via_js(page):
         }""")
     except Exception: return None
 
-# ─── Coleta Zé Delivery — Playwright com localStorage ────────────────────────
-ZE_CEP = "01310100"
-ZE_LAT = -23.5646162
-ZE_LNG = -46.6527547
-
-def extrair_id_ze(url):
-    m = re.search(r'/entrega-produto/(\d+)/', url)
-    return m.group(1) if m else None
-
-def coletar_ze_playwright(page, url):
-    """
-    Coleta preço do Zé Delivery via Playwright.
-    Injeta endereço de SP no localStorage antes de navegar para o produto,
-    evitando o modal de endereço que bloqueia o preço.
-    """
-    resultado = {
-        "url": url, "disponivel": False, "preco_atual": None,
-        "preco_original": None, "em_promocao": False,
-        "rota_css": None, "url_recuperada": None, "tentativas": 1, "erro": None,
-    }
-    try:
-        # 1. Navega para o domínio principal para poder usar localStorage
-        page.goto("https://www.ze.delivery/", wait_until="networkidle", timeout=20000)
-        page.wait_for_timeout(2000)
-
-        # 2. Injeta endereço de SP no localStorage — formato exato que o site usa
-        addr_json = json.dumps({
-            "zipCode": ZE_CEP,
-            "city": "São Paulo",
-            "state": "SP",
-            "neighborhood": "Bela Vista",
-            "street": "Avenida Paulista",
-            "number": "1000",
-            "lat": ZE_LAT,
-            "lng": ZE_LNG,
-        })
-        page.evaluate(f"""() => {{
-            try {{
-                // Múltiplos formatos que o ze.delivery pode usar
-                localStorage.setItem('ze-address', '{addr_json}');
-                localStorage.setItem('address', '{addr_json}');
-                localStorage.setItem('userAddress', '{addr_json}');
-                localStorage.setItem('deliveryAddress', '{addr_json}');
-                localStorage.setItem('selectedAddress', '{addr_json}');
-                localStorage.setItem('zipCode', '{ZE_CEP}');
-                // Redux persist format
-                const reduxState = JSON.stringify({{
-                    address: {{address: '{addr_json}'}},
-                    _persist: {{version: 1, rehydrated: true}}
-                }});
-                localStorage.setItem('persist:root', reduxState);
-                localStorage.setItem('persist:address', JSON.stringify({{
-                    address: '{addr_json}',
-                    _persist: JSON.stringify({{version: 1, rehydrated: true}})
-                }}));
-            }} catch(e) {{}}
-        }}""")
-
-        # 3. Navega direto para a página do produto
-        page.goto(url, wait_until="domcontentloaded", timeout=25000)
-
-        # 4. Aguarda o preço aparecer no DOM (até 15s) — mais confiável que networkidle
-        preco_no_dom = False
-        try:
-            page.wait_for_selector('[data-testid="product-price"]', timeout=15000)
-            preco_no_dom = True
-        except Exception:
-            # Preço não apareceu — tenta fechar modal e aguarda mais
-            page.wait_for_timeout(3000)
-
-        # 5. Fecha o popup modal "Continuar no site" se ainda aparecer
-        for sel in [
-            '[data-testid="close-button"]',
-            '[class*="secondaryButton"]',
-            '[data-testid="modal-close"]',
-            'button[aria-label="Fechar"]',
-            '[class*="closeButton"]',
-        ]:
-            try:
-                btn = page.query_selector(sel)
-                if btn and btn.is_visible():
-                    btn.click()
-                    page.wait_for_timeout(1000)
-                    break
-            except Exception:
-                pass
-
-        # 6. Se o preço ainda não apareceu, aguarda mais uma vez após fechar modal
-        if not preco_no_dom:
-            try:
-                page.wait_for_selector('[data-testid="product-price"]', timeout=8000)
-            except Exception:
-                pass
-        # 6. Extrai preço — sem checar is_visible (modal pode estar na frente)
-        for sel in [
-            '[data-testid="product-price"]',
-            '[class*="priceText"]',
-            '[class*="ProductWithAddress_priceText"]',
-        ]:
-            try:
-                el = page.query_selector(sel)
-                if el:
-                    txt = el.inner_text().strip().replace('\xa0', '').replace('\u00a0', '')
-                    nums = re.findall(r'\d+[.,]\d{2}', txt)
-                    if nums:
-                        p = float(nums[0].replace(',', '.'))
-                        if 0.5 < p < 50:
-                            resultado["preco_atual"] = round(p, 2)
-                            resultado["disponivel"]  = True
-                            resultado["rota_css"]    = 1
-                            print(f"[ZE DEBUG] Preço: R${p} via {sel}")
-                            break
-            except Exception:
-                pass
-        # 7. Fallback: JSON-LD
-        if not resultado["preco_atual"]:
-            p = extrair_via_json_ld(page)
-            if p and 0.5 < p < 50:
-                resultado["preco_atual"] = round(p, 2)
-                resultado["disponivel"]  = True
-                resultado["rota_css"]    = 10
-
-        if not resultado["preco_atual"]:
-            resultado["erro"] = "ze_preco_nao_encontrado"
-
-    except Exception as e:
-        resultado["erro"] = f"ze_{str(e)[:80]}"
-
-    return resultado
-
-
 def scroll_e_aguarda(page, supermercado):
     """Scroll para forçar lazy-load + espera adaptativa por supermercado."""
     try:
@@ -929,6 +772,13 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
 
         # Injeta CEP após carregar a página (para sites que leem do localStorage)
         scroll_e_aguarda(page, supermercado)
+
+        # Extra e Pão de Açúcar precisam de tempo extra para o JS carregar o h1
+        if supermercado in ("Extra", "Pão de Açúcar"):
+            try:
+                page.wait_for_selector("h1", timeout=8000, state="attached")
+            except Exception:
+                page.wait_for_timeout(3000)
 
         # Rota 0 — página inválida → recupera URL
         if not pagina_valida(page):
@@ -1097,11 +947,7 @@ def main(categorias_filtro=None):
                         if not url: continue
 
                         horario = datetime.now().strftime("%H:%M:%S")
-                        if sm_nome == "Zé Delivery":
-                            dados = coletar_ze_playwright(page, url)
-                            time.sleep(random.uniform(1.5, 2.5))
-                        else:
-                            dados = coletar_com_retry(
+                        dados = coletar_com_retry(
                                 page, url, sm_nome,
                                 produto["nome"], produto["embalagem"], con,
                                 categoria=cat_nome
