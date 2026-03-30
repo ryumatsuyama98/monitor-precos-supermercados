@@ -1,8 +1,8 @@
 """
-Teste Zé Delivery — intercepta resposta SSR para extrair preço do HTML bruto.
+Teste Zé Delivery via requests puro — sem browser, sem Playwright.
+O preço vem do SSR do Next.js via Apollo, passando endereço nos cookies.
 """
-import re, json, os, time
-from playwright.sync_api import sync_playwright
+import re, os, urllib.request, urllib.error, json
 
 URLS_TESTE = [
     ("Heineken Lata 350ml",   "https://www.ze.delivery/entrega-produto/9991/heineken-350ml"),
@@ -10,115 +10,118 @@ URLS_TESTE = [
     ("Antarctica Lata 350ml", "https://www.ze.delivery/entrega-produto/8522/antarctica-pilsen-350ml"),
 ]
 
-def parse_cookies(cookie_str):
-    cookies = []
-    for part in cookie_str.split('; '):
-        part = part.strip()
-        if '=' in part:
-            name, _, value = part.partition('=')
-            cookies.append({"name": name.strip(), "value": value.strip(),
-                            "domain": ".ze.delivery", "path": "/"})
-    return cookies
+# Endereço SP codificado como o site espera nos cookies
+import urllib.parse
+USER_ADDRESS = urllib.parse.quote(json.dumps({
+    "latitude": -23.58734437003894,
+    "longitude": -46.682922566589006,
+    "zipcode": "04538-132",
+    "street": "Avenida Brigadeiro Faria Lima",
+    "neighborhood": "Itaim Bibi",
+    "city": "São Paulo",
+    "province": "SP",
+    "country": "BR",
+    "number": "3500",
+    "referencePoint": "",
+    "type": {"displayName": "", "id": "HISTORIC"}
+}))
+
+DELIVERY_OPTIONS = urllib.parse.quote(json.dumps({
+    "__typename": "DeliveryOption",
+    "deliveryMethod": "DELIVERY",
+    "address": {
+        "__typename": "AddressOutput",
+        "latitude": -23.58734437003894,
+        "longitude": -46.682922566589006,
+        "zipcode": "04538-132",
+        "country": "BR",
+        "province": "SP",
+        "city": "São Paulo",
+        "neighborhood": "Itaim Bibi",
+        "street": "Avenida Brigadeiro Faria Lima",
+        "number": "3500",
+        "addressLine2": None,
+        "referencePoint": ""
+    }
+}))
 
 def extrair_preco_html(html):
-    """Extrai preço diretamente do HTML do SSR — sem depender do JS."""
-    # Tenta JSON embedded no __next_f
-    matches = re.findall(r'"price"\s*:\s*(\d+\.?\d*)', html)
-    if matches:
-        precos = [float(m) for m in matches if 0.5 < float(m) < 50]
-        if precos:
-            return min(precos)
-
-    # Tenta texto R$ no HTML
-    matches = re.findall(r'R\$\s*(?:&nbsp;)?\s*(\d+)[,.](\d{2})', html)
-    if matches:
-        precos = [float(f"{a}.{b}") for a,b in matches if 0.5 < float(f"{a}.{b}") < 50]
-        if precos:
-            return min(precos)
-
-    # Tenta data-testid="product-price" no HTML
-    m = re.search(r'data-testid="product-price"[^>]*>([^<]+)<', html)
+    # Tenta "price": numero no JSON do Next.js
+    m = re.search(r'"price"\s*:\s*(\d+\.?\d*)', html)
     if m:
-        txt = m.group(1).replace('&nbsp;','').strip()
-        nums = re.findall(r'\d+[.,]\d{2}', txt)
-        if nums:
-            return float(nums[0].replace(',','.'))
-
+        p = float(m.group(1))
+        if 0.5 < p < 50:
+            return p
+    # Tenta R$ no HTML
+    matches = re.findall(r'R\$\s*(?:&nbsp;|\u00a0)?\s*(\d+)[,.](\d{2})', html)
+    precos = [float(f"{a}.{b}") for a,b in matches if 0.5 < float(f"{a}.{b}") < 50]
+    if precos:
+        return min(precos)
     return None
 
-def testar_url(context, nome, url):
+def testar_url(nome, url, extra_cookies=""):
     print(f"\n{'─'*50}\n🍺 {nome}\n   {url}")
 
-    html_capturado = []
+    # Monta cookie string com endereço
+    cookies = (
+        f"userAddress={USER_ADDRESS}; "
+        f"deliveryOptions={DELIVERY_OPTIONS}; "
+        f"deliveryMethod=%22DELIVERY%22; "
+        f"isScheduledDeliveryAvailable=false; "
+        f"ageGateAccepted=true; "
+    )
+    if extra_cookies:
+        cookies += extra_cookies
 
-    page = context.new_page()
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "pt-BR,pt;q=0.9",
+        "Accept-Encoding": "gzip, deflate",
+        "Cookie": cookies,
+        "Referer": "https://www.ze.delivery/",
+    }
+
     try:
-        # Intercepta a resposta da página principal
-        def handle_response(response):
-            if url in response.url and response.status == 200:
-                try:
-                    body = response.body()
-                    html_capturado.append(body.decode('utf-8', errors='replace'))
-                except: pass
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            import gzip
+            raw = resp.read()
+            try:
+                html = gzip.decompress(raw).decode('utf-8', errors='replace')
+            except:
+                html = raw.decode('utf-8', errors='replace')
 
-        page.on("response", handle_response)
-        page.goto(url, wait_until="domcontentloaded", timeout=25000)
-        print(f"   ✓ Página carregada | título: {page.title()[:60]}")
+        print(f"   ✓ HTTP {resp.status} | {len(html)} chars")
 
-        # Tenta extrair do HTML capturado (SSR)
-        if html_capturado:
-            html = html_capturado[0]
-            p = extrair_preco_html(html)
-            if p:
-                print(f"   ✅ PREÇO (SSR): R$ {p:.2f}")
-            else:
-                print(f"   ⚠️  HTML capturado ({len(html)} chars) mas preço não encontrado")
-                # Mostra HTML completo para diagnóstico
-                print(f"   📄 HTML COMPLETO:\n{html}")
+        # Verifica initialStoreData
+        if '"userAddress":null' in html:
+            print("   ⚠️  userAddress=null no SSR — servidor não leu o cookie")
+        elif '"userAddress":{' in html or '"userAddress":"{' in html:
+            print("   ✓ userAddress presente no SSR")
+
+        p = extrair_preco_html(html)
+        if p:
+            print(f"   ✅ PREÇO: R$ {p:.2f}")
         else:
-            print("   ❌ Nenhuma resposta HTML capturada")
-            # Fallback: tenta via JS mesmo assim
-            preco_txt = page.evaluate("""() => {
-                const el = document.querySelector('[data-testid="product-price"]');
-                return el ? el.textContent.trim() : null;
-            }""")
-            if preco_txt:
-                print(f"   ✅ PREÇO (DOM): {preco_txt}")
-            else:
-                body = page.evaluate("() => document.body?.innerHTML?.slice(0,200) || 'vazio'")
-                print(f"   📄 Body DOM: {body}")
+            print("   ❌ Preço não encontrado no HTML")
+            # Mostra trecho do initialStoreData
+            idx = html.find('"initialStoreData"')
+            if idx > 0:
+                print(f"   📄 initialStoreData: {html[idx:idx+300]}")
 
+    except urllib.error.HTTPError as e:
+        print(f"   ❌ HTTP {e.code}: {e.reason}")
     except Exception as e:
         print(f"   ❌ Erro: {e}")
-    finally:
-        page.close()
 
 def main():
-    cookie_str = os.environ.get("ZE_COOKIES", "")
+    extra = os.environ.get("ZE_COOKIES", "")
     print("=" * 50)
-    print("TESTE ZÉ DELIVERY — Interceptação SSR")
+    print("TESTE ZÉ DELIVERY — requests puro")
     print("=" * 50)
-
-    with sync_playwright() as pw:
-        browser = pw.chromium.launch(
-            headless=True,
-            args=["--no-sandbox","--disable-blink-features=AutomationControlled",
-                  "--disable-dev-shm-usage","--disable-gpu"]
-        )
-        context = browser.new_context(
-            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
-            viewport={"width": 1366, "height": 768},
-            locale="pt-BR",
-        )
-        if cookie_str:
-            context.add_cookies(parse_cookies(cookie_str))
-            print(f"✓ Cookies injetados")
-
-        for nome, url in URLS_TESTE:
-            testar_url(context, nome, url)
-            time.sleep(1)
-
-        browser.close()
+    for nome, url in URLS_TESTE:
+        testar_url(nome, url, extra)
 
     print("\n" + "=" * 50)
     print("Teste concluído")
