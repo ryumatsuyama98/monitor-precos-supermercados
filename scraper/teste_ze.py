@@ -67,6 +67,21 @@ def configurar_cep(page):
     if not clicou:
         print("   ⚠️  Não achou campo de endereço — tentando busca por CEP diretamente")
 
+    # Diagnóstico: mostra todos os elementos clicáveis visíveis
+    diag = page.evaluate("""() => {
+        const els = [...document.querySelectorAll('button, input, [role=button], [class*=address], [class*=Address], [class*=delivery], [class*=Delivery]')];
+        return els.filter(e => e.offsetParent !== null).slice(0,15).map(e => ({
+            tag: e.tagName,
+            id: e.id,
+            cls: e.className.slice(0,60),
+            txt: e.textContent.trim().slice(0,40),
+            ph: e.placeholder || ''
+        }));
+    }""")
+    print(f"   📋 Elementos visíveis na página:")
+    for d in diag:
+        print(f"      {d['tag']} id={d['id'][:20]} | {d['cls'][:40]} | '{d['txt']}' ph='{d['ph']}'")
+
     # Digita o CEP no input que aparecer
     print(f"   → Digitando CEP {CEP}...")
     digitou = False
