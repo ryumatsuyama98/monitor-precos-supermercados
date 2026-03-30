@@ -1,8 +1,8 @@
-name: Coleta Biscoitos e Massas
+name: Coleta Biscoitos+Massas
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # 05:00 BRT
+    - cron: '0 8 * * *'  # BRT -3h
   workflow_dispatch:
 
 jobs:
@@ -12,6 +12,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -19,15 +21,29 @@ jobs:
         run: |
           pip install playwright
           playwright install chromium --with-deps
-      - name: Coletar Biscoitos e Massas
+      - name: Coletar Biscoitos+Massas
         run: python scraper/scraper.py Biscoitos Massas
       - name: Gerar dashboard
         run: python scraper/gerar_dashboard.py
-      - name: Commit
+      - name: Commit e push (merge seguro)
         run: |
           git config user.name "Monitor Bot"
           git config user.email "bot@monitor-precos.local"
+          # Salva os arquivos gerados localmente
+          cp data/precos.db /tmp/precos_local.db
+          cp docs/index.html /tmp/index_local.html
+          cp data/coleta.log /tmp/coleta_local.log 2>/dev/null || true
+          TODAY=$(date +%Y-%m-%d)
+          cp data/coleta_$TODAY.csv /tmp/coleta_csv_local.csv 2>/dev/null || true
+          # Puxa o estado mais recente do remoto (descarta conflitos)
+          git fetch origin main
+          git reset --hard origin/main
+          # Restaura os arquivos locais por cima
+          cp /tmp/precos_local.db data/precos.db
+          cp /tmp/index_local.html docs/index.html
+          cp /tmp/coleta_local.log data/coleta.log 2>/dev/null || true
+          cp /tmp/coleta_csv_local.csv data/coleta_$TODAY.csv 2>/dev/null || true
+          # Commit e push
           git add data/ docs/
           git diff --staged --quiet || git commit -m "Biscoitos+Massas: $(date '+%d/%m/%Y %H:%M')"
-          git pull --rebase origin main
-          git push
+          git push origin main
