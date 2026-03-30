@@ -105,10 +105,21 @@ def testar_url(nome, url, extra_cookies=""):
             print(f"   ✅ PREÇO: R$ {p:.2f}")
         else:
             print("   ❌ Preço não encontrado no HTML")
-            # Mostra trecho do initialStoreData
+            # Diagnóstico completo
             idx = html.find('"initialStoreData"')
             if idx > 0:
-                print(f"   📄 initialStoreData: {html[idx:idx+300]}")
+                print(f"   📄 initialStoreData: {html[idx:idx+500]}")
+            # Procura qualquer número que pareça preço
+            all_prices = re.findall(r'"price[^"]*"\s*:\s*([0-9.]+)', html)
+            print(f"   💰 Campos 'price' no HTML: {all_prices[:10]}")
+            # Mostra script do Apollo SSR
+            idx2 = html.find("ApolloSSRDataTransport")
+            if idx2 > 0:
+                print(f"   🔭 Apollo: {html[idx2:idx2+300]}")
+            # Mostra o __next_f que tem os dados
+            idx3 = html.find('"productId"')
+            if idx3 > 0:
+                print(f"   📦 productId: {html[idx3:idx3+200]}")
 
     except urllib.error.HTTPError as e:
         print(f"   ❌ HTTP {e.code}: {e.reason}")
