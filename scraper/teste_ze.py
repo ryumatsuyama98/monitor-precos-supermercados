@@ -81,30 +81,26 @@ def configurar_cep(page):
     # Digita CEP no input fake-address-search
     print(f"   → Digitando CEP {CEP}...")
     digitou = False
-    for sel in [
-        '#fake-address-search-input',
-        '[id*="fake-address-search"]',
-        'input[placeholder*="endereço"]',
-        'input[placeholder*="Inserir"]',
-        'input[placeholder*="CEP"]',
-    ]:
-        try:
-            inp = page.wait_for_selector(sel, timeout=4000, state="visible")
-            if inp:
-                inp.click()
-                page.wait_for_timeout(500)
-                inp.fill("")
-                page.wait_for_timeout(200)
-                inp.type(CEP, delay=100)
-                page.wait_for_timeout(2000)
-                digitou = True
-                print(f"   ✓ CEP digitado via {sel}")
-                break
-        except: pass
-
-    if not digitou:
-        print("   ❌ Não conseguiu digitar o CEP")
+    # Digita via JavaScript direto — mais confiável que Playwright type/fill
+    digitou = page.evaluate(f"""() => {{
+        const inp = document.querySelector('#fake-address-search-input');
+        if (!inp) return false;
+        inp.focus();
+        inp.value = '{CEP}';
+        inp.dispatchEvent(new Event('input', {{bubbles: true}}));
+        inp.dispatchEvent(new Event('change', {{bubbles: true}}));
+        inp.dispatchEvent(new KeyboardEvent('keydown', {{bubbles: true, key: '1'}}));
+        inp.dispatchEvent(new KeyboardEvent('keyup', {{bubbles: true, key: '1'}}));
+        return true;
+    }}""")
+    if digitou:
+        print(f"   ✓ CEP digitado via JS")
+        page.wait_for_timeout(2000)
+    else:
+        print("   ❌ Input não encontrado via JS")
         return False
+
+
 
     # Aguarda sugestões aparecerem e clica na primeira
     print("   → Aguardando sugestões de endereço...")
