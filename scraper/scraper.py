@@ -703,6 +703,53 @@ def extrair_via_js(page):
         }""")
     except Exception: return None
 
+def tratar_ze_delivery(page, cep="01310100"):
+    """Fecha modal de endereço do Zé Delivery e injeta CEP."""
+    try:
+        # Aguarda carregamento inicial
+        page.wait_for_timeout(3000)
+        # Tenta fechar modal de endereço se existir
+        for sel in ['button[data-testid="modal-close"]', 'button[aria-label="Fechar"]',
+                    '[class*="closeButton"]', '[class*="CloseButton"]',
+                    'button[class*="close"]', '[data-testid="close-modal"]']:
+            try:
+                btn = page.query_selector(sel)
+                if btn and btn.is_visible():
+                    btn.click()
+                    page.wait_for_timeout(1000)
+                    break
+            except Exception:
+                continue
+        # Tenta preencher CEP no modal se ainda estiver aberto
+        for inp_sel in ['input[data-testid="address-input"]', 'input[placeholder*="CEP"]',
+                        'input[placeholder*="cep"]', 'input[type="text"]']:
+            try:
+                inp = page.query_selector(inp_sel)
+                if inp and inp.is_visible():
+                    inp.fill(cep)
+                    page.wait_for_timeout(500)
+                    # Tenta confirmar
+                    for btn_sel in ['button[type="submit"]', 'button[data-testid="confirm"]',
+                                    '[class*="confirmButton"]', 'button[class*="primary"]']:
+                        try:
+                            btn = page.query_selector(btn_sel)
+                            if btn and btn.is_visible():
+                                btn.click()
+                                page.wait_for_timeout(2000)
+                                break
+                        except Exception:
+                            continue
+                    break
+            except Exception:
+                continue
+        # Aguarda preço aparecer
+        try:
+            page.wait_for_selector('[data-testid="product-price"]', timeout=5000, state="visible")
+        except Exception:
+            pass
+    except Exception:
+        pass
+
 def scroll_e_aguarda(page, supermercado):
     """Scroll para forçar lazy-load + espera adaptativa por supermercado."""
     try:
