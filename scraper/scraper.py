@@ -267,6 +267,7 @@ LINKS = {
             "Amstel Lata_350ml":             "https://www.paodeacucar.com/produto/1606864/cerveja-lager-puro-malte-amstel-lata-350ml",
             "Brahma Duplo Malte_350ml":      "https://www.paodeacucar.com/produto/462219/cerveja-pilsner-duplo-malte-brahma-lata-350ml",
             "Budweiser Lata_269ml":          "https://www.paodeacucar.com/produto/323696/cerveja-pilsen-budweiser-lata-269ml",
+            "Corona Extra Lata_350ml":       "https://www.paodeacucar.com/produto/1461878/cerveja-corona-extra-lata-350ml",
             "Corona Extra Long Neck_330ml":  "https://www.paodeacucar.com/produto/456783/cerveja-pilsen-corona-garrafa-330ml",
             "Heineken 0.0_350ml":            "https://www.paodeacucar.com/produto/1606861/cerveja-heineken-zero-lata-sleek-350ml",
             "Heineken Lata_269ml":           "https://www.paodeacucar.com/produto/1376370/cerveja-lager-puro-malte-heineken-lata-269ml",
@@ -314,7 +315,7 @@ LINKS = {
             "Oreo 90g Mondelez_90g":                 "https://www.paodeacucar.com/produto/301575/biscoito-original-oreo-pacote-90g",
             "Passatempo 150g Nestlé_150g":           "https://www.paodeacucar.com/produto/177670/biscoito-recheio-chocolate-passatempo-pacote-130g",
             "Recheado Chocolate 140g Bauducco_140g": "https://www.paodeacucar.com/produto/310906/biscoito-wafer-recheio-chocolate-bauducco-pacote-140g",
-            "Recheado Chocolate 100g Piraque_100g":  "https://www.paodeacucar.com/produto/1386461/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
+            "Recheado Chocolate 100g Piraque_100g":  "https://www.extramercado.com.br/produto/1404804/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
         },
         "Massas": {
             "Macarrão Espaguete 500g Barilla_500g":  "https://www.paodeacucar.com/produto/279928/macarrao-com-ovos-espaguete-8-barilla-pacote-500g",
@@ -355,6 +356,7 @@ LINKS = {
             "Skol Lata_269ml":               "https://www.extramercado.com.br/produto/71229/cerveja-skol-pilsen-lata-269ml",
             "Skol Lata_350ml":               "https://www.extramercado.com.br/produto/91224/cerveja-pilsen-skol-lata-350ml",
             "Spaten Puro Malte Lata_269ml":  "https://www.extramercado.com.br/produto/1500377/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
+            "Spaten Puro Malte Lata_350ml":  "https://www.extramercado.com.br/produto/628110/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
             "Stella Artois Lata_269ml":      "https://www.extramercado.com.br/produto/71886/cerveja-stella-artois-puro-malte-269ml-lata",
         },
         "Carnes": {
