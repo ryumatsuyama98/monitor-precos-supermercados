@@ -773,31 +773,31 @@ def coletar_ze_playwright(page, url):
         except Exception:
             pass
 
-        # 4. Fecha o popup modal "Continuar no site" que aparece na frente
+        # 4. Aguarda a página hidratar completamente
+        page.wait_for_timeout(3000)
+
+        # 5. Fecha o popup modal "Continuar no site"
         for sel in [
-            '[data-testid="close-button"]',       # botão "Continuar no site"
+            '[data-testid="close-button"]',
+            '[class*="secondaryButton"]',
             '[data-testid="modal-close"]',
             'button[aria-label="Fechar"]',
-            '[class*="secondaryButton"]',
             '[class*="closeButton"]',
-            '[class*="CloseModal"]',
         ]:
             try:
                 btn = page.query_selector(sel)
                 if btn and btn.is_visible():
                     btn.click()
-                    page.wait_for_timeout(1000)
-                    print(f"[ZE DEBUG] Modal fechado via {sel}")
+                    page.wait_for_timeout(1500)
                     break
             except Exception:
                 pass
 
-        # 5. Aguarda preço aparecer
+        # 6. Aguarda explicitamente o elemento de preço aparecer no DOM
         try:
-            page.wait_for_selector('[data-testid="product-price"]', timeout=6000, state="visible")
+            page.wait_for_selector('[data-testid="product-price"]', timeout=8000)
         except Exception:
             pass
-
         # 6. Extrai preço — sem checar is_visible (modal pode estar na frente)
         for sel in [
             '[data-testid="product-price"]',
