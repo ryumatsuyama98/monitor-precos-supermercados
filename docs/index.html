@@ -674,7 +674,7 @@ function renderGrupo(gid){
   // Build series per SM+product — só se houver SMs físicos selecionados
   const mostrarLinhasIndividuais = smsFisicos.length > 0;
   const series=new Map();
-  dados.forEach(r=>{
+  if(mostrarLinhasIndividuais) dados.forEach(r=>{
     const lbl=`${r.supermercado} — ${r.nome_produto} ${r.embalagem}`;
     if(!series.has(lbl))series.set(lbl,{});
     const bd=series.get(lbl);
