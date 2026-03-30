@@ -703,107 +703,127 @@ def extrair_via_js(page):
         }""")
     except Exception: return None
 
-# ─── Coleta via API — Zé Delivery ────────────────────────────────────────────
-ZE_CEP     = "01310100"
-ZE_LAT     = -23.5646162
-ZE_LNG     = -46.6527547
-
-# Endpoints conhecidos do Zé Delivery (app mobile)
-ZE_ENDPOINTS = [
-    "https://api.ze.delivery/graphql",
-    "https://api.ze.delivery/v3/graphql",
-    "https://gateway.ze.delivery/graphql",
-]
-
-ZE_QUERY = """
-query productById($id: ID!, $lat: Float!, $lng: Float!) {
-  product(id: $id, coordinates: {lat: $lat, lng: $lng}) {
-    id
-    name
-    price
-    listPrice
-    available
-  }
-}
-"""
-
-ZE_QUERY_ALT = """
-query ($productId: String!, $lat: Float!, $lng: Float!) {
-  productDetails(productId: $productId, lat: $lat, lng: $lng) {
-    id
-    name
-    price
-    available
-  }
-}
-"""
+# ─── Coleta Zé Delivery — Playwright com localStorage ────────────────────────
+ZE_CEP = "01310100"
+ZE_LAT = -23.5646162
+ZE_LNG = -46.6527547
 
 def extrair_id_ze(url):
     m = re.search(r'/entrega-produto/(\d+)/', url)
     return m.group(1) if m else None
 
-def coletar_ze_api(url):
-    """Coleta preço via API do Zé Delivery. Sem Playwright."""
+def coletar_ze_playwright(page, url):
+    """
+    Coleta preço do Zé Delivery via Playwright.
+    Injeta endereço de SP no localStorage antes de navegar para o produto,
+    evitando o modal de endereço que bloqueia o preço.
+    """
     resultado = {
         "url": url, "disponivel": False, "preco_atual": None,
         "preco_original": None, "em_promocao": False,
-        "rota_css": 20, "url_recuperada": None, "tentativas": 1, "erro": None,
+        "rota_css": None, "url_recuperada": None, "tentativas": 1, "erro": None,
     }
-    product_id = extrair_id_ze(url)
-    if not product_id:
-        resultado["erro"] = "ze_id_nao_encontrado"
-        return resultado
+    try:
+        # 1. Navega para o domínio principal para poder usar localStorage
+        page.goto("https://www.ze.delivery/", wait_until="domcontentloaded", timeout=15000)
+        page.wait_for_timeout(1500)
 
-    headers = {
-        "Content-Type":  "application/json",
-        "Accept":        "application/json",
-        "Origin":        "https://www.ze.delivery",
-        "Referer":       "https://www.ze.delivery/",
-        "User-Agent":    "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/122.0.0.0 Mobile Safari/537.36",
-        "Accept-Language": "pt-BR,pt;q=0.9",
-        "x-app-version": "4.0.0",
-        "x-platform":    "web",
-    }
+        # 2. Injeta endereço de SP no localStorage — formato exato que o site usa
+        addr_json = json.dumps({
+            "zipCode": ZE_CEP,
+            "city": "São Paulo",
+            "state": "SP",
+            "neighborhood": "Bela Vista",
+            "street": "Avenida Paulista",
+            "number": "1000",
+            "lat": ZE_LAT,
+            "lng": ZE_LNG,
+        })
+        page.evaluate(f"""() => {{
+            try {{
+                // Múltiplos formatos que o ze.delivery pode usar
+                localStorage.setItem('ze-address', '{addr_json}');
+                localStorage.setItem('address', '{addr_json}');
+                localStorage.setItem('userAddress', '{addr_json}');
+                localStorage.setItem('deliveryAddress', '{addr_json}');
+                localStorage.setItem('selectedAddress', '{addr_json}');
+                localStorage.setItem('zipCode', '{ZE_CEP}');
+                // Redux persist format
+                const reduxState = JSON.stringify({{
+                    address: {{address: '{addr_json}'}},
+                    _persist: {{version: 1, rehydrated: true}}
+                }});
+                localStorage.setItem('persist:root', reduxState);
+                localStorage.setItem('persist:address', JSON.stringify({{
+                    address: '{addr_json}',
+                    _persist: JSON.stringify({{version: 1, rehydrated: true}})
+                }}));
+            }} catch(e) {{}}
+        }}""")
 
-    for endpoint in ZE_ENDPOINTS:
-        for query in [ZE_QUERY, ZE_QUERY_ALT]:
+        # 3. Navega direto para a página do produto
+        page.goto(url, wait_until="domcontentloaded", timeout=18000)
+        page.wait_for_timeout(3000)
+
+        # 4. Fecha modal se aparecer
+        for sel in [
+            '[data-testid="modal-close"]',
+            'button[aria-label="Fechar"]',
+            '[class*="closeButton"]',
+            '[class*="CloseModal"]',
+            'button[class*="close"]',
+        ]:
             try:
-                payload = json.dumps({
-                    "query": query,
-                    "variables": {
-                        "id": product_id,
-                        "productId": product_id,
-                        "lat": ZE_LAT,
-                        "lng": ZE_LNG,
-                    },
-                }).encode("utf-8")
-
-                req = urllib.request.Request(endpoint, data=payload, headers=headers, method="POST")
-                with urllib.request.urlopen(req, timeout=12) as resp:
-                    data = json.loads(resp.read().decode("utf-8"))
-
-                # Tenta extrair preço de qualquer campo possível
-                d = data.get("data") or {}
-                product = d.get("product") or d.get("productDetails") or d.get("productById")
-                if product and product.get("price"):
-                    preco = float(product["price"])
-                    orig  = product.get("listPrice") or product.get("originalPrice")
-                    if preco > 0:
-                        resultado["preco_atual"]  = round(preco, 2)
-                        resultado["disponivel"]   = bool(product.get("available", True))
-                        resultado["em_promocao"]  = bool(orig and float(orig) > preco)
-                        if resultado["em_promocao"]:
-                            resultado["preco_original"] = round(float(orig), 2)
-                        return resultado
-
-            except urllib.error.HTTPError as e:
-                resultado["erro"] = f"ze_http_{e.code}_{endpoint.split('/')[2]}"
-                continue
+                btn = page.query_selector(sel)
+                if btn and btn.is_visible():
+                    btn.click()
+                    page.wait_for_timeout(1000)
+                    break
             except Exception:
-                continue
+                pass
 
-    if not resultado["erro"]:
-        resultado["erro"] = "ze_api_todos_endpoints_falharam"
+        # 5. Aguarda preço aparecer
+        try:
+            page.wait_for_selector('[data-testid="product-price"]', timeout=6000, state="visible")
+        except Exception:
+            pass
+
+        # 6. Extrai preço
+        for sel in [
+            '[data-testid="product-price"]',
+            '[class*="priceText"]',
+            '[class*="ProductWithAddress_priceText"]',
+            '[class*="price"]',
+        ]:
+            try:
+                el = page.query_selector(sel)
+                if el and el.is_visible():
+                    txt = el.inner_text().strip()
+                    nums = re.findall(r'\d+[.,]\d{2}', txt.replace(' ',''))
+                    if nums:
+                        p = float(nums[0].replace(',','.'))
+                        if 0.5 < p < 50:
+                            resultado["preco_atual"] = round(p, 2)
+                            resultado["disponivel"]  = True
+                            resultado["rota_css"]    = 1
+                            break
+            except Exception:
+                pass
+
+        # 7. Fallback: JSON-LD
+        if not resultado["preco_atual"]:
+            p = extrair_via_json_ld(page)
+            if p and 0.5 < p < 50:
+                resultado["preco_atual"] = round(p, 2)
+                resultado["disponivel"]  = True
+                resultado["rota_css"]    = 10
+
+        if not resultado["preco_atual"]:
+            resultado["erro"] = "ze_preco_nao_encontrado"
+
+    except Exception as e:
+        resultado["erro"] = f"ze_{str(e)[:80]}"
+
     return resultado
 
 
@@ -1071,8 +1091,8 @@ def main(categorias_filtro=None):
 
                         horario = datetime.now().strftime("%H:%M:%S")
                         if sm_nome == "Zé Delivery":
-                            dados = coletar_ze_api(url)
-                            time.sleep(random.uniform(0.8, 1.5))
+                            dados = coletar_ze_playwright(page, url)
+                            time.sleep(random.uniform(1.5, 2.5))
                         else:
                             dados = coletar_com_retry(
                                 page, url, sm_nome,
