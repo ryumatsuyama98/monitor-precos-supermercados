@@ -81,21 +81,52 @@ def configurar_cep(page):
     # Digita CEP no input fake-address-search
     print(f"   → Digitando CEP {CEP}...")
     digitou = False
-    # Digita via JavaScript direto — mais confiável que Playwright type/fill
+    # Digita via React nativeInputValueSetter para triggerar o onChange do React
     digitou = page.evaluate(f"""() => {{
         const inp = document.querySelector('#fake-address-search-input');
         if (!inp) return false;
         inp.focus();
-        inp.value = '{CEP}';
+        // Usa o setter nativo do React para triggerar onChange
+        const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
+            window.HTMLInputElement.prototype, 'value'
+        ).set;
+        nativeInputValueSetter.call(inp, '{CEP}');
         inp.dispatchEvent(new Event('input', {{bubbles: true}}));
         inp.dispatchEvent(new Event('change', {{bubbles: true}}));
-        inp.dispatchEvent(new KeyboardEvent('keydown', {{bubbles: true, key: '1'}}));
-        inp.dispatchEvent(new KeyboardEvent('keyup', {{bubbles: true, key: '1'}}));
-        return true;
+        return inp.value;
     }}""")
     if digitou:
-        print(f"   ✓ CEP digitado via JS")
-        page.wait_for_timeout(2000)
+        print(f"   ✓ CEP digitado: '{digitou}'")
+        page.wait_for_timeout(3000)
+
+        # Verifica se sugestões apareceram
+        sugs = page.evaluate("""() => {
+            const items = document.querySelectorAll('[class*="suggestion"], [class*="Suggestion"], [role="option"], [class*="listItem"], [class*="AddressItem"]');
+            return [...items].filter(e => e.offsetParent !== null).map(e => e.textContent.trim().slice(0,60));
+        }""")
+        print(f"   📍 Sugestões: {sugs}")
+
+        if not sugs:
+            # Tenta digitar caracter por caracter via Playwright
+            print("   → Tentando digitar via Playwright .type()...")
+            try:
+                inp_el = page.query_selector('#fake-address-search-input')
+                if inp_el:
+                    inp_el.click()
+                    page.wait_for_timeout(300)
+                    inp_el.fill("")
+                    for c in CEP:
+                        page.keyboard.type(c)
+                        page.wait_for_timeout(150)
+                    page.wait_for_timeout(2500)
+                    sugs2 = page.evaluate("""() => {
+                        const items = document.querySelectorAll('[class*="suggestion"], [class*="Suggestion"], [role="option"], [class*="listItem"]');
+                        return [...items].filter(e => e.offsetParent !== null).map(e => e.textContent.trim().slice(0,60));
+                    }""")
+                    print(f"   📍 Sugestões após type: {sugs2}")
+                    sugs = sugs2
+            except Exception as e:
+                print(f"   ⚠️  type falhou: {e}")
     else:
         print("   ❌ Input não encontrado via JS")
         return False
