@@ -73,13 +73,8 @@ def testar_url(context, nome, url):
                 print(f"   ✅ PREÇO (SSR): R$ {p:.2f}")
             else:
                 print(f"   ⚠️  HTML capturado ({len(html)} chars) mas preço não encontrado")
-                # Mostra trecho relevante
-                idx = html.find('price')
-                if idx > 0:
-                    print(f"   📄 Trecho 'price': ...{html[max(0,idx-50):idx+100]}...")
-                idx2 = html.find('R$')
-                if idx2 > 0:
-                    print(f"   📄 Trecho 'R$': ...{html[max(0,idx2-20):idx2+60]}...")
+                # Mostra HTML completo para diagnóstico
+                print(f"   📄 HTML COMPLETO:\n{html}")
         else:
             print("   ❌ Nenhuma resposta HTML capturada")
             # Fallback: tenta via JS mesmo assim
