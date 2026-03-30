@@ -662,12 +662,17 @@ function renderGrupo(gid){
   const showAvg=smsSel.includes("__avg__");
   const prodsSel=getChecked("chk-prod-"+gid);
 
-  let dadosBase=HIST.filter(r=>cats.includes(r.categoria)&&smsFisicos.includes(r.supermercado));
+  // Se Average marcado sem SM físico selecionado, usa todos os SMs disponíveis para calcular média
+  const smsParaDados = smsFisicos.length > 0 ? smsFisicos
+    : [...new Set(HIST.filter(r=>cats.includes(r.categoria)).map(r=>r.supermercado))];
+
+  let dadosBase=HIST.filter(r=>cats.includes(r.categoria)&&smsParaDados.includes(r.supermercado));
   if(prodsSel.length) dadosBase=dadosBase.filter(r=>prodsSel.includes(r.nome_produto+"_"+r.embalagem));
   const datas=getPeriodoDatas(gid,[...new Set(dadosBase.map(r=>r.data_coleta))]);
   const dados=dadosBase.filter(r=>datas.includes(r.data_coleta));
 
-  // Build series per SM+product
+  // Build series per SM+product — só se houver SMs físicos selecionados
+  const mostrarLinhasIndividuais = smsFisicos.length > 0;
   const series=new Map();
   dados.forEach(r=>{
     const lbl=`${r.supermercado} — ${r.nome_produto} ${r.embalagem}`;
@@ -677,7 +682,7 @@ function renderGrupo(gid){
     bd[r.data_coleta].push(r.preco_atual);
   });
 
-  // Average series: avg across ALL supermarkets (not just selected ones)
+  // Average series: avg across ALL available supermarkets
   if(showAvg){
     const dadosAvgBase=HIST.filter(r=>cats.includes(r.categoria));
     const dadosAvgFiltered=prodsSel.length?dadosAvgBase.filter(r=>prodsSel.includes(r.nome_produto+"_"+r.embalagem)):dadosAvgBase;
