@@ -773,39 +773,21 @@ def coletar_ze_playwright(page, url):
         except Exception:
             pass
 
-        # 4. Tenta preencher CEP se modal aparecer
-        for inp_sel in [
-            'input[data-testid="address-cep-input"]',
-            'input[placeholder*="CEP"]',
-            'input[placeholder*="cep"]',
-            'input[name="cep"]',
-            'input[type="text"]',
-        ]:
-            try:
-                inp = page.query_selector(inp_sel)
-                if inp and inp.is_visible():
-                    inp.fill(ZE_CEP)
-                    page.wait_for_timeout(500)
-                    page.keyboard.press("Enter")
-                    page.wait_for_timeout(2000)
-                    print(f"[ZE DEBUG] CEP preenchido via {inp_sel}")
-                    break
-            except Exception:
-                pass
-
-        # Fecha modal se ainda aparecer
+        # 4. Fecha o popup modal "Continuar no site" que aparece na frente
         for sel in [
+            '[data-testid="close-button"]',       # botão "Continuar no site"
             '[data-testid="modal-close"]',
             'button[aria-label="Fechar"]',
+            '[class*="secondaryButton"]',
             '[class*="closeButton"]',
             '[class*="CloseModal"]',
-            'button[class*="close"]',
         ]:
             try:
                 btn = page.query_selector(sel)
                 if btn and btn.is_visible():
                     btn.click()
                     page.wait_for_timeout(1000)
+                    print(f"[ZE DEBUG] Modal fechado via {sel}")
                     break
             except Exception:
                 pass
@@ -816,28 +798,27 @@ def coletar_ze_playwright(page, url):
         except Exception:
             pass
 
-        # 6. Extrai preço
+        # 6. Extrai preço — sem checar is_visible (modal pode estar na frente)
         for sel in [
             '[data-testid="product-price"]',
             '[class*="priceText"]',
             '[class*="ProductWithAddress_priceText"]',
-            '[class*="price"]',
         ]:
             try:
                 el = page.query_selector(sel)
-                if el and el.is_visible():
-                    txt = el.inner_text().strip()
-                    nums = re.findall(r'\d+[.,]\d{2}', txt.replace(' ',''))
+                if el:
+                    txt = el.inner_text().strip().replace('\xa0', '').replace('\u00a0', '')
+                    nums = re.findall(r'\d+[.,]\d{2}', txt)
                     if nums:
-                        p = float(nums[0].replace(',','.'))
+                        p = float(nums[0].replace(',', '.'))
                         if 0.5 < p < 50:
                             resultado["preco_atual"] = round(p, 2)
                             resultado["disponivel"]  = True
                             resultado["rota_css"]    = 1
+                            print(f"[ZE DEBUG] Preço: R${p} via {sel}")
                             break
             except Exception:
                 pass
-
         # 7. Fallback: JSON-LD
         if not resultado["preco_atual"]:
             p = extrair_via_json_ld(page)
