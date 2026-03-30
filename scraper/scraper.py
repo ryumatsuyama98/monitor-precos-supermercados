@@ -14,7 +14,7 @@ Melhorias vs versão anterior:
 - Commit incremental a cada cidade (não perde dados se o job cair)
 """
 
-import sqlite3, json, re, time, random, csv, hashlib
+import sqlite3, json, re, time, random, csv, hashlib, urllib.request, urllib.error
 from datetime import date, datetime
 from pathlib import Path
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
@@ -703,52 +703,89 @@ def extrair_via_js(page):
         }""")
     except Exception: return None
 
-def tratar_ze_delivery(page, cep="01310100"):
-    """Fecha modal de endereço do Zé Delivery e injeta CEP."""
+# ─── Coleta via API — Zé Delivery ────────────────────────────────────────────
+ZE_CEP      = "01310100"   # Av. Paulista, SP
+ZE_LAT      = -23.5646162
+ZE_LNG      = -46.6527547
+ZE_GRAPHQL  = "https://api.ze.delivery/public/graphql"
+
+ZE_QUERY = """
+query GetProduct($productId: ID!, $lat: Float!, $lng: Float!) {
+  product(id: $productId, deliveryLocation: {lat: $lat, lng: $lng}) {
+    id
+    name
+    price
+    originalPrice
+    available
+  }
+}
+"""
+
+def extrair_id_ze(url):
+    """Extrai o ID numérico da URL do Zé Delivery.
+    Ex: https://www.ze.delivery/entrega-produto/9991/heineken-350ml -> 9991
+    """
+    m = re.search(r'/entrega-produto/(\d+)/', url)
+    return m.group(1) if m else None
+
+def coletar_ze_api(url):
+    """Coleta preço via GraphQL API do Zé Delivery. Sem Playwright."""
+    resultado = {
+        "url": url, "disponivel": False, "preco_atual": None,
+        "preco_original": None, "em_promocao": False,
+        "rota_css": 20, "url_recuperada": None, "tentativas": 1, "erro": None,
+    }
+    product_id = extrair_id_ze(url)
+    if not product_id:
+        resultado["erro"] = "ze_id_nao_encontrado"
+        return resultado
+
+    payload = json.dumps({
+        "query": ZE_QUERY,
+        "variables": {"productId": product_id, "lat": ZE_LAT, "lng": ZE_LNG},
+    }).encode("utf-8")
+
+    headers = {
+        "Content-Type":  "application/json",
+        "Accept":        "application/json",
+        "Origin":        "https://www.ze.delivery",
+        "Referer":       "https://www.ze.delivery/",
+        "User-Agent":    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
+        "Accept-Language": "pt-BR,pt;q=0.9",
+    }
+
     try:
-        # Aguarda carregamento inicial
-        page.wait_for_timeout(3000)
-        # Tenta fechar modal de endereço se existir
-        for sel in ['button[data-testid="modal-close"]', 'button[aria-label="Fechar"]',
-                    '[class*="closeButton"]', '[class*="CloseButton"]',
-                    'button[class*="close"]', '[data-testid="close-modal"]']:
-            try:
-                btn = page.query_selector(sel)
-                if btn and btn.is_visible():
-                    btn.click()
-                    page.wait_for_timeout(1000)
-                    break
-            except Exception:
-                continue
-        # Tenta preencher CEP no modal se ainda estiver aberto
-        for inp_sel in ['input[data-testid="address-input"]', 'input[placeholder*="CEP"]',
-                        'input[placeholder*="cep"]', 'input[type="text"]']:
-            try:
-                inp = page.query_selector(inp_sel)
-                if inp and inp.is_visible():
-                    inp.fill(cep)
-                    page.wait_for_timeout(500)
-                    # Tenta confirmar
-                    for btn_sel in ['button[type="submit"]', 'button[data-testid="confirm"]',
-                                    '[class*="confirmButton"]', 'button[class*="primary"]']:
-                        try:
-                            btn = page.query_selector(btn_sel)
-                            if btn and btn.is_visible():
-                                btn.click()
-                                page.wait_for_timeout(2000)
-                                break
-                        except Exception:
-                            continue
-                    break
-            except Exception:
-                continue
-        # Aguarda preço aparecer
-        try:
-            page.wait_for_selector('[data-testid="product-price"]', timeout=5000, state="visible")
-        except Exception:
-            pass
-    except Exception:
-        pass
+        req  = urllib.request.Request(ZE_GRAPHQL, data=payload, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+
+        product = (data.get("data") or {}).get("product")
+        if not product:
+            resultado["erro"] = "ze_produto_nao_encontrado_na_api"
+            return resultado
+
+        preco = product.get("price")
+        orig  = product.get("originalPrice")
+        avail = product.get("available", False)
+
+        if preco and preco > 0:
+            resultado["preco_atual"]    = round(float(preco), 2)
+            resultado["disponivel"]     = bool(avail)
+            resultado["em_promocao"]    = bool(orig and orig > preco)
+            if resultado["em_promocao"]:
+                resultado["preco_original"] = round(float(orig), 2)
+        else:
+            resultado["erro"] = "ze_preco_zero_ou_ausente"
+
+    except urllib.error.HTTPError as e:
+        resultado["erro"] = f"ze_http_{e.code}"
+    except urllib.error.URLError as e:
+        resultado["erro"] = f"ze_url_error_{str(e.reason)[:60]}"
+    except Exception as e:
+        resultado["erro"] = f"ze_api_{str(e)[:80]}"
+
+    return resultado
+
 
 def scroll_e_aguarda(page, supermercado):
     """Scroll para forçar lazy-load + espera adaptativa por supermercado."""
@@ -1013,11 +1050,15 @@ def main(categorias_filtro=None):
                         if not url: continue
 
                         horario = datetime.now().strftime("%H:%M:%S")
-                        dados = coletar_com_retry(
-                            page, url, sm_nome,
-                            produto["nome"], produto["embalagem"], con,
-                            categoria=cat_nome
-                        )
+                        if sm_nome == "Zé Delivery":
+                            dados = coletar_ze_api(url)
+                            time.sleep(random.uniform(0.8, 1.5))
+                        else:
+                            dados = coletar_com_retry(
+                                page, url, sm_nome,
+                                produto["nome"], produto["embalagem"], con,
+                                categoria=cat_nome
+                            )
                         reg = {
                             "data_coleta": hoje, "horario_coleta": horario,
                             "supermercado": sm_nome, "categoria": cat_nome,
