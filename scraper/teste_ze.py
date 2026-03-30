@@ -44,19 +44,30 @@ def configurar_cep(page):
                 break
         except: pass
 
-    # Confirma idade (age gate) se aparecer
-    for sel in [
-        '[id*="age-gate"][id*="confirm"]',
-        '[class*="AgeGate"] button:last-child',
-        '[class*="AgeGate"] button',
-    ]:
+    # Diagnóstico: lista todos os botões e inputs visíveis
+    diag = page.evaluate("""() => {
+        const els = [...document.querySelectorAll('button, input')];
+        return els.filter(e => e.offsetParent !== null).map(e => ({
+            tag: e.tagName, id: e.id.slice(0,40),
+            cls: e.className.slice(0,60),
+            txt: e.textContent.trim().slice(0,40),
+            ph: e.placeholder || ''
+        }));
+    }""")
+    print("   📋 Botões/inputs visíveis:")
+    for d in diag:
+        print(f"      {d['tag']} id='{d['id']}' txt='{d['txt']}' ph='{d['ph']}'")
+
+    # Confirma idade (age gate) — clica no último botão do AgeGate
+    age_btns = page.query_selector_all('[class*="AgeGate"] button, [class*="age-gate"] button, [id*="age-gate"]')
+    for btn in age_btns:
         try:
-            btn = page.query_selector(sel)
-            if btn and btn.is_visible():
-                txt = btn.inner_text()
-                if any(w in txt.lower() for w in ['sim', 'tenho', 'confirmar', 'continuar', 'entrar']):
+            if btn.is_visible():
+                txt = btn.inner_text().strip()
+                print(f"   🔞 Age gate botão: '{txt}'")
+                if any(w in txt.lower() for w in ['sim', 'tenho', 'confirmar', 'continuar', 'entrar', 'maior']):
                     btn.click()
-                    page.wait_for_timeout(1000)
+                    page.wait_for_timeout(1500)
                     print(f"   ✓ Age gate confirmado: '{txt}'")
                     break
         except: pass
