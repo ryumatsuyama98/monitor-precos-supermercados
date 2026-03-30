@@ -16,4 +16,6 @@ jobs:
           pip install playwright
           playwright install chromium --with-deps
       - name: Rodar teste
+        env:
+          ZE_COOKIES: ${{ secrets.ZE_COOKIES }}
         run: python scraper/teste_ze.py
