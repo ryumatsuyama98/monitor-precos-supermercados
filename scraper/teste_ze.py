@@ -58,37 +58,51 @@ def configurar_cep(page):
     for d in diag:
         print(f"      {d['tag']} id='{d['id']}' txt='{d['txt']}' ph='{d['ph']}'")
 
-    # Confirma idade (age gate) — clica no último botão do AgeGate
-    age_btns = page.query_selector_all('[class*="AgeGate"] button, [class*="age-gate"] button, [id*="age-gate"]')
-    for btn in age_btns:
-        try:
-            if btn.is_visible():
-                txt = btn.inner_text().strip()
-                print(f"   🔞 Age gate botão: '{txt}'")
-                if any(w in txt.lower() for w in ['sim', 'tenho', 'confirmar', 'continuar', 'entrar', 'maior']):
-                    btn.click()
-                    page.wait_for_timeout(1500)
-                    print(f"   ✓ Age gate confirmado: '{txt}'")
-                    break
-        except: pass
+    # Age gate — clica via JS em qualquer botão que NÃO seja "Voltar"
+    age_clicked = page.evaluate("""() => {
+        const btns = [...document.querySelectorAll('button')];
+        for (const btn of btns) {
+            const txt = btn.textContent.trim().toLowerCase();
+            const id = btn.id.toLowerCase();
+            if (id.includes('age-gate') && !txt.includes('voltar') && !txt.includes('back')) {
+                btn.click(); return 'clicked: ' + btn.textContent.trim();
+            }
+        }
+        // Fallback: qualquer botão com texto de confirmação
+        for (const btn of btns) {
+            const txt = btn.textContent.trim().toLowerCase();
+            if (['sim', 'tenho 18', 'sou maior', 'confirmar', 'continuar', 'tenho mais'].some(w => txt.includes(w))) {
+                btn.click(); return 'clicked: ' + btn.textContent.trim();
+            }
+        }
+        return null;
+    }""")
+    if age_clicked:
+        print(f"   ✓ Age gate: {age_clicked}")
+        page.wait_for_timeout(1500)
+    else:
+        # Se não tem botão de confirmação, o age gate já passou (cookie)
+        print("   ℹ️  Age gate sem botão de confirmação — já aceito ou inexistente")
 
     # Digita CEP no input fake-address-search
     print(f"   → Digitando CEP {CEP}...")
     digitou = False
     for sel in [
+        '#fake-address-search-input',
         '[id*="fake-address-search"]',
         'input[placeholder*="endereço"]',
         'input[placeholder*="Inserir"]',
         'input[placeholder*="CEP"]',
-        'input[placeholder*="cep"]',
     ]:
         try:
             inp = page.wait_for_selector(sel, timeout=4000, state="visible")
             if inp:
                 inp.click()
-                page.wait_for_timeout(300)
-                inp.fill(CEP)
-                page.wait_for_timeout(1500)
+                page.wait_for_timeout(500)
+                inp.fill("")
+                page.wait_for_timeout(200)
+                inp.type(CEP, delay=100)
+                page.wait_for_timeout(2000)
                 digitou = True
                 print(f"   ✓ CEP digitado via {sel}")
                 break
