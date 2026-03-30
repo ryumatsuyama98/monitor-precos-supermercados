@@ -44,61 +44,39 @@ def configurar_cep(page):
                 break
         except: pass
 
-    # Clica no campo de endereço/CEP
-    print("   → Clicando no campo de endereço...")
-    clicou = False
+    # Confirma idade (age gate) se aparecer
     for sel in [
-        '[data-testid="delivery-options-card"]',
-        '#delivery-options-card',
-        '[class*="DeliveryOptionsCard"]',
-        '[class*="addressContainer"]',
-        '[id="address-container"]',
+        '[id*="age-gate"][id*="confirm"]',
+        '[class*="AgeGate"] button:last-child',
+        '[class*="AgeGate"] button',
     ]:
         try:
-            el = page.query_selector(sel)
-            if el and el.is_visible():
-                el.click()
-                page.wait_for_timeout(1500)
-                clicou = True
-                print(f"   ✓ Clicou no endereço via {sel}")
-                break
+            btn = page.query_selector(sel)
+            if btn and btn.is_visible():
+                txt = btn.inner_text()
+                if any(w in txt.lower() for w in ['sim', 'tenho', 'confirmar', 'continuar', 'entrar']):
+                    btn.click()
+                    page.wait_for_timeout(1000)
+                    print(f"   ✓ Age gate confirmado: '{txt}'")
+                    break
         except: pass
 
-    if not clicou:
-        print("   ⚠️  Não achou campo de endereço — tentando busca por CEP diretamente")
-
-    # Diagnóstico: mostra todos os elementos clicáveis visíveis
-    diag = page.evaluate("""() => {
-        const els = [...document.querySelectorAll('button, input, [role=button], [class*=address], [class*=Address], [class*=delivery], [class*=Delivery]')];
-        return els.filter(e => e.offsetParent !== null).slice(0,15).map(e => ({
-            tag: e.tagName,
-            id: e.id,
-            cls: e.className.slice(0,60),
-            txt: e.textContent.trim().slice(0,40),
-            ph: e.placeholder || ''
-        }));
-    }""")
-    print(f"   📋 Elementos visíveis na página:")
-    for d in diag:
-        print(f"      {d['tag']} id={d['id'][:20]} | {d['cls'][:40]} | '{d['txt']}' ph='{d['ph']}'")
-
-    # Digita o CEP no input que aparecer
+    # Digita CEP no input fake-address-search
     print(f"   → Digitando CEP {CEP}...")
     digitou = False
     for sel in [
+        '[id*="fake-address-search"]',
+        'input[placeholder*="endereço"]',
+        'input[placeholder*="Inserir"]',
         'input[placeholder*="CEP"]',
         'input[placeholder*="cep"]',
-        'input[placeholder*="endereço"]',
-        'input[placeholder*="Endereço"]',
-        'input[placeholder*="Digite"]',
-        'input[type="text"]',
     ]:
         try:
             inp = page.wait_for_selector(sel, timeout=4000, state="visible")
             if inp:
-                inp.fill("")
+                inp.click()
                 page.wait_for_timeout(300)
-                digitar_humano(page, sel, CEP)
+                inp.fill(CEP)
                 page.wait_for_timeout(1500)
                 digitou = True
                 print(f"   ✓ CEP digitado via {sel}")
