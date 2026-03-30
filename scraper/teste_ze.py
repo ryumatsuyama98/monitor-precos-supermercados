@@ -58,21 +58,13 @@ def configurar_cep(page):
     for d in diag:
         print(f"      {d['tag']} id='{d['id']}' txt='{d['txt']}' ph='{d['ph']}'")
 
-    # Age gate — clica via JS em qualquer botão que NÃO seja "Voltar"
+    # Age gate — clica especificamente no botão age-gate que não é "Voltar"
+    # O botão correto tem id contendo "age-gate" mas NÃO é "try-again"
     age_clicked = page.evaluate("""() => {
-        const btns = [...document.querySelectorAll('button')];
+        const btns = [...document.querySelectorAll('button[id*="age-gate"]')];
         for (const btn of btns) {
-            const txt = btn.textContent.trim().toLowerCase();
-            const id = btn.id.toLowerCase();
-            if (id.includes('age-gate') && !txt.includes('voltar') && !txt.includes('back')) {
-                btn.click(); return 'clicked: ' + btn.textContent.trim();
-            }
-        }
-        // Fallback: qualquer botão com texto de confirmação
-        for (const btn of btns) {
-            const txt = btn.textContent.trim().toLowerCase();
-            if (['sim', 'tenho 18', 'sou maior', 'confirmar', 'continuar', 'tenho mais'].some(w => txt.includes(w))) {
-                btn.click(); return 'clicked: ' + btn.textContent.trim();
+            if (!btn.id.includes('try-again')) {
+                btn.click(); return 'clicked: ' + btn.id + ' = ' + btn.textContent.trim();
             }
         }
         return null;
@@ -81,8 +73,10 @@ def configurar_cep(page):
         print(f"   ✓ Age gate: {age_clicked}")
         page.wait_for_timeout(1500)
     else:
-        # Se não tem botão de confirmação, o age gate já passou (cookie)
-        print("   ℹ️  Age gate sem botão de confirmação — já aceito ou inexistente")
+        print("   ℹ️  Age gate não encontrado ou já aceito")
+        # Lista todos os botões com age-gate no ID para diagnóstico
+        ids = page.evaluate("() => [...document.querySelectorAll('[id*=age-gate]')].map(e => e.id + '|' + e.textContent.trim())")
+        print(f"   🔍 Elementos age-gate: {ids}")
 
     # Digita CEP no input fake-address-search
     print(f"   → Digitando CEP {CEP}...")
