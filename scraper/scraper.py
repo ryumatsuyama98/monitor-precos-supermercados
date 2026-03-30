@@ -765,7 +765,35 @@ def coletar_ze_playwright(page, url):
         page.goto(url, wait_until="domcontentloaded", timeout=18000)
         page.wait_for_timeout(3000)
 
-        # 4. Fecha modal se aparecer
+        # DEBUG — loga primeiros 2000 chars do HTML para diagnosticar
+        try:
+            html_snippet = page.content()[:2000]
+            print(f"[ZE DEBUG] URL: {url}")
+            print(f"[ZE DEBUG] HTML: {html_snippet}")
+        except Exception:
+            pass
+
+        # 4. Tenta preencher CEP se modal aparecer
+        for inp_sel in [
+            'input[data-testid="address-cep-input"]',
+            'input[placeholder*="CEP"]',
+            'input[placeholder*="cep"]',
+            'input[name="cep"]',
+            'input[type="text"]',
+        ]:
+            try:
+                inp = page.query_selector(inp_sel)
+                if inp and inp.is_visible():
+                    inp.fill(ZE_CEP)
+                    page.wait_for_timeout(500)
+                    page.keyboard.press("Enter")
+                    page.wait_for_timeout(2000)
+                    print(f"[ZE DEBUG] CEP preenchido via {inp_sel}")
+                    break
+            except Exception:
+                pass
+
+        # Fecha modal se ainda aparecer
         for sel in [
             '[data-testid="modal-close"]',
             'button[aria-label="Fechar"]',
