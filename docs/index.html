@@ -662,14 +662,19 @@ function renderGrupo(gid){
   const showAvg=smsSel.includes("__avg__");
   const prodsSel=getChecked("chk-prod-"+gid);
 
-  let dadosBase=HIST.filter(r=>cats.includes(r.categoria)&&smsFisicos.includes(r.supermercado));
+  // Se Average marcado sem SM físico selecionado, usa todos os SMs disponíveis para calcular média
+  const smsParaDados = smsFisicos.length > 0 ? smsFisicos
+    : [...new Set(HIST.filter(r=>cats.includes(r.categoria)).map(r=>r.supermercado))];
+
+  let dadosBase=HIST.filter(r=>cats.includes(r.categoria)&&smsParaDados.includes(r.supermercado));
   if(prodsSel.length) dadosBase=dadosBase.filter(r=>prodsSel.includes(r.nome_produto+"_"+r.embalagem));
   const datas=getPeriodoDatas(gid,[...new Set(dadosBase.map(r=>r.data_coleta))]);
   const dados=dadosBase.filter(r=>datas.includes(r.data_coleta));
 
-  // Build series per SM+product
+  // Build series per SM+product — só se houver SMs físicos selecionados
+  const mostrarLinhasIndividuais = smsFisicos.length > 0;
   const series=new Map();
-  dados.forEach(r=>{
+  if(mostrarLinhasIndividuais) dados.forEach(r=>{
     const lbl=`${r.supermercado} — ${r.nome_produto} ${r.embalagem}`;
     if(!series.has(lbl))series.set(lbl,{});
     const bd=series.get(lbl);
@@ -677,7 +682,7 @@ function renderGrupo(gid){
     bd[r.data_coleta].push(r.preco_atual);
   });
 
-  // Average series: avg across ALL supermarkets (not just selected ones)
+  // Average series: avg across ALL available supermarkets
   if(showAvg){
     const dadosAvgBase=HIST.filter(r=>cats.includes(r.categoria));
     const dadosAvgFiltered=prodsSel.length?dadosAvgBase.filter(r=>prodsSel.includes(r.nome_produto+"_"+r.embalagem)):dadosAvgBase;
@@ -690,6 +695,12 @@ function renderGrupo(gid){
       if(!bd[r.data_coleta])bd[r.data_coleta]=[];
       bd[r.data_coleta].push(r.preco_atual);
     });
+    // Atribui cor por SKU antes de inserir na série
+    let skuColorIdx=0;
+    const skuColors=new Map();
+    byProd.forEach((byDate,k)=>{
+      if(!skuColors.has(k)) skuColors.set(k, CLUSTER_COLORS[skuColorIdx++%CLUSTER_COLORS.length]);
+    });
     byProd.forEach((byDate,k)=>{
       const [nome,...rest]=k.split("_"); const emb=rest.join("_");
       const lbl=`⌀ ${nome} ${emb}`;
@@ -697,9 +708,19 @@ function renderGrupo(gid){
     });
   }
 
+  // Mapeia posição de cada SKU no array de séries para determinar cor
+  const seriesKeys=[...series.keys()];
+  // Pré-calcula cores: Average recebe cor baseada na posição do SKU entre as médias
+  const avgKeys=seriesKeys.filter(k=>k.startsWith("⌀"));
+  const indKeys=seriesKeys.filter(k=>!k.startsWith("⌀"));
+
   const datasets=[...series.entries()].slice(0,20).map(([lbl,byDate],i)=>{
     const isAvg=lbl.startsWith("⌀");
-    const color=isAvg?"#0694a2":CLUSTER_COLORS[i%CLUSTER_COLORS.length];
+    // Cor: Average usa índice dentro das médias; individual usa índice dentro das individuais
+    const colorIdx=isAvg
+      ? avgKeys.indexOf(lbl) % CLUSTER_COLORS.length
+      : indKeys.indexOf(lbl) % CLUSTER_COLORS.length;
+    const color=CLUSTER_COLORS[colorIdx];
     return {label:lbl,
       data:datas.map(d=>{const v=byDate[d];return v?.length?+(v.reduce((a,b)=>a+b,0)/v.length).toFixed(2):null;}),
       borderColor:color,backgroundColor:color+"22",borderDash:isAvg?[6,3]:[],
