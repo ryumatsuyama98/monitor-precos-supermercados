@@ -762,21 +762,18 @@ def coletar_ze_playwright(page, url):
         }}""")
 
         # 3. Navega direto para a página do produto
-        page.goto(url, wait_until="networkidle", timeout=25000)
-        page.wait_for_timeout(4000)
+        page.goto(url, wait_until="domcontentloaded", timeout=25000)
 
-        # DEBUG — loga primeiros 2000 chars do HTML para diagnosticar
+        # 4. Aguarda o preço aparecer no DOM (até 15s) — mais confiável que networkidle
+        preco_no_dom = False
         try:
-            html_snippet = page.content()[:2000]
-            print(f"[ZE DEBUG] URL: {url}")
-            print(f"[ZE DEBUG] HTML: {html_snippet}")
+            page.wait_for_selector('[data-testid="product-price"]', timeout=15000)
+            preco_no_dom = True
         except Exception:
-            pass
+            # Preço não apareceu — tenta fechar modal e aguarda mais
+            page.wait_for_timeout(3000)
 
-        # 4. Aguarda a página hidratar completamente
-        page.wait_for_timeout(3000)
-
-        # 5. Fecha o popup modal "Continuar no site"
+        # 5. Fecha o popup modal "Continuar no site" se ainda aparecer
         for sel in [
             '[data-testid="close-button"]',
             '[class*="secondaryButton"]',
@@ -788,16 +785,17 @@ def coletar_ze_playwright(page, url):
                 btn = page.query_selector(sel)
                 if btn and btn.is_visible():
                     btn.click()
-                    page.wait_for_timeout(1500)
+                    page.wait_for_timeout(1000)
                     break
             except Exception:
                 pass
 
-        # 6. Aguarda explicitamente o elemento de preço aparecer no DOM
-        try:
-            page.wait_for_selector('[data-testid="product-price"]', timeout=8000)
-        except Exception:
-            pass
+        # 6. Se o preço ainda não apareceu, aguarda mais uma vez após fechar modal
+        if not preco_no_dom:
+            try:
+                page.wait_for_selector('[data-testid="product-price"]', timeout=8000)
+            except Exception:
+                pass
         # 6. Extrai preço — sem checar is_visible (modal pode estar na frente)
         for sel in [
             '[data-testid="product-price"]',
@@ -991,7 +989,7 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         # Filtro de sanidade — preço absurdo indica captura de pack/fardo
         PRECO_MAX = {
             "Cervejas": 20.0, "Embutidos": 60.0, "Biscoitos": 30.0,
-            "Massas": 30.0, "Mercearia": 80.0,
+            "Massas": 30.0, "Mercearia": 80.0, "Carnes": 400.0,
         }
         if resultado["preco_atual"]:
             cat_max = PRECO_MAX.get(categoria, 200.0)
