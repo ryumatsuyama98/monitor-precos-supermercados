@@ -719,6 +719,12 @@ function renderGrupo(gid){{
       if(!bd[r.data_coleta])bd[r.data_coleta]=[];
       bd[r.data_coleta].push(r.preco_atual);
     }});
+    // Atribui cor por SKU antes de inserir na série
+    let skuColorIdx=0;
+    const skuColors=new Map();
+    byProd.forEach((byDate,k)=>{{
+      if(!skuColors.has(k)) skuColors.set(k, CLUSTER_COLORS[skuColorIdx++%CLUSTER_COLORS.length]);
+    }});
     byProd.forEach((byDate,k)=>{{
       const [nome,...rest]=k.split("_"); const emb=rest.join("_");
       const lbl=`⌀ ${{nome}} ${{emb}}`;
@@ -726,9 +732,19 @@ function renderGrupo(gid){{
     }});
   }}
 
+  // Mapeia posição de cada SKU no array de séries para determinar cor
+  const seriesKeys=[...series.keys()];
+  // Pré-calcula cores: Average recebe cor baseada na posição do SKU entre as médias
+  const avgKeys=seriesKeys.filter(k=>k.startsWith("⌀"));
+  const indKeys=seriesKeys.filter(k=>!k.startsWith("⌀"));
+
   const datasets=[...series.entries()].slice(0,20).map(([lbl,byDate],i)=>{{
     const isAvg=lbl.startsWith("⌀");
-    const color=isAvg?"#0694a2":CLUSTER_COLORS[i%CLUSTER_COLORS.length];
+    // Cor: Average usa índice dentro das médias; individual usa índice dentro das individuais
+    const colorIdx=isAvg
+      ? avgKeys.indexOf(lbl) % CLUSTER_COLORS.length
+      : indKeys.indexOf(lbl) % CLUSTER_COLORS.length;
+    const color=CLUSTER_COLORS[colorIdx];
     return {{label:lbl,
       data:datas.map(d=>{{const v=byDate[d];return v?.length?+(v.reduce((a,b)=>a+b,0)/v.length).toFixed(2):null;}}),
       borderColor:color,backgroundColor:color+"22",borderDash:isAvg?[6,3]:[],
