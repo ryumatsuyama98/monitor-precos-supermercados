@@ -725,8 +725,8 @@ def coletar_ze_playwright(page, url):
     }
     try:
         # 1. Navega para o domínio principal para poder usar localStorage
-        page.goto("https://www.ze.delivery/", wait_until="domcontentloaded", timeout=15000)
-        page.wait_for_timeout(1500)
+        page.goto("https://www.ze.delivery/", wait_until="networkidle", timeout=20000)
+        page.wait_for_timeout(2000)
 
         # 2. Injeta endereço de SP no localStorage — formato exato que o site usa
         addr_json = json.dumps({
@@ -762,8 +762,8 @@ def coletar_ze_playwright(page, url):
         }}""")
 
         # 3. Navega direto para a página do produto
-        page.goto(url, wait_until="domcontentloaded", timeout=18000)
-        page.wait_for_timeout(3000)
+        page.goto(url, wait_until="networkidle", timeout=25000)
+        page.wait_for_timeout(4000)
 
         # DEBUG — loga primeiros 2000 chars do HTML para diagnosticar
         try:
