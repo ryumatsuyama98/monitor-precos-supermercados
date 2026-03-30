@@ -279,7 +279,7 @@ tr:hover td{{background:#fafafa}}
 .b-ok{{background:#d1fae5;color:#065f46}}.b-err{{background:#fee2e2;color:#991b1b}}
 .b-promo{{background:#fef3c7;color:#92400e}}
 .b-pa{{background:#dcfce7;color:#166534}}.b-ex{{background:#fff7ed;color:#9a3412}}
-.b-at{{background:#fefce8;color:#713f12}}.b-ze{{background:#fce7f3;color:#9d174d}}
+.b-at{{background:#fefce8;color:#713f12}}
 .btn{{padding:7px 14px;border:none;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer}}
 .btn-green{{background:var(--green);color:#fff}}.btn-black{{background:#0a0a0f;color:#fff}}
 .alertas-ok{{background:#f0fdf4;border:1px solid #a7f3d0;border-radius:8px;padding:.75rem 1rem;font-size:12px;color:#065f46}}
@@ -361,7 +361,7 @@ tr:hover td{{background:#fafafa}}
         <div class="filters">
           <label>Supermarket:</label>
           <select id="f-sm" onchange="filtrarTabela()">
-            <option value="">All</option><option>Pão de Açúcar</option><option>Extra</option><option>Atacadão</option><option>Zé Delivery</option>
+            <option value="">All</option><option>Pão de Açúcar</option><option>Extra</option><option>Atacadão</option>
           </select>
           <label>Group:</label>
           <select id="f-grupo" onchange="filtrarTabela()">
@@ -404,7 +404,7 @@ tr:hover td{{background:#fafafa}}
           <label>Date:</label><select id="fe-dia" onchange="filtrarErros()"><option value="">All</option></select>
           <label>Supermarket:</label>
           <select id="fe-sm" onchange="filtrarErros()">
-            <option value="">All</option><option>Pão de Açúcar</option><option>Extra</option><option>Atacadão</option><option>Zé Delivery</option>
+            <option value="">All</option><option>Pão de Açúcar</option><option>Extra</option><option>Atacadão</option>
           </select>
           <label>Category:</label>
           <select id="fe-cat" onchange="filtrarErros()">
@@ -466,7 +466,7 @@ const ALERTAS  = {alertas_j};
 const GRUPOS   = {grupos_j};
 const CLUSTERS_DEF_ORIG = {clusters_j};
 const CLUSTER_COLORS = {colors_j};
-const SM_BADGE = {{"Pão de Açúcar":"b-pa","Extra":"b-ex","Atacadão":"b-at","Zé Delivery":"b-ze"}};
+const SM_BADGE = {{"Pão de Açúcar":"b-pa","Extra":"b-ex","Atacadão":"b-at"}};
 
 function fmt(v){{return v!=null?"R$ "+v.toFixed(2).replace(".",","):"—"}}
 function fmtPct(a,b){{return(a&&b&&b>a)?"-"+Math.round((b-a)/b*100)+"%":"—"}}
