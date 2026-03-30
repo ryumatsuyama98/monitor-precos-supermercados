@@ -704,32 +704,46 @@ def extrair_via_js(page):
     except Exception: return None
 
 # ─── Coleta via API — Zé Delivery ────────────────────────────────────────────
-ZE_CEP      = "01310100"   # Av. Paulista, SP
-ZE_LAT      = -23.5646162
-ZE_LNG      = -46.6527547
-ZE_GRAPHQL  = "https://api.ze.delivery/public/graphql"
+ZE_CEP     = "01310100"
+ZE_LAT     = -23.5646162
+ZE_LNG     = -46.6527547
+
+# Endpoints conhecidos do Zé Delivery (app mobile)
+ZE_ENDPOINTS = [
+    "https://api.ze.delivery/graphql",
+    "https://api.ze.delivery/v3/graphql",
+    "https://gateway.ze.delivery/graphql",
+]
 
 ZE_QUERY = """
-query GetProduct($productId: ID!, $lat: Float!, $lng: Float!) {
-  product(id: $productId, deliveryLocation: {lat: $lat, lng: $lng}) {
+query productById($id: ID!, $lat: Float!, $lng: Float!) {
+  product(id: $id, coordinates: {lat: $lat, lng: $lng}) {
     id
     name
     price
-    originalPrice
+    listPrice
+    available
+  }
+}
+"""
+
+ZE_QUERY_ALT = """
+query ($productId: String!, $lat: Float!, $lng: Float!) {
+  productDetails(productId: $productId, lat: $lat, lng: $lng) {
+    id
+    name
+    price
     available
   }
 }
 """
 
 def extrair_id_ze(url):
-    """Extrai o ID numérico da URL do Zé Delivery.
-    Ex: https://www.ze.delivery/entrega-produto/9991/heineken-350ml -> 9991
-    """
     m = re.search(r'/entrega-produto/(\d+)/', url)
     return m.group(1) if m else None
 
 def coletar_ze_api(url):
-    """Coleta preço via GraphQL API do Zé Delivery. Sem Playwright."""
+    """Coleta preço via API do Zé Delivery. Sem Playwright."""
     resultado = {
         "url": url, "disponivel": False, "preco_atual": None,
         "preco_original": None, "em_promocao": False,
@@ -740,50 +754,56 @@ def coletar_ze_api(url):
         resultado["erro"] = "ze_id_nao_encontrado"
         return resultado
 
-    payload = json.dumps({
-        "query": ZE_QUERY,
-        "variables": {"productId": product_id, "lat": ZE_LAT, "lng": ZE_LNG},
-    }).encode("utf-8")
-
     headers = {
         "Content-Type":  "application/json",
         "Accept":        "application/json",
         "Origin":        "https://www.ze.delivery",
         "Referer":       "https://www.ze.delivery/",
-        "User-Agent":    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122.0.0.0 Safari/537.36",
+        "User-Agent":    "Mozilla/5.0 (Linux; Android 12) AppleWebKit/537.36 Chrome/122.0.0.0 Mobile Safari/537.36",
         "Accept-Language": "pt-BR,pt;q=0.9",
+        "x-app-version": "4.0.0",
+        "x-platform":    "web",
     }
 
-    try:
-        req  = urllib.request.Request(ZE_GRAPHQL, data=payload, headers=headers, method="POST")
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read().decode("utf-8"))
+    for endpoint in ZE_ENDPOINTS:
+        for query in [ZE_QUERY, ZE_QUERY_ALT]:
+            try:
+                payload = json.dumps({
+                    "query": query,
+                    "variables": {
+                        "id": product_id,
+                        "productId": product_id,
+                        "lat": ZE_LAT,
+                        "lng": ZE_LNG,
+                    },
+                }).encode("utf-8")
 
-        product = (data.get("data") or {}).get("product")
-        if not product:
-            resultado["erro"] = "ze_produto_nao_encontrado_na_api"
-            return resultado
+                req = urllib.request.Request(endpoint, data=payload, headers=headers, method="POST")
+                with urllib.request.urlopen(req, timeout=12) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
 
-        preco = product.get("price")
-        orig  = product.get("originalPrice")
-        avail = product.get("available", False)
+                # Tenta extrair preço de qualquer campo possível
+                d = data.get("data") or {}
+                product = d.get("product") or d.get("productDetails") or d.get("productById")
+                if product and product.get("price"):
+                    preco = float(product["price"])
+                    orig  = product.get("listPrice") or product.get("originalPrice")
+                    if preco > 0:
+                        resultado["preco_atual"]  = round(preco, 2)
+                        resultado["disponivel"]   = bool(product.get("available", True))
+                        resultado["em_promocao"]  = bool(orig and float(orig) > preco)
+                        if resultado["em_promocao"]:
+                            resultado["preco_original"] = round(float(orig), 2)
+                        return resultado
 
-        if preco and preco > 0:
-            resultado["preco_atual"]    = round(float(preco), 2)
-            resultado["disponivel"]     = bool(avail)
-            resultado["em_promocao"]    = bool(orig and orig > preco)
-            if resultado["em_promocao"]:
-                resultado["preco_original"] = round(float(orig), 2)
-        else:
-            resultado["erro"] = "ze_preco_zero_ou_ausente"
+            except urllib.error.HTTPError as e:
+                resultado["erro"] = f"ze_http_{e.code}_{endpoint.split('/')[2]}"
+                continue
+            except Exception:
+                continue
 
-    except urllib.error.HTTPError as e:
-        resultado["erro"] = f"ze_http_{e.code}"
-    except urllib.error.URLError as e:
-        resultado["erro"] = f"ze_url_error_{str(e.reason)[:60]}"
-    except Exception as e:
-        resultado["erro"] = f"ze_api_{str(e)[:80]}"
-
+    if not resultado["erro"]:
+        resultado["erro"] = "ze_api_todos_endpoints_falharam"
     return resultado
 
 
