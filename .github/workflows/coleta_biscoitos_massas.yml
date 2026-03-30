@@ -2,7 +2,7 @@ name: Coleta Biscoitos+Massas
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # BRT -3h
+    - cron: '0 5 * * *'  # BRT -3h
   workflow_dispatch:
 
 jobs:
