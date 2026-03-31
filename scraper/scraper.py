@@ -775,12 +775,18 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         # Injeta CEP após carregar a página (para sites que leem do localStorage)
         scroll_e_aguarda(page, supermercado)
 
-        # Extra e Pão de Açúcar precisam de tempo extra para o JS carregar o h1
+        # Extra e Pão de Açúcar precisam de tempo extra para o JS carregar o conteúdo
         if supermercado in ("Extra", "Pão de Açúcar"):
-            try:
-                page.wait_for_selector("h1", timeout=8000, state="attached")
-            except Exception:
-                page.wait_for_timeout(3000)
+            carregou = False
+            for sel in ["h1", "[class*='product']", "[class*='Product']", "[itemprop='name']", ".pdp-title"]:
+                try:
+                    page.wait_for_selector(sel, timeout=12000, state="attached")
+                    carregou = True
+                    break
+                except Exception:
+                    continue
+            if not carregou:
+                page.wait_for_timeout(5000)
 
         # Rota 0 — página inválida → recupera URL
         if not pagina_valida(page):
