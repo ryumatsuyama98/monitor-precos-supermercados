@@ -706,15 +706,18 @@ def pagina_valida(page):
     try:
         titulo = page.title().lower()
         url    = page.url.lower()
-        if any(x in titulo for x in ["página não encontrada","not found","erro 404","indisponível","acesso negado"]):
+        # Títulos que indicam erro
+        if any(x in titulo for x in ["página não encontrada","not found","erro 404","indisponível","acesso negado","untitled"]):
             return False
+        # URLs que indicam erro
         if any(x in url for x in ["404","not-found","erro","blocked","captcha"]):
             return False
-        tem_produto = page.query_selector(
-            'h1, [class*="product"], [class*="Product"], '
-            '[class*="pdp"], [class*="item-page"], [itemtype*="Product"]'
-        )
-        return tem_produto is not None
+        # Título vazio ou genérico indica página não carregada
+        if not titulo or titulo in ["extra mercado", "pão de açúcar", "atacadão"]:
+            return False
+        # Se o título tem conteúdo específico de produto, é válida
+        # Não checa h1 pois pode não ter carregado ainda via JS
+        return True
     except Exception:
         return True
 
