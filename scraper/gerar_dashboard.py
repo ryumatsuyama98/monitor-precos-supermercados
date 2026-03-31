@@ -50,7 +50,8 @@ def carregar_dados():
 
     historico = [dict(r) for r in con.execute("""
         SELECT data_coleta, supermercado, categoria, marca, nome_produto, embalagem,
-               MIN(preco_atual) as preco_atual
+               MIN(preco_atual) as preco_atual,
+               MAX(CASE WHEN erro='copiado_dia_anterior' THEN 1 ELSE 0 END) as copiado
         FROM precos
         WHERE preco_atual IS NOT NULL AND disponivel=1
         GROUP BY data_coleta, supermercado, categoria, marca, nome_produto, embalagem
