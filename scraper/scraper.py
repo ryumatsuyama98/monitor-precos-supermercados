@@ -983,8 +983,8 @@ def main(categorias_filtro=None):
                         total_erro += not bool(dados["preco_atual"])
 
                         # Delay humanizado — mais longo nos sites com maior bloqueio
-                        base_delay = 1.5 if sm_nome in ["Pão de Açúcar","Extra","Zé Delivery"] else 1.0
-                        time.sleep(random.uniform(base_delay, base_delay + 1.5))
+                        base_delay = 2.5 if sm_nome in ["Pão de Açúcar", "Extra"] else 1.0
+                        time.sleep(random.uniform(base_delay, base_delay + 2.0))
 
                     ctx.close()
 
