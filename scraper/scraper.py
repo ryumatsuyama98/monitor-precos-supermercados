@@ -893,6 +893,79 @@ def coletar_com_retry(page, url, supermercado, nome_produto, embalagem, con, max
 
 
 # ─── Loop principal ───────────────────────────────────────────────────────────
+def preencher_gaps(con, hoje):
+    """
+    Ao final de cada coleta, preenche com o último preço disponível
+    os produtos que não foram coletados hoje mas têm histórico recente.
+    Marca com erro='copiado_dia_anterior' para distinguir de dados reais.
+    """
+    inseridos = 0
+    # Busca produtos que têm dado nos últimos 7 dias mas não têm dado hoje
+    candidatos = con.execute("""
+        SELECT DISTINCT supermercado, categoria, grupo, marca, nome_produto,
+               embalagem, cidade, uf, regiao, url
+        FROM precos
+        WHERE preco_atual IS NOT NULL
+          AND data_coleta >= date(?, '-7 days')
+          AND data_coleta < ?
+          AND (erro IS NULL OR erro = 'copiado_dia_anterior')
+    """, (hoje, hoje)).fetchall()
+
+    for p in candidatos:
+        sm, cat, grp, marca, nome, emb = (
+            p[0], p[1], p[2], p[3], p[4], p[5])
+        cidade, uf, reg, url = p[6], p[7], p[8], p[9]
+
+        # Já tem dado real hoje?
+        existe = con.execute("""
+            SELECT id FROM precos
+            WHERE supermercado=? AND nome_produto=? AND embalagem=?
+              AND data_coleta=? AND preco_atual IS NOT NULL
+              AND (erro IS NULL OR erro NOT IN ('copiado_dia_anterior'))
+        """, (sm, nome, emb, hoje)).fetchone()
+
+        if existe:
+            continue
+
+        # Já foi copiado hoje?
+        ja_copiado = con.execute("""
+            SELECT id FROM precos
+            WHERE supermercado=? AND nome_produto=? AND embalagem=?
+              AND data_coleta=? AND erro='copiado_dia_anterior'
+        """, (sm, nome, emb, hoje)).fetchone()
+
+        if ja_copiado:
+            continue
+
+        # Pega último preço real disponível
+        ultimo = con.execute("""
+            SELECT preco_atual, preco_original, em_promocao
+            FROM precos
+            WHERE supermercado=? AND nome_produto=? AND embalagem=?
+              AND preco_atual IS NOT NULL
+              AND (erro IS NULL OR erro = 'copiado_dia_anterior')
+            ORDER BY data_coleta DESC LIMIT 1
+        """, (sm, nome, emb)).fetchone()
+
+        if not ultimo:
+            continue
+
+        con.execute("""
+            INSERT INTO precos
+            (data_coleta, horario_coleta, supermercado, categoria, grupo, marca,
+             nome_produto, embalagem, cidade, uf, regiao, preco_atual, preco_original,
+             em_promocao, disponivel, url, erro, rota_css, tentativas)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,1,?,'copiado_dia_anterior',99,1)
+        """, (hoje, "00:00:00", sm, cat, grp, marca, nome, emb,
+              cidade, uf, reg, ultimo[0], ultimo[1], ultimo[2], url))
+        inseridos += 1
+
+    if inseridos > 0:
+        con.commit()
+        print(f"  → {inseridos} preços preenchidos por cópia do dia anterior")
+    return inseridos
+
+
 def main(categorias_filtro=None):
     """
     categorias_filtro: lista de categorias a coletar, ex: ["Cervejas"]
