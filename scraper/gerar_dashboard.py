@@ -224,7 +224,38 @@ def gerar_html(todos, erros, historico, ultima_data, alertas):
         label = GRUPOS_EN.get(g, g)
         grupo_tabs += f'<button class="tab-btn" onclick="showTab(\'grupo-{gid}\',this)">{label}</button>\n    '
 
-    _js_extra = "<script>\nwindow.salvarManual = function(inp) {\n  if (!inp || !inp.value) { alert('Digite um preco'); return; }\n  var p = parseFloat(inp.value);\n  if (isNaN(p) || p <= 0) { alert('Preco invalido'); return; }\n  var sm  = inp.getAttribute('data-sm');\n  var nome = inp.getAttribute('data-nome');\n  var emb  = inp.getAttribute('data-emb');\n  var dt   = inp.getAttribute('data-dt');\n  var cat  = inp.getAttribute('data-cat');\n  var csv  = dt + ',00:00:00,' + sm + ',' + cat + ',,,' + nome + ',' + emb + ',Sao Paulo,SP,Sudeste,' + p + ',,,1,,input_manual,99,1';\n  if (navigator.clipboard) {\n    navigator.clipboard.writeText(csv).then(function() {\n      inp.disabled = true;\n      inp.nextElementSibling.disabled = true;\n      inp.style.borderColor = 'green';\n      alert('Copiado!\\n' + csv);\n    }).catch(function() { prompt('CSV:', csv); });\n  } else { prompt('CSV:', csv); }\n};\n</script>"
+    _js_extra = """<script>
+window.salvarManual = function(inp) {
+  if (!inp || !inp.value) { alert('Digite um preco'); return; }
+  var p = parseFloat(inp.value);
+  if (isNaN(p) || p <= 0) { alert('Preco invalido'); return; }
+  var sm   = inp.getAttribute('data-sm');
+  var nome = inp.getAttribute('data-nome');
+  var emb  = inp.getAttribute('data-emb');
+  var dt   = inp.getAttribute('data-dt');
+  var cat  = inp.getAttribute('data-cat');
+  var grupoMap = {'Cervejas':'Cervejas','Carnes':'Carnes, Processados e Preparados','Biscoitos':'Mercearias Secas','Massas':'Mercearias Secas','Mercearia':'Mercearias Secas'};
+  var grp = grupoMap[cat] || '';
+  var pat = sessionStorage.getItem('gh_pat');
+  if (!pat) { pat = prompt('Cole seu GitHub PAT:'); if (!pat) return; sessionStorage.setItem('gh_pat', pat); }
+  var btn = inp.nextElementSibling;
+  btn.textContent = '...'; btn.disabled = true;
+  fetch('https://api.github.com/repos/ryumatsuyama98/monitor-precos-supermercados/actions/workflows/inserir_preco_manual.yml/dispatches', {
+    method: 'POST',
+    headers: {'Authorization':'Bearer '+pat,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
+    body: JSON.stringify({ref:'main',inputs:{data_coleta:dt,supermercado:sm,categoria:cat,grupo:grp,nome_produto:nome,embalagem:emb,preco:String(p)}})
+  }).then(function(r) {
+    if (r.status === 204) {
+      inp.disabled=true; inp.style.borderColor='green';
+      btn.textContent='✓';
+      alert('Enviado! Dashboard atualiza em ~2min.');
+    } else {
+      btn.textContent='✓'; btn.disabled=false;
+      r.text().then(function(t){alert('Erro '+r.status+': '+t);});
+    }
+  }).catch(function(e){btn.textContent='✓';btn.disabled=false;alert('Erro: '+e.message);});
+};
+</script>"""
     return _js_extra + f"""<!DOCTYPE html>
 <html lang="en">
 <head>
