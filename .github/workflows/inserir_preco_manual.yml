@@ -1,0 +1,100 @@
+name: Inserir Preco Manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      data_coleta:
+        description: 'Data (YYYY-MM-DD)'
+        required: true
+      supermercado:
+        description: 'Supermercado'
+        required: true
+      categoria:
+        description: 'Categoria'
+        required: true
+      grupo:
+        description: 'Grupo'
+        required: true
+      nome_produto:
+        description: 'Nome do produto'
+        required: true
+      embalagem:
+        description: 'Embalagem'
+        required: true
+      preco:
+        description: 'Preco (ex: 3.79)'
+        required: true
+
+jobs:
+  inserir:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Inserir preço no banco
+        run: |
+          python3 << 'PYEOF'
+          import sqlite3, os
+          from pathlib import Path
+
+          DB = Path("data/precos.db")
+          con = sqlite3.connect(DB)
+
+          data     = os.environ["INPUT_DATA_COLETA"]
+          sm       = os.environ["INPUT_SUPERMERCADO"]
+          cat      = os.environ["INPUT_CATEGORIA"]
+          grp      = os.environ["INPUT_GRUPO"]
+          nome     = os.environ["INPUT_NOME_PRODUTO"]
+          emb      = os.environ["INPUT_EMBALAGEM"]
+          preco    = float(os.environ["INPUT_PRECO"])
+
+          # Remove entrada copiada anterior se existir
+          con.execute("""
+            DELETE FROM precos
+            WHERE data_coleta=? AND supermercado=? AND nome_produto=? AND embalagem=?
+              AND erro IN ('copiado_dia_anterior', 'input_manual')
+          """, (data, sm, nome, emb))
+
+          # Insere preço manual
+          con.execute("""
+            INSERT INTO precos
+            (data_coleta, horario_coleta, supermercado, categoria, grupo, marca,
+             nome_produto, embalagem, cidade, uf, regiao, preco_atual,
+             disponivel, erro, rota_css, tentativas)
+            VALUES (?,?,?,?,?,?,?,?,?,?,?,?,1,'input_manual',99,1)
+          """, (data, "00:00:00", sm, cat, grp, "", nome, emb,
+                "São Paulo", "SP", "Sudeste", preco))
+
+          con.commit()
+          con.close()
+          print(f"✓ Preço R${preco:.2f} inserido: {sm} | {nome} {emb} | {data}")
+          PYEOF
+        env:
+          INPUT_DATA_COLETA: ${{ github.event.inputs.data_coleta }}
+          INPUT_SUPERMERCADO: ${{ github.event.inputs.supermercado }}
+          INPUT_CATEGORIA: ${{ github.event.inputs.categoria }}
+          INPUT_GRUPO: ${{ github.event.inputs.grupo }}
+          INPUT_NOME_PRODUTO: ${{ github.event.inputs.nome_produto }}
+          INPUT_EMBALAGEM: ${{ github.event.inputs.embalagem }}
+          INPUT_PRECO: ${{ github.event.inputs.preco }}
+      - name: Gerar dashboard
+        run: python scraper/gerar_dashboard.py
+      - name: Commit e push
+        run: |
+          git config user.name "Monitor Bot"
+          git config user.email "bot@monitor-precos.local"
+          cp data/precos.db /tmp/precos_local.db
+          cp docs/index.html /tmp/index_local.html
+          git fetch origin main
+          git reset --hard origin/main
+          cp /tmp/precos_local.db data/precos.db
+          cp /tmp/index_local.html docs/index.html
+          git add data/ docs/
+          git diff --staged --quiet || git commit -m "Preco manual: ${{ github.event.inputs.supermercado }} | ${{ github.event.inputs.nome_produto }} ${{ github.event.inputs.embalagem }} | ${{ github.event.inputs.data_coleta }}"
+          git push origin main
