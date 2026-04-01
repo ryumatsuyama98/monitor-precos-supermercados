@@ -315,7 +315,7 @@ LINKS = {
             "Oreo 90g Mondelez_90g":                 "https://www.paodeacucar.com/produto/301575/biscoito-original-oreo-pacote-90g",
             "Passatempo 150g Nestlé_150g":           "https://www.paodeacucar.com/produto/177670/biscoito-recheio-chocolate-passatempo-pacote-130g",
             "Recheado Chocolate 140g Bauducco_140g": "https://www.paodeacucar.com/produto/310906/biscoito-wafer-recheio-chocolate-bauducco-pacote-140g",
-            "Recheado Chocolate 100g Piraque_100g":  "https://www.extramercado.com.br/produto/1404804/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
+            "Recheado Chocolate 100g Piraque_100g":  "https://www.paodeacucar.com/produto/1386461/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
         },
         "Massas": {
             "Macarrão Espaguete 500g Barilla_500g":  "https://www.paodeacucar.com/produto/279928/macarrao-com-ovos-espaguete-8-barilla-pacote-500g",
@@ -1072,6 +1072,8 @@ def main(categorias_filtro=None):
 
         browser.close()
 
+    # Preenche gaps com último preço disponível
+    preencher_gaps(con, hoje)
     con.close()
 
     # CSV diário
