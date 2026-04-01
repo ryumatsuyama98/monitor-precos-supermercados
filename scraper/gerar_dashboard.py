@@ -224,7 +224,8 @@ def gerar_html(todos, erros, historico, ultima_data, alertas):
         label = GRUPOS_EN.get(g, g)
         grupo_tabs += f'<button class="tab-btn" onclick="showTab(\'grupo-{gid}\',this)">{label}</button>\n    '
 
-    return f"""<!DOCTYPE html>
+    _js_extra = "<script>\nwindow.salvarManual = function(inp) {\n  if (!inp || !inp.value) { alert('Digite um preco'); return; }\n  var p = parseFloat(inp.value);\n  if (isNaN(p) || p <= 0) { alert('Preco invalido'); return; }\n  var sm  = inp.getAttribute('data-sm');\n  var nome = inp.getAttribute('data-nome');\n  var emb  = inp.getAttribute('data-emb');\n  var dt   = inp.getAttribute('data-dt');\n  var cat  = inp.getAttribute('data-cat');\n  var csv  = dt + ',00:00:00,' + sm + ',' + cat + ',,,' + nome + ',' + emb + ',Sao Paulo,SP,Sudeste,' + p + ',,,1,,input_manual,99,1';\n  if (navigator.clipboard) {\n    navigator.clipboard.writeText(csv).then(function() {\n      inp.disabled = true;\n      inp.nextElementSibling.disabled = true;\n      inp.style.borderColor = 'green';\n      alert('Copiado!\\n' + csv);\n    }).catch(function() { prompt('CSV:', csv); });\n  } else { prompt('CSV:', csv); }\n};\n</script>"
+    return _js_extra + f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -576,12 +577,13 @@ function filtrarErros(){{
     <td style="color:var(--muted)">${{r.categoria}}</td><td>${{r.nome_produto}}</td><td>${{r.embalagem}}</td>
     <td style="font-size:11px;color:var(--red)">${{r.erro||""}}</td>
     <td>${{r.url?`<a href="${{r.url}}" target="_blank" style="color:var(--accent);font-size:10px">↗</a>`:"—"}}</td>
-    <td><input type="number" step="0.01" min="0" placeholder="R$"
-      data-sm="${{r.supermercado}}" data-nome="${{r.nome_produto}}"
-      data-emb="${{r.embalagem}}" data-data="${{r.data_coleta}}"
-      data-cat="${{r.categoria}}" data-grp="${{r.grupo||''}}"
-      style="width:65px;font-size:11px;padding:3px 5px;border:1px solid var(--border);border-radius:5px;margin-right:4px">
-    <button onclick="salvarManual(this.previousElementSibling)" class="btn btn-green" style="font-size:10px;padding:3px 7px">✓</button></td>
+    <td><div style="display:flex;gap:4px;align-items:center">
+      <input type="number" step="0.01" min="0" placeholder="R$"
+        id="inp_${{r.supermercado}}_${{r.nome_produto}}_${{r.embalagem}}_${{r.data_coleta}}"
+        style="width:70px;font-size:11px;padding:3px 5px;border:1px solid var(--border);border-radius:5px">
+      <button class="btn btn-green" style="font-size:10px;padding:4px 8px"
+        onclick="salvarPrecoManual(this)">✓</button>
+    </div></td>
   </tr>`).join("");
   document.getElementById("erros-count").textContent=`${{errosData.length}} errors`;
 }}
@@ -965,8 +967,6 @@ function salvarNovoCluster(){{
   renderClusterCards(modalCurrentGid);
   renderClusterChart(modalCurrentGid);
 }}
-
-function salvarManual(inp){{if(!inp.value){{alert("Digite um preco");return;}}var p=parseFloat(inp.value);if(isNaN(p)||p<=0){{alert("Preco invalido");return;}}var d=inp.dataset;var csv=[d.data,"00:00:00",d.sm,d.cat,d.grp||"","","",d.nome,d.emb,"Sao Paulo","SP","Sudeste",p,"","","1","","input_manual","99","1"].join(",");navigator.clipboard&&navigator.clipboard.writeText(csv).then(function(){{inp.disabled=true;inp.nextElementSibling.disabled=true;inp.style.borderColor="green";alert("Copiado!\n\n"+csv);}}).catch(function(){{prompt("CSV:",csv);}});}}
 
 </script>
 </body>
