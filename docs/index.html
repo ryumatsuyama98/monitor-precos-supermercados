@@ -569,27 +569,6 @@ function exportarExcel(){
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(tabelaData),"Prices");
   XLSX.writeFile(wb,`fnb_prices_2026-04-01.xlsx`);
 }
-function salvarPrecoManual(btn) {
-  var td = btn.closest('td');
-  var inp = td.querySelector('input');
-  if (!inp || !inp.value) { alert('Digite um preço'); return; }
-  var preco = parseFloat(inp.value);
-  if (isNaN(preco) || preco <= 0) { alert('Preço inválido'); return; }
-  var id = inp.id.split('_');
-  var sm=id[1], nome=id.slice(2,-2).join(' '), emb=id[id.length-2], data=id[id.length-1];
-  var csv = [data,'00:00:00',sm,'','','',nome,emb,'São Paulo','SP','Sudeste',preco,'','',1,'','input_manual',99,1].join(',');
-  navigator.clipboard.writeText(csv).then(function() {
-    inp.disabled=true; btn.disabled=true;
-    inp.style.borderColor='var(--green)';
-    alert('✓ Linha copiada para clipboard:
-' + csv + '
-
-Envie ao admin para inserir no banco.');
-  }).catch(function() {
-    prompt('Copie esta linha CSV:', csv);
-  });
-}
-
 function exportarErrosExcel(){
   const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(errosData.length?errosData:ERROS_H),"Errors");
@@ -961,6 +940,25 @@ function salvarNovoCluster(){
   fecharModal();
   renderClusterCards(modalCurrentGid);
   renderClusterChart(modalCurrentGid);
+}
+
+function salvarPrecoManual(btn) {
+  var td=btn.closest("td");
+  var inp=td?td.querySelector("input[type=number]"):null;
+  if(!inp||!inp.value){alert("Digite um preco");return;}
+  var preco=parseFloat(inp.value);
+  if(isNaN(preco)||preco<=0){alert("Preco invalido");return;}
+  var parts=inp.id.split("|");
+  var data=parts[0],sm=parts[1],nome=parts[2],emb=parts[3];
+  var csv=data+",00:00:00,"+sm+",,,,"+nome+","+emb+",Sao Paulo,SP,Sudeste,"+preco+",,,1,,input_manual,99,1";
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(csv).then(function(){
+      inp.disabled=true;btn.disabled=true;
+      inp.style.borderColor="green";
+      alert("Copiado!
+"+csv);
+    }).catch(function(){prompt("Copie:",csv);});
+  }else{prompt("Copie:",csv);}
 }
 </script>
 </body>
