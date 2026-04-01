@@ -613,7 +613,7 @@ function filtrarErros(){{
         id="inp_${{r.supermercado}}_${{r.nome_produto}}_${{r.embalagem}}_${{r.data_coleta}}"
         style="width:70px;font-size:11px;padding:3px 5px;border:1px solid var(--border);border-radius:5px">
       <button class="btn btn-green" style="font-size:10px;padding:4px 8px"
-        onclick="salvarPrecoManual(this)">✓</button>
+        onclick="window.salvarManual(this.previousElementSibling)">✓</button>
     </div></td>
   </tr>`).join("");
   document.getElementById("erros-count").textContent=`${{errosData.length}} errors`;
