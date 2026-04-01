@@ -587,6 +587,8 @@ function exportarExcel(){{
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(tabelaData),"Prices");
   XLSX.writeFile(wb,`fnb_prices_{ultima_data}.xlsx`);
 }}
+function salvarPrecoManual(sm,nome,emb,data,cat,grupo){{var inp=document.getElementById("inp-"+sm+"-"+nome+"-"+emb+"-"+data);if(!inp||!inp.value){{alert("Digite um preço válido");return;}}var preco=parseFloat(inp.value);if(isNaN(preco)||preco<=0){{alert("Preço inválido");return;}}var csv=data+",00:00:00,"+sm+","+cat+","+grupo+",,"+nome+","+emb+",São Paulo,SP,Sudeste,"+preco+",,,1,,input_manual,99,1";navigator.clipboard&&navigator.clipboard.writeText(csv).then(function(){{inp.style.borderColor="var(--green)";inp.disabled=true;alert("✓ R$"+preco.toFixed(2)+" copiado!\n\nCSV:\n"+csv);}}).catch(function(){{alert("CSV:\n"+csv);}});}}
+
 function exportarErrosExcel(){{
   const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(errosData.length?errosData:ERROS_H),"Errors");
