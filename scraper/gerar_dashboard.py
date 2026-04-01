@@ -414,7 +414,7 @@ tr:hover td{{background:#fafafa}}
           <label>Error type:</label><select id="fe-tipo" onchange="filtrarErros()"><option value="">All</option></select>
         </div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Date</th><th>Supermarket</th><th>Category</th><th>Product</th><th>Size</th><th>Error</th><th>URL</th></tr></thead>
+          <thead><tr><th>Date</th><th>Supermarket</th><th>Category</th><th>Product</th><th>Size</th><th>Error</th><th>URL</th><th>Input Manual</th></tr></thead>
           <tbody id="erros-body"></tbody>
         </table></div>
         <div id="erros-count" style="font-size:11px;color:var(--muted);margin-top:6px;text-align:right"></div>
@@ -576,6 +576,13 @@ function filtrarErros(){{
     <td style="color:var(--muted)">${{r.categoria}}</td><td>${{r.nome_produto}}</td><td>${{r.embalagem}}</td>
     <td style="font-size:11px;color:var(--red)">${{r.erro||""}}</td>
     <td>${{r.url?`<a href="${{r.url}}" target="_blank" style="color:var(--accent);font-size:10px">↗</a>`:"—"}}</td>
+    <td><div style="display:flex;gap:4px;align-items:center">
+      <input type="number" step="0.01" min="0" placeholder="R$"
+        id="inp_${{r.supermercado}}_${{r.nome_produto}}_${{r.embalagem}}_${{r.data_coleta}}"
+        style="width:70px;font-size:11px;padding:3px 5px;border:1px solid var(--border);border-radius:5px">
+      <button class="btn btn-green" style="font-size:10px;padding:4px 8px"
+        onclick="salvarPrecoManual(this)">✓</button>
+    </div></td>
   </tr>`).join("");
   document.getElementById("erros-count").textContent=`${{errosData.length}} errors`;
 }}
@@ -587,6 +594,24 @@ function exportarExcel(){{
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(tabelaData),"Prices");
   XLSX.writeFile(wb,`fnb_prices_{ultima_data}.xlsx`);
 }}
+function salvarPrecoManual(btn) {{
+  var td = btn.closest('td');
+  var inp = td.querySelector('input');
+  if (!inp || !inp.value) {{ alert('Digite um preço'); return; }}
+  var preco = parseFloat(inp.value);
+  if (isNaN(preco) || preco <= 0) {{ alert('Preço inválido'); return; }}
+  var id = inp.id.split('_');
+  var sm=id[1], nome=id.slice(2,-2).join(' '), emb=id[id.length-2], data=id[id.length-1];
+  var csv = [data,'00:00:00',sm,'','','',nome,emb,'São Paulo','SP','Sudeste',preco,'','',1,'','input_manual',99,1].join(',');
+  navigator.clipboard.writeText(csv).then(function() {{
+    inp.disabled=true; btn.disabled=true;
+    inp.style.borderColor='var(--green)';
+    alert('✓ Linha copiada para clipboard:\n' + csv + '\n\nEnvie ao admin para inserir no banco.');
+  }}).catch(function() {{
+    prompt('Copie esta linha CSV:', csv);
+  }});
+}}
+
 function exportarErrosExcel(){{
   const wb=XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb,XLSX.utils.json_to_sheet(errosData.length?errosData:ERROS_H),"Errors");
