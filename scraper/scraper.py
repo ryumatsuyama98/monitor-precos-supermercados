@@ -794,7 +794,6 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         # Debug — loga título e URL para diagnóstico
         _titulo_debug = page.title()
         _url_debug = page.url
-        print(f"    [DEBUG pagina_valida] titulo='{_titulo_debug}' url='{_url_debug}'")
 
         # Rota 0 — página inválida → recupera URL
         if not pagina_valida(page):
