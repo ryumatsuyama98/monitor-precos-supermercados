@@ -589,13 +589,6 @@ function filtrarErros(){{
     <td style="color:var(--muted)">${{r.categoria}}</td><td>${{r.nome_produto}}</td><td>${{r.embalagem}}</td>
     <td style="font-size:11px;color:var(--red)">${{r.erro||""}}</td>
     <td>${{r.url?`<a href="${{r.url}}" target="_blank" style="color:var(--accent);font-size:10px">↗</a>`:"—"}}</td>
-    <td><div style="display:flex;gap:4px;align-items:center">
-      <input type="number" step="0.01" min="0" placeholder="R$"
-        id="inp_${{r.supermercado}}_${{r.nome_produto}}_${{r.embalagem}}_${{r.data_coleta}}"
-        style="width:70px;font-size:11px;padding:3px 5px;border:1px solid var(--border);border-radius:5px">
-      <button class="btn btn-green" style="font-size:10px;padding:4px 8px"
-        onclick="salvarPrecoManual(this)">✓</button>
-    </div></td>
   </tr>`).join("");
   document.getElementById("erros-count").textContent=`${{errosData.length}} errors`;
 }}
