@@ -48,12 +48,23 @@ def carregar_dados():
         ORDER BY data_coleta DESC, supermercado, categoria, nome_produto
     """).fetchall()]
 
-    historico = [dict(r) for r in con.execute("""
+    # Produtos removidos permanentemente por problemas de scraping
+    EXCLUIR = [
+        ("Pão de Açúcar", "Original Lata"),
+        ("Pão de Açúcar", "Linguiça Toscana 700g Sadia"),
+        ("Pão de Açúcar", "Recheado Chocolate 100g Piraque"),
+    ]
+    excluir_clause = " AND NOT (" + " OR ".join(
+        f"(supermercado='{sm}' AND nome_produto='{nm}')" for sm, nm in EXCLUIR
+    ) + ")"
+
+    historico = [dict(r) for r in con.execute(f"""
         SELECT data_coleta, supermercado, categoria, marca, nome_produto, embalagem,
                MIN(preco_atual) as preco_atual,
                MAX(CASE WHEN erro='copiado_dia_anterior' THEN 1 ELSE 0 END) as copiado
         FROM precos
         WHERE preco_atual IS NOT NULL AND disponivel=1
+        {excluir_clause}
         GROUP BY data_coleta, supermercado, categoria, marca, nome_produto, embalagem
         ORDER BY data_coleta, supermercado, categoria, nome_produto, embalagem
     """).fetchall()]
@@ -610,12 +621,10 @@ function filtrarErros(){{
     <td>${{r.url?`<a href="${{r.url}}" target="_blank" style="color:var(--accent);font-size:10px">↗</a>`:"—"}}</td>
     <td><div style="display:flex;gap:4px;align-items:center">
       <input type="number" step="0.01" min="0" placeholder="R$"
-        data-sm="${{r.supermercado}}" data-nome="${{r.nome_produto}}"
-        data-emb="${{r.embalagem}}" data-dt="${{r.data_coleta}}"
-        data-cat="${{r.categoria}}"
+        id="inp_${{r.supermercado}}_${{r.nome_produto}}_${{r.embalagem}}_${{r.data_coleta}}"
         style="width:70px;font-size:11px;padding:3px 5px;border:1px solid var(--border);border-radius:5px">
       <button class="btn btn-green" style="font-size:10px;padding:4px 8px"
-        onclick="window.salvarManual(this.previousElementSibling)">✓</button>
+        onclick="salvarPrecoManual(this)">✓</button>
     </div></td>
   </tr>`).join("");
   document.getElementById("erros-count").textContent=`${{errosData.length}} errors`;
