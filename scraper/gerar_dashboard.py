@@ -235,38 +235,8 @@ def gerar_html(todos, erros, historico, ultima_data, alertas):
         label = GRUPOS_EN.get(g, g)
         grupo_tabs += f'<button class="tab-btn" onclick="showTab(\'grupo-{gid}\',this)">{label}</button>\n    '
 
-    _js_extra = """<script>
-window.salvarManual = function(inp) {
-  if (!inp || !inp.value) { alert('Digite um preco'); return; }
-  var p = parseFloat(inp.value);
-  if (isNaN(p) || p <= 0) { alert('Preco invalido'); return; }
-  var sm   = inp.getAttribute('data-sm');
-  var nome = inp.getAttribute('data-nome');
-  var emb  = inp.getAttribute('data-emb');
-  var dt   = inp.getAttribute('data-dt');
-  var cat  = inp.getAttribute('data-cat');
-  var grupoMap = {'Cervejas':'Cervejas','Carnes':'Carnes, Processados e Preparados','Biscoitos':'Mercearias Secas','Massas':'Mercearias Secas','Mercearia':'Mercearias Secas'};
-  var grp = grupoMap[cat] || '';
-  var pat = sessionStorage.getItem('gh_pat');
-  if (!pat) { pat = prompt('Cole seu GitHub PAT:'); if (!pat) return; sessionStorage.setItem('gh_pat', pat); }
-  var btn = inp.nextElementSibling;
-  btn.textContent = '...'; btn.disabled = true;
-  fetch('https://api.github.com/repos/ryumatsuyama98/monitor-precos-supermercados/actions/workflows/inserir_preco_manual.yml/dispatches', {
-    method: 'POST',
-    headers: {'Authorization':'Bearer '+pat,'Accept':'application/vnd.github+json','Content-Type':'application/json'},
-    body: JSON.stringify({ref:'main',inputs:{data_coleta:dt,supermercado:sm,categoria:cat,grupo:grp,nome_produto:nome,embalagem:emb,preco:String(p)}})
-  }).then(function(r) {
-    if (r.status === 204) {
-      inp.disabled=true; inp.style.borderColor='green';
-      btn.textContent='✓';
-      alert('Enviado! Dashboard atualiza em ~2min.');
-    } else {
-      btn.textContent='✓'; btn.disabled=false;
-      r.text().then(function(t){alert('Erro '+r.status+': '+t);});
-    }
-  }).catch(function(e){btn.textContent='✓';btn.disabled=false;alert('Erro: '+e.message);});
-};
-</script>"""
+    _js_extra = ""
+
     return _js_extra + f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -457,7 +427,7 @@ tr:hover td{{background:#fafafa}}
           <label>Error type:</label><select id="fe-tipo" onchange="filtrarErros()"><option value="">All</option></select>
         </div>
         <div class="table-wrap"><table>
-          <thead><tr><th>Date</th><th>Supermarket</th><th>Category</th><th>Product</th><th>Size</th><th>Error</th><th>URL</th><th>Input Manual</th></tr></thead>
+          <thead><tr><th>Date</th><th>Supermarket</th><th>Category</th><th>Product</th><th>Size</th><th>Error</th><th>URL</th></tr></thead>
           <tbody id="erros-body"></tbody>
         </table></div>
         <div id="erros-count" style="font-size:11px;color:var(--muted);margin-top:6px;text-align:right"></div>
