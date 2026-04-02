@@ -274,8 +274,7 @@ LINKS = {
             "Heineken Lata_350ml":           "https://www.paodeacucar.com/produto/1606865/cerveja-heineken-lata-sleek-350ml",
             "Itaipava Lata_350ml":           "https://www.paodeacucar.com/produto/112967/cerveja-pilsen-itaipava-lata-350ml",
             "Original Lata_269ml":           "https://www.paodeacucar.com/produto/479389/cerveja-pilsen-antarctica-original-lata-269ml",
-            "Original Lata_350ml":           "https://www.paodeacucar.com/produto/444042/cerveja-pilsen-antarctica-original-lata-350ml",
-            "Skol Lata_269ml":               "https://www.paodeacucar.com/produto/71229/cerveja-skol-pilsen-lata-269ml",
+                        "Skol Lata_269ml":               "https://www.paodeacucar.com/produto/71229/cerveja-skol-pilsen-lata-269ml",
             "Spaten Puro Malte Lata_269ml":  "https://www.paodeacucar.com/produto/1461013/cerveja-munich-helles-puro-malte-spaten-lata-269ml",
             "Spaten Puro Malte Lata_350ml":  "https://www.paodeacucar.com/produto/583963/cerveja-munich-helles-puro-malte-spaten-lata-350ml",
             "Stella Artois Long Neck_330ml": "https://www.paodeacucar.com/produto/452630/cerveja-lager-premium-puro-malte-stella-artois-garrafa-330ml",
@@ -284,8 +283,7 @@ LINKS = {
             "Salsicha Hot Dog 500g Sadia_500g":     "https://www.paodeacucar.com/produto/114859/salsicha-hot-dog-sadia-500g-10-unidades",
             "Salsicha Hot Dog 500g Perdigão_500g":  "https://www.paodeacucar.com/produto/113887/salsicha-hot-dog-perdigao-500g-12-unidades",
             "Salsicha Hot Dog 500g Seara_500g":     "https://www.paodeacucar.com/produto/21730/salsicha-hot-dog-seara-500g",
-            "Linguiça Toscana 700g Sadia_700g":     "https://www.paodeacucar.com/produto/1614047/linguica-toscana-sadia-700g",
-            "Linguiça Toscana 700g Perdigão_700g":  "https://www.paodeacucar.com/produto/1638980/linguica-toscana-perdigao-na-brasa-700g",
+                        "Linguiça Toscana 700g Perdigão_700g":  "https://www.paodeacucar.com/produto/1638980/linguica-toscana-perdigao-na-brasa-700g",
             "Linguiça Toscana 700g Swift_700g":     "https://www.paodeacucar.com/produto/434959/linguica-toscana-swift-700g",
             "Nuggets de Frango 300g Sadia_300g":    "https://www.paodeacucar.com/produto/142969/empanado-de-frango-peito-crocante-sadia-nuggets-pacote-300g",
             "Lasanha Bolonhesa 600g Sadia_600g":    "https://www.paodeacucar.com/produto/344410/lasanha-bolonhesa-sadia-pacote-600g",
@@ -315,8 +313,7 @@ LINKS = {
             "Oreo 90g Mondelez_90g":                 "https://www.paodeacucar.com/produto/301575/biscoito-original-oreo-pacote-90g",
             "Passatempo 150g Nestlé_150g":           "https://www.paodeacucar.com/produto/177670/biscoito-recheio-chocolate-passatempo-pacote-130g",
             "Recheado Chocolate 140g Bauducco_140g": "https://www.paodeacucar.com/produto/310906/biscoito-wafer-recheio-chocolate-bauducco-pacote-140g",
-            "Recheado Chocolate 100g Piraque_100g":  "https://www.paodeacucar.com/produto/1386461/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
-        },
+                    },
         "Massas": {
             "Macarrão Espaguete 500g Barilla_500g":  "https://www.paodeacucar.com/produto/279928/macarrao-com-ovos-espaguete-8-barilla-pacote-500g",
             "Macarrão Espaguete 500g Adria_500g":    "https://www.paodeacucar.com/produto/111375/macarrao-adria-com-ovos-espaguete---8-500g",
@@ -794,6 +791,7 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         # Debug — loga título e URL para diagnóstico
         _titulo_debug = page.title()
         _url_debug = page.url
+        print(f"    [DEBUG pagina_valida] titulo='{_titulo_debug}' url='{_url_debug}'")
 
         # Rota 0 — página inválida → recupera URL
         if not pagina_valida(page):
@@ -830,11 +828,35 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
             if p and 0.5 < p < 10000:
                 resultado["preco_atual"] = p; resultado["rota_css"] = 11
 
-        # Rota varredura JS
+        # Rota varredura JS — só usa se produto disponível
         if not resultado["preco_atual"]:
-            p = extrair_via_js(page)
-            if p and 0.5 < p < 10000:
-                resultado["preco_atual"] = p; resultado["rota_css"] = 12
+            # Verifica se produto está indisponível antes de aceitar preço da varredura
+            indisponivel = page.evaluate("""() => {
+                const sels = [
+                    '[class*="unavailable"]', '[class*="Unavailable"]',
+                    '[class*="out-of-stock"]', '[class*="outOfStock"]',
+                    '[class*="indisponivel"]', '[class*="esgotado"]',
+                    '[class*="sold-out"]', '[class*="SoldOut"]',
+                    '[class*="sem-estoque"]'
+                ];
+                for (const s of sels) {
+                    const el = document.querySelector(s);
+                    if (el && el.offsetParent !== null) return true;
+                }
+                // Verifica texto de indisponibilidade
+                const body = document.body?.innerText?.toLowerCase() || '';
+                return body.includes('produto indisponível') ||
+                       body.includes('produto esgotado') ||
+                       body.includes('fora de estoque') ||
+                       body.includes('não disponível') ||
+                       body.includes('avise-me quando chegar');
+            }""")
+            if indisponivel:
+                resultado["erro"] = "produto_indisponivel"
+            else:
+                p = extrair_via_js(page)
+                if p and 0.5 < p < 10000:
+                    resultado["preco_atual"] = p; resultado["rota_css"] = 12
 
         # Preço original (riscado)
         for sel in [
@@ -896,12 +918,10 @@ def preencher_gaps(con, hoje):
     """
     Ao final de cada coleta, preenche com o último preço disponível
     os produtos que não foram coletados hoje mas têm histórico recente.
-    Marca com erro='copiado_dia_anterior' para distinguir de dados reais.
-    Só preenche se NÃO houver nenhum dado real hoje para aquele SM+produto.
+    Também cobre produtos marcados como indisponíveis.
     """
     inseridos = 0
 
-    # Busca todos os produtos que já tiveram dado real nos últimos 7 dias
     candidatos = con.execute("""
         SELECT DISTINCT supermercado, categoria, grupo, marca, nome_produto,
                embalagem, cidade, uf, regiao, url
@@ -912,7 +932,7 @@ def preencher_gaps(con, hoje):
           AND erro IS NULL
     """, (hoje, hoje)).fetchall()
 
-    # Busca todos que já têm dado real HOJE (para exclusão eficiente)
+    # Sets para verificação eficiente
     tem_hoje = set()
     for r in con.execute("""
         SELECT supermercado, nome_produto, embalagem FROM precos
@@ -921,7 +941,6 @@ def preencher_gaps(con, hoje):
     """, (hoje,)).fetchall():
         tem_hoje.add((r[0], r[1], r[2]))
 
-    # Busca todos que já foram copiados hoje
     ja_copiado_hoje = set()
     for r in con.execute("""
         SELECT supermercado, nome_produto, embalagem FROM precos
@@ -929,17 +948,29 @@ def preencher_gaps(con, hoje):
     """, (hoje,)).fetchall():
         ja_copiado_hoje.add((r[0], r[1], r[2]))
 
+    # Produtos marcados como indisponíveis hoje — também precisam ser copiados
+    for r in con.execute("""
+        SELECT supermercado, nome_produto, embalagem FROM precos
+        WHERE data_coleta=? AND erro='produto_indisponivel'
+    """, (hoje,)).fetchall():
+        candidatos_extra = con.execute("""
+            SELECT DISTINCT supermercado, categoria, grupo, marca, nome_produto,
+                   embalagem, cidade, uf, regiao, url
+            FROM precos WHERE supermercado=? AND nome_produto=? AND embalagem=?
+              AND preco_atual IS NOT NULL AND erro IS NULL
+            LIMIT 1
+        """, (r[0], r[1], r[2])).fetchall()
+        candidatos = list(candidatos) + candidatos_extra
+
     for p in candidatos:
         sm, cat, grp, marca, nome, emb = p[0], p[1], p[2], p[3], p[4], p[5]
         cidade, uf, reg, url = p[6], p[7], p[8], p[9]
 
-        # Pula se já tem dado real ou já foi copiado hoje
         if (sm, nome, emb) in tem_hoje:
             continue
         if (sm, nome, emb) in ja_copiado_hoje:
             continue
 
-        # Pega último preço real disponível (não copiado)
         ultimo = con.execute("""
             SELECT preco_atual, preco_original, em_promocao
             FROM precos
