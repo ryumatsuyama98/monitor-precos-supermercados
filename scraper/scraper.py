@@ -796,6 +796,31 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
             resultado["erro"] = "pagina_invalida_url_desatualizada"
             return resultado
 
+        # Verifica indisponibilidade ANTES de qualquer extração de preço
+        indisponivel = page.evaluate("""() => {
+            const sels = [
+                '[class*="unavailable"]', '[class*="Unavailable"]',
+                '[class*="out-of-stock"]', '[class*="outOfStock"]',
+                '[class*="indisponivel"]', '[class*="esgotado"]',
+                '[class*="sold-out"]', '[class*="SoldOut"]',
+                '[class*="sem-estoque"]', '[class*="productUnavailable"]',
+                '[class*="product-unavailable"]'
+            ];
+            for (const s of sels) {
+                const el = document.querySelector(s);
+                if (el && el.offsetParent !== null) return true;
+            }
+            const body = document.body?.innerText?.toLowerCase() || '';
+            return body.includes('produto indisponível') ||
+                   body.includes('produto esgotado') ||
+                   body.includes('fora de estoque') ||
+                   body.includes('avise-me quando chegar') ||
+                   body.includes('produto não disponível');
+        }""")
+        if indisponivel:
+            resultado["erro"] = "produto_indisponivel"
+            return resultado
+
         # Rotas 1-N: seletores CSS em cascata
         for i, sel in enumerate(SELETORES.get(supermercado, []), 1):
             try:
@@ -820,35 +845,11 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
             if p and 0.5 < p < 10000:
                 resultado["preco_atual"] = p; resultado["rota_css"] = 11
 
-        # Rota varredura JS — só usa se produto disponível
+        # Rota varredura JS
         if not resultado["preco_atual"]:
-            # Verifica se produto está indisponível antes de aceitar preço da varredura
-            indisponivel = page.evaluate("""() => {
-                const sels = [
-                    '[class*="unavailable"]', '[class*="Unavailable"]',
-                    '[class*="out-of-stock"]', '[class*="outOfStock"]',
-                    '[class*="indisponivel"]', '[class*="esgotado"]',
-                    '[class*="sold-out"]', '[class*="SoldOut"]',
-                    '[class*="sem-estoque"]'
-                ];
-                for (const s of sels) {
-                    const el = document.querySelector(s);
-                    if (el && el.offsetParent !== null) return true;
-                }
-                // Verifica texto de indisponibilidade
-                const body = document.body?.innerText?.toLowerCase() || '';
-                return body.includes('produto indisponível') ||
-                       body.includes('produto esgotado') ||
-                       body.includes('fora de estoque') ||
-                       body.includes('não disponível') ||
-                       body.includes('avise-me quando chegar');
-            }""")
-            if indisponivel:
-                resultado["erro"] = "produto_indisponivel"
-            else:
-                p = extrair_via_js(page)
-                if p and 0.5 < p < 10000:
-                    resultado["preco_atual"] = p; resultado["rota_css"] = 12
+            p = extrair_via_js(page)
+            if p and 0.5 < p < 10000:
+                resultado["preco_atual"] = p; resultado["rota_css"] = 12
 
         # Preço original (riscado)
         for sel in [
