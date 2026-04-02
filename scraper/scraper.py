@@ -392,8 +392,7 @@ LINKS = {
             "Oreo 90g Mondelez_90g":                 "https://www.extramercado.com.br/produto/323114/biscoito-original-oreo-pacote-90g",
             "Passatempo 150g Nestlé_150g":           "https://www.extramercado.com.br/produto/177670/biscoito-recheio-chocolate-passatempo-pacote-130g",
             "Recheado Chocolate 140g Bauducco_140g": "https://www.extramercado.com.br/produto/335660/biscoito-wafer-recheio-chocolate-bauducco-pacote-140g",
-            "Recheado Chocolate 100g Piraque_100g":  "https://www.extramercado.com.br/produto/1404804/biscoito-wafer-recheio-chocolate-piraque-pacote-100g",
-        },
+                    },
         "Massas": {
             "Macarrão Espaguete 500g Barilla_500g":   "https://www.extramercado.com.br/produto/305593/macarrao-com-ovos-espaguete-8-barilla-pacote-500g",
             "Macarrão Espaguete 500g Adria_500g":     "https://www.extramercado.com.br/produto/111375/macarrao-adria-com-ovos-espaguete---8-500g",
@@ -791,18 +790,11 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
         # Debug — loga título e URL para diagnóstico
         _titulo_debug = page.title()
         _url_debug = page.url
-        print(f"    [DEBUG pagina_valida] titulo='{_titulo_debug}' url='{_url_debug}'")
 
-        # Rota 0 — página inválida → recupera URL
+        # Rota 0 — página inválida → erro direto (sem recuperação de URL)
         if not pagina_valida(page):
-            nova_url, origem = recuperar_url(page, nome_produto, embalagem, supermercado, con)
-            if nova_url:
-                resultado["url_recuperada"] = nova_url
-                page.goto(nova_url, wait_until="domcontentloaded", timeout=18000)
-                scroll_e_aguarda(page, supermercado)
-            else:
-                resultado["erro"] = "pagina_invalida_url_nao_recuperada"
-                return resultado
+            resultado["erro"] = "pagina_invalida_url_desatualizada"
+            return resultado
 
         # Rotas 1-N: seletores CSS em cascata
         for i, sel in enumerate(SELETORES.get(supermercado, []), 1):
