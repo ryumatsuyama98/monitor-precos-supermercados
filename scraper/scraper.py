@@ -798,6 +798,7 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
 
         # Verifica indisponibilidade ANTES de qualquer extração de preço
         indisponivel = page.evaluate("""() => {
+            // Seletores CSS por classe
             const sels = [
                 '[class*="unavailable"]', '[class*="Unavailable"]',
                 '[class*="out-of-stock"]', '[class*="outOfStock"]',
@@ -810,12 +811,20 @@ def coletar_pagina(page, url, supermercado, nome_produto="", embalagem="", con=N
                 const el = document.querySelector(s);
                 if (el && el.offsetParent !== null) return true;
             }
+            // Busca por texto exato — cobre Extra e outros sites com classes dinâmicas
+            const allSpans = document.querySelectorAll('span, button, p, div, h2, h3');
+            for (const el of allSpans) {
+                const txt = el.textContent.trim().toLowerCase();
+                if ((txt === 'indisponível' || txt === 'indisponivel' ||
+                     txt === 'produto indisponível' || txt === 'esgotado' ||
+                     txt === 'sem estoque') && el.offsetParent !== null) {
+                    return true;
+                }
+            }
+            // Fallback por innerText do body
             const body = document.body?.innerText?.toLowerCase() || '';
-            return body.includes('produto indisponível') ||
-                   body.includes('produto esgotado') ||
-                   body.includes('fora de estoque') ||
-                   body.includes('avise-me quando chegar') ||
-                   body.includes('produto não disponível');
+            return body.includes('avise-me quando chegar') ||
+                   body.includes('avise-me quando disponível');
         }""")
         if indisponivel:
             resultado["erro"] = "produto_indisponivel"
