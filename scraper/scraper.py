@@ -897,9 +897,11 @@ def preencher_gaps(con, hoje):
     Ao final de cada coleta, preenche com o último preço disponível
     os produtos que não foram coletados hoje mas têm histórico recente.
     Marca com erro='copiado_dia_anterior' para distinguir de dados reais.
+    Só preenche se NÃO houver nenhum dado real hoje para aquele SM+produto.
     """
     inseridos = 0
-    # Busca produtos que têm dado nos últimos 7 dias mas não têm dado hoje
+
+    # Busca todos os produtos que já tiveram dado real nos últimos 7 dias
     candidatos = con.execute("""
         SELECT DISTINCT supermercado, categoria, grupo, marca, nome_produto,
                embalagem, cidade, uf, regiao, url
@@ -907,42 +909,42 @@ def preencher_gaps(con, hoje):
         WHERE preco_atual IS NOT NULL
           AND data_coleta >= date(?, '-7 days')
           AND data_coleta < ?
-          AND (erro IS NULL OR erro = 'copiado_dia_anterior')
+          AND erro IS NULL
     """, (hoje, hoje)).fetchall()
 
+    # Busca todos que já têm dado real HOJE (para exclusão eficiente)
+    tem_hoje = set()
+    for r in con.execute("""
+        SELECT supermercado, nome_produto, embalagem FROM precos
+        WHERE data_coleta=? AND preco_atual IS NOT NULL
+          AND (erro IS NULL OR erro='input_manual')
+    """, (hoje,)).fetchall():
+        tem_hoje.add((r[0], r[1], r[2]))
+
+    # Busca todos que já foram copiados hoje
+    ja_copiado_hoje = set()
+    for r in con.execute("""
+        SELECT supermercado, nome_produto, embalagem FROM precos
+        WHERE data_coleta=? AND erro='copiado_dia_anterior'
+    """, (hoje,)).fetchall():
+        ja_copiado_hoje.add((r[0], r[1], r[2]))
+
     for p in candidatos:
-        sm, cat, grp, marca, nome, emb = (
-            p[0], p[1], p[2], p[3], p[4], p[5])
+        sm, cat, grp, marca, nome, emb = p[0], p[1], p[2], p[3], p[4], p[5]
         cidade, uf, reg, url = p[6], p[7], p[8], p[9]
 
-        # Já tem dado real hoje?
-        existe = con.execute("""
-            SELECT id FROM precos
-            WHERE supermercado=? AND nome_produto=? AND embalagem=?
-              AND data_coleta=? AND preco_atual IS NOT NULL
-              AND (erro IS NULL OR erro NOT IN ('copiado_dia_anterior'))
-        """, (sm, nome, emb, hoje)).fetchone()
-
-        if existe:
+        # Pula se já tem dado real ou já foi copiado hoje
+        if (sm, nome, emb) in tem_hoje:
+            continue
+        if (sm, nome, emb) in ja_copiado_hoje:
             continue
 
-        # Já foi copiado hoje?
-        ja_copiado = con.execute("""
-            SELECT id FROM precos
-            WHERE supermercado=? AND nome_produto=? AND embalagem=?
-              AND data_coleta=? AND erro='copiado_dia_anterior'
-        """, (sm, nome, emb, hoje)).fetchone()
-
-        if ja_copiado:
-            continue
-
-        # Pega último preço real disponível
+        # Pega último preço real disponível (não copiado)
         ultimo = con.execute("""
             SELECT preco_atual, preco_original, em_promocao
             FROM precos
             WHERE supermercado=? AND nome_produto=? AND embalagem=?
-              AND preco_atual IS NOT NULL
-              AND (erro IS NULL OR erro = 'copiado_dia_anterior')
+              AND preco_atual IS NOT NULL AND erro IS NULL
             ORDER BY data_coleta DESC LIMIT 1
         """, (sm, nome, emb)).fetchone()
 
@@ -958,6 +960,7 @@ def preencher_gaps(con, hoje):
         """, (hoje, "00:00:00", sm, cat, grp, marca, nome, emb,
               cidade, uf, reg, ultimo[0], ultimo[1], ultimo[2], url))
         inseridos += 1
+        ja_copiado_hoje.add((sm, nome, emb))
 
     if inseridos > 0:
         con.commit()
