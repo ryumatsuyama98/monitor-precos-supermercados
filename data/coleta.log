@@ -7128,3 +7128,56 @@
 2026-04-13|Atacadão|Cervejas|Original Lata 350ml|São Paulo|R$5.09|OK(rota10)
 2026-04-13|Atacadão|Cervejas|Original Lata 269ml|São Paulo|—|ERRO:produto_indisponivel
 2026-04-13|Atacadão|Cervejas|Itaipava Lata 350ml|São Paulo|R$3.49|OK(rota10)
+=== 2026-04-13 | OK:27 ERRO:25 ===
+2026-04-13|Pão de Açúcar|Carnes|Salsicha Hot Dog 500g Sadia 500g|São Paulo|R$17.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Salsicha Hot Dog 500g Perdigão 500g|São Paulo|R$14.79|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Salsicha Hot Dog 500g Seara 500g|São Paulo|R$12.99|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Linguiça Toscana 700g Perdigão 700g|São Paulo|—|ERRO:produto_indisponivel
+2026-04-13|Pão de Açúcar|Carnes|Linguiça Toscana 700g Swift 700g|São Paulo|R$19.50|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Nuggets de Frango 300g Sadia 300g|São Paulo|R$12.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Lasanha Bolonhesa 600g Sadia 600g|São Paulo|R$18.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Lasanha Bolonhesa 600g Perdigão 600g|São Paulo|R$18.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Lasanha Bolonhesa 600g Seara 600g|São Paulo|R$18.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Peito de Frango 1kg Sadia 1kg|São Paulo|R$17.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Peito de Frango 1kg Swift 1kg|São Paulo|R$27.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Peito de Frango 1kg Seara 1kg|São Paulo|R$15.50|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Coxa de Frango 1kg Swift 1kg|São Paulo|R$12.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Asa de Frango 1kg Swift 1kg|São Paulo|R$16.90|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Fraldinha 1kg Bassi 1kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-13|Pão de Açúcar|Carnes|Picanha 1kg Bassi 1kg|São Paulo|R$223.86|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Picanha 1kg Friboi 1kg|São Paulo|R$203.83|OK(rota10)
+2026-04-13|Pão de Açúcar|Carnes|Picanha 1kg Estância 92 1kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-13|Pão de Açúcar|Carnes|Carne Moida 1kg Swift 1kg|São Paulo|R$41.90|OK(rota10)
+2026-04-13|Extra|Carnes|Salsicha Hot Dog 500g Sadia 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Salsicha Hot Dog 500g Perdigão 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Salsicha Hot Dog 500g Seara 500g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Linguiça Toscana 700g Sadia 700g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Linguiça Toscana 700g Perdigão 700g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Linguiça Toscana 700g Swift 700g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Nuggets de Frango 300g Sadia 300g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Lasanha Bolonhesa 600g Sadia 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Lasanha Bolonhesa 600g Perdigão 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Lasanha Bolonhesa 600g Seara 600g|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Peito de Frango 1kg Sadia 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Peito de Frango 1kg Swift 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Coxa de Frango 1kg Sadia 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Coxa de Frango 1kg Swift 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Coxa de Frango 1kg Seara 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Asa de Frango 1kg Swift 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Fraldinha 1kg Bassi 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Picanha 1kg Bassi 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Picanha 1kg Estância 92 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Extra|Carnes|Carne Moida 1kg Swift 1kg|São Paulo|—|ERRO:preco_nao_encontrado_todas_rotas
+2026-04-13|Atacadão|Carnes|Salsicha Hot Dog 500g Sadia 500g|São Paulo|R$12.80|OK(rota10)
+2026-04-13|Atacadão|Carnes|Salsicha Hot Dog 500g Perdigão 500g|São Paulo|—|ERRO:produto_indisponivel
+2026-04-13|Atacadão|Carnes|Salsicha Hot Dog 500g Seara 500g|São Paulo|R$9.90|OK(rota10)
+2026-04-13|Atacadão|Carnes|Linguiça Toscana 700g Sadia 700g|São Paulo|R$20.80|OK(rota10)
+2026-04-13|Atacadão|Carnes|Linguiça Toscana 700g Perdigão 700g|São Paulo|R$19.90|OK(rota10)
+2026-04-13|Atacadão|Carnes|Nuggets de Frango 300g Sadia 300g|São Paulo|R$10.50|OK(rota10)
+2026-04-13|Atacadão|Carnes|Lasanha Bolonhesa 600g Sadia 600g|São Paulo|R$17.90|OK(rota10)
+2026-04-13|Atacadão|Carnes|Lasanha Bolonhesa 600g Perdigão 600g|São Paulo|R$15.90|OK(rota10)
+2026-04-13|Atacadão|Carnes|Lasanha Bolonhesa 600g Seara 600g|São Paulo|R$13.90|OK(rota10)
+2026-04-13|Atacadão|Carnes|Peito de Frango 1kg Sadia 1kg|São Paulo|R$19.97|OK(rota10)
+2026-04-13|Atacadão|Carnes|Peito de Frango 1kg Seara 1kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-13|Atacadão|Carnes|Coxa de Frango 1kg Sadia 1kg|São Paulo|R$13.90|OK(rota10)
+2026-04-13|Atacadão|Carnes|Asa de Frango 1kg Sadia 1kg|São Paulo|R$15.90|OK(rota10)
