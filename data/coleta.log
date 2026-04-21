@@ -8364,3 +8364,40 @@
 2026-04-21|Atacadão|Cervejas|Original Lata 350ml|São Paulo|R$3.89|OK(rota10)
 2026-04-21|Atacadão|Cervejas|Original Lata 269ml|São Paulo|—|ERRO:produto_indisponivel
 2026-04-21|Atacadão|Cervejas|Itaipava Lata 350ml|São Paulo|R$2.49|OK(rota10)
+=== 2026-04-21 | OK:29 ERRO:7 ===
+2026-04-21|Pão de Açúcar|Mercearia|Arroz Branco 5kg Tio João 5kg|São Paulo|R$29.99|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Arroz Branco 5kg Camil 5kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Pão de Açúcar|Mercearia|Feijão Carioca 1kg Camil 1kg|São Paulo|R$9.79|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Feijão Carioca 1kg Kicaldo 1kg|São Paulo|R$8.29|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Açúcar Refinado 1kg União 1kg|São Paulo|R$4.79|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Açúcar Refinado 1kg Caravelas 1kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Pão de Açúcar|Mercearia|Açúcar Refinado 1kg Da Barra 1kg|São Paulo|R$4.69|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Farinha de Trigo 1kg Dona Benta 1kg|São Paulo|R$6.39|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Café Torrado e Moído 500g Pilão 500g|São Paulo|R$34.99|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Café Torrado e Moído 500g Café Brasileiro 500g|São Paulo|R$29.99|OK(rota10)
+2026-04-21|Pão de Açúcar|Mercearia|Café Torrado e Moído 500g União 500g|São Paulo|R$29.99|OK(rota10)
+2026-04-21|Extra|Mercearia|Arroz Branco 5kg Tio João 5kg|São Paulo|R$29.99|OK(rota10)
+2026-04-21|Extra|Mercearia|Arroz Branco 5kg Camil 5kg|São Paulo|R$23.99|OK(rota10)
+2026-04-21|Extra|Mercearia|Feijão Carioca 1kg Camil 1kg|São Paulo|R$9.79|OK(rota10)
+2026-04-21|Extra|Mercearia|Feijão Carioca 1kg Kicaldo 1kg|São Paulo|R$8.29|OK(rota10)
+2026-04-21|Extra|Mercearia|Açúcar Refinado 1kg União 1kg|São Paulo|R$4.79|OK(rota10)
+2026-04-21|Extra|Mercearia|Açúcar Refinado 1kg Caravelas 1kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Extra|Mercearia|Açúcar Refinado 1kg Guarani 1kg|São Paulo|R$4.49|OK(rota10)
+2026-04-21|Extra|Mercearia|Farinha de Trigo 1kg Sol 1kg|São Paulo|R$4.49|OK(rota10)
+2026-04-21|Extra|Mercearia|Café Torrado e Moído 500g Pilão 500g|São Paulo|R$27.99|OK(rota10)
+2026-04-21|Extra|Mercearia|Café Torrado e Moído 500g Melitta 500g|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Extra|Mercearia|Café Torrado e Moído 500g Café Brasileiro 500g|São Paulo|R$28.99|OK(rota10)
+2026-04-21|Extra|Mercearia|Café Torrado e Moído 500g União 500g|São Paulo|R$28.99|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Arroz Branco 5kg Tio João 5kg|São Paulo|R$27.29|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Arroz Branco 5kg Camil 5kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Atacadão|Mercearia|Feijão Carioca 1kg Camil 1kg|São Paulo|R$8.19|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Feijão Carioca 1kg Kicaldo 1kg|São Paulo|R$8.19|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Açúcar Refinado 1kg União 1kg|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Atacadão|Mercearia|Açúcar Refinado 1kg Caravelas 1kg|São Paulo|R$2.59|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Açúcar Refinado 1kg Da Barra 1kg|São Paulo|R$3.19|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Farinha de Trigo 1kg Dona Benta 1kg|São Paulo|R$4.79|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Farinha de Trigo 1kg Venturelli 1kg|São Paulo|R$4.69|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Café Torrado e Moído 500g Pilão 500g|São Paulo|R$26.90|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Café Torrado e Moído 500g 3 Corações 500g|São Paulo|—|ERRO:produto_indisponivel
+2026-04-21|Atacadão|Mercearia|Café Torrado e Moído 500g Melitta 500g|São Paulo|R$26.90|OK(rota10)
+2026-04-21|Atacadão|Mercearia|Café Torrado e Moído 500g União 500g|São Paulo|R$23.90|OK(rota10)
