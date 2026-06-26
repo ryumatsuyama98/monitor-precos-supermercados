@@ -20813,3 +20813,53 @@
 2026-06-25|Atacadão|Mercearia|Café Torrado e Moído 500g 3 Corações 500g|São Paulo|R$24.48|OK(rota10)
 2026-06-25|Atacadão|Mercearia|Café Torrado e Moído 500g Melitta 500g|São Paulo|R$23.48|OK(rota10)
 2026-06-25|Atacadão|Mercearia|Café Torrado e Moído 500g União 500g|São Paulo|R$19.90|OK(rota10)
+=== 2026-06-26 | OK:15 ERRO:34 ===
+2026-06-26|Pão de Açúcar|Biscoitos|Água e Sal 300g Marilan 300g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1639482/biscoito-agua-e-sal-marilan-300g
+2026-06-26|Pão de Açúcar|Biscoitos|Água e Sal 300g Mabel 300g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1616940/biscoito-agua-e-sal-mabel-pacote
+2026-06-26|Pão de Açúcar|Biscoitos|Água e Sal 350g Vitarella 350g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1286774/biscoito-agua-e-sal-tradicional-
+2026-06-26|Pão de Açúcar|Biscoitos|Cream Cracker 300g Marilan 300g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1639385/biscoito-cream-cracker-marilan-3
+2026-06-26|Pão de Açúcar|Biscoitos|Cream Cracker 300g Mabel 300g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1616942/biscoito-cream-cracker-mabel-300
+2026-06-26|Pão de Açúcar|Biscoitos|Cream Cracker 184g Piraque 184g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1606433/biscoito-cream-cracker-piraque-p
+2026-06-26|Pão de Açúcar|Biscoitos|Cream Cracker 140g Marilan 140g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1448576/biscoito-cream-cracker-marilan-p
+2026-06-26|Pão de Açúcar|Biscoitos|Cream Cracker 165g Bauducco 165g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1629268/biscoito-cream-cracker-tradicion
+2026-06-26|Pão de Açúcar|Biscoitos|Cream Cracker 170g Adria 170g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/1602912/biscoito-cream-cracker-folhado-m
+2026-06-26|Pão de Açúcar|Biscoitos|Oreo 90g Mondelez 90g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/301575/biscoito-original-oreo-pacote-90g
+2026-06-26|Pão de Açúcar|Biscoitos|Passatempo 150g Nestlé 150g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/177670/biscoito-recheio-chocolate-passat
+2026-06-26|Pão de Açúcar|Biscoitos|Recheado Chocolate 140g Bauducco 140g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/310906/biscoito-wafer-recheio-chocolate-
+2026-06-26|Pão de Açúcar|Massas|Macarrão Espaguete 500g Barilla 500g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/279928/macarrao-com-ovos-espaguete-8-bar
+2026-06-26|Pão de Açúcar|Massas|Macarrão Espaguete 500g Adria 500g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/111375/macarrao-adria-com-ovos-espaguete
+2026-06-26|Pão de Açúcar|Massas|Miojo Carne 85g Nissin 85g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.paodeacucar.com/produto/169902/macarrao-instantaneo-de-carne-nis
+2026-06-26|Extra|Biscoitos|Água e Sal 300g Marilan 300g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1667484/biscoito-agua-e-sal-marilan-
+2026-06-26|Extra|Biscoitos|Água e Sal 350g Vitarella 350g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1376440/biscoito-agua-e-sal-tradicio
+2026-06-26|Extra|Biscoitos|Água e Sal 170g Adria 170g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1642405/biscoito-agua-e-sal-adria-pa
+2026-06-26|Extra|Biscoitos|Água e Sal 184g Piraque 184g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1641546/biscoito-agua-e-sal-piraque-
+2026-06-26|Extra|Biscoitos|Cream Cracker 300g Marilan 300g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1667380/biscoito-cream-cracker-maril
+2026-06-26|Extra|Biscoitos|Cream Cracker 350g Vitarella 350g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1376439/biscoito-cream-cracker-amant
+2026-06-26|Extra|Biscoitos|Cream Cracker 184g Piraque 184g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1641542/biscoito-cream-cracker-piraq
+2026-06-26|Extra|Biscoitos|Cream Cracker 140g Marilan 140g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1667384/biscoito-cream-cracker-maril
+2026-06-26|Extra|Biscoitos|Cream Cracker 165g Bauducco 165g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1660610/biscoito-cream-cracker-tradi
+2026-06-26|Extra|Biscoitos|Cream Cracker 170g Adria 170g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/1638049/biscoito-cream-cracker-folha
+2026-06-26|Extra|Biscoitos|Oreo 90g Mondelez 90g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/323114/biscoito-original-oreo-pacote
+2026-06-26|Extra|Biscoitos|Passatempo 150g Nestlé 150g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/177670/biscoito-recheio-chocolate-pa
+2026-06-26|Extra|Biscoitos|Recheado Chocolate 140g Bauducco 140g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/335660/biscoito-wafer-recheio-chocol
+2026-06-26|Extra|Massas|Macarrão Espaguete 500g Barilla 500g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/305593/macarrao-com-ovos-espaguete-8
+2026-06-26|Extra|Massas|Macarrão Espaguete 500g Adria 500g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/111375/macarrao-adria-com-ovos-espag
+2026-06-26|Extra|Massas|Macarrão Espaguete 500g Dona Benta 500g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/5789/macarrao-de-semola-com-ovos-lin
+2026-06-26|Extra|Massas|Miojo Carne 85g Nissin 85g|São Paulo|—|ERRO:Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.extramercado.com.br/produto/169902/macarrao-instantaneo-de-carne
+2026-06-26|Atacadão|Biscoitos|Água e Sal 300g Marilan 300g|São Paulo|R$5.89|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Água e Sal 300g Mabel 300g|São Paulo|—|ERRO:produto_indisponivel
+2026-06-26|Atacadão|Biscoitos|Água e Sal 350g Vitarella 350g|São Paulo|R$5.39|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Água e Sal 170g Adria 170g|São Paulo|R$2.98|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Cream Cracker 300g Mabel 300g|São Paulo|—|ERRO:produto_indisponivel
+2026-06-26|Atacadão|Biscoitos|Cream Cracker 350g Vitarella 350g|São Paulo|R$5.39|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Cream Cracker 140g Marilan 140g|São Paulo|R$1.99|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Cream Cracker 170g Adria 170g|São Paulo|R$2.98|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Oreo 90g Mondelez 90g|São Paulo|R$3.59|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Passatempo 150g Nestlé 150g|São Paulo|R$1.79|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Recheado Chocolate 140g Bauducco 140g|São Paulo|R$4.29|OK(rota10)
+2026-06-26|Atacadão|Biscoitos|Recheado Chocolate 100g Piraque 100g|São Paulo|R$2.97|OK(rota10)
+2026-06-26|Atacadão|Massas|Macarrão Espaguete 500g Barilla 500g|São Paulo|R$4.99|OK(rota10) [tentativa 2]
+2026-06-26|Atacadão|Massas|Macarrão Espaguete 500g Adria 500g|São Paulo|R$3.60|OK(rota10)
+2026-06-26|Atacadão|Massas|Macarrão Espaguete 500g Camil 500g|São Paulo|R$3.29|OK(rota10)
+2026-06-26|Atacadão|Massas|Macarrão Espaguete 500g Dona Benta 500g|São Paulo|R$2.49|OK(rota10)
+2026-06-26|Atacadão|Massas|Miojo Carne 85g Nissin 85g|São Paulo|R$2.89|OK(rota10)
