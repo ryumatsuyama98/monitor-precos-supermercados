@@ -24937,3 +24937,57 @@
 2026-07-17|Atacadão|Massas|Macarrão Espaguete 500g Camil 500g|São Paulo|R$2.49|OK(rota10)
 2026-07-17|Atacadão|Massas|Macarrão Espaguete 500g Dona Benta 500g|São Paulo|R$2.69|OK(rota10)
 2026-07-17|Atacadão|Massas|Miojo Carne 85g Nissin 85g|São Paulo|R$2.29|OK(rota10)
+=== 2026-07-17 | OK:45 ERRO:8 ===
+2026-07-17|Pão de Açúcar|Cervejas|Heineken Lata 350ml|São Paulo|R$6.29|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Heineken Lata 269ml|São Paulo|R$4.99|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Heineken 0.0 350ml|São Paulo|R$5.09|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Skol Lata 269ml|São Paulo|R$2.59|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Brahma Duplo Malte 350ml|São Paulo|R$4.89|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Stella Artois Long Neck 330ml|São Paulo|R$5.89|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Corona Extra Long Neck 330ml|São Paulo|R$6.99|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Corona Extra Lata 350ml|São Paulo|R$5.49|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Budweiser Lata 269ml|São Paulo|R$3.19|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Amstel Lata 350ml|São Paulo|—|ERRO:produto_indisponivel
+2026-07-17|Pão de Açúcar|Cervejas|Amstel Lata 269ml|São Paulo|R$2.79|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Spaten Puro Malte Lata 350ml|São Paulo|R$4.49|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|R$3.79|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Original Lata 269ml|São Paulo|R$3.49|OK(rota10)
+2026-07-17|Pão de Açúcar|Cervejas|Itaipava Lata 350ml|São Paulo|R$3.29|OK(rota10)
+2026-07-17|Extra|Cervejas|Antarctica Lata 350ml|São Paulo|R$3.69|OK(rota10)
+2026-07-17|Extra|Cervejas|Heineken Lata 350ml|São Paulo|R$5.19|OK(rota10)
+2026-07-17|Extra|Cervejas|Heineken Lata 269ml|São Paulo|R$4.99|OK(rota10)
+2026-07-17|Extra|Cervejas|Heineken 0.0 350ml|São Paulo|R$5.49|OK(rota10)
+2026-07-17|Extra|Cervejas|Skol Lata 350ml|São Paulo|R$3.69|OK(rota10)
+2026-07-17|Extra|Cervejas|Skol Lata 269ml|São Paulo|R$2.59|OK(rota10)
+2026-07-17|Extra|Cervejas|Brahma Duplo Malte 350ml|São Paulo|R$4.19|OK(rota10)
+2026-07-17|Extra|Cervejas|Brahma Duplo Malte 269ml|São Paulo|R$3.39|OK(rota10)
+2026-07-17|Extra|Cervejas|Corona Extra Long Neck 330ml|São Paulo|R$7.19|OK(rota10)
+2026-07-17|Extra|Cervejas|Corona Extra Lata 350ml|São Paulo|R$5.49|OK(rota10)
+2026-07-17|Extra|Cervejas|Budweiser Lata 350ml|São Paulo|—|ERRO:produto_indisponivel
+2026-07-17|Extra|Cervejas|Budweiser Lata 269ml|São Paulo|R$3.19|OK(rota10)
+2026-07-17|Extra|Cervejas|Amstel Lata 350ml|São Paulo|R$3.49|OK(rota10)
+2026-07-17|Extra|Cervejas|Amstel Lata 269ml|São Paulo|R$2.99|OK(rota10)
+2026-07-17|Extra|Cervejas|Spaten Puro Malte Lata 350ml|São Paulo|R$3.99|OK(rota10)
+2026-07-17|Extra|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|R$3.79|OK(rota10)
+2026-07-17|Extra|Cervejas|Original Lata 350ml|São Paulo|R$4.89|OK(rota10)
+2026-07-17|Extra|Cervejas|Original Lata 269ml|São Paulo|R$3.09|OK(rota10)
+2026-07-17|Extra|Cervejas|Itaipava Lata 350ml|São Paulo|—|ERRO:produto_indisponivel
+2026-07-17|Atacadão|Cervejas|Antarctica Lata 350ml|São Paulo|R$3.29|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Heineken Lata 350ml|São Paulo|R$4.99|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Heineken Lata 269ml|São Paulo|R$3.99|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Heineken 0.0 350ml|São Paulo|R$5.39|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Skol Lata 350ml|São Paulo|R$3.39|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Skol Lata 269ml|São Paulo|—|ERRO:pagina_invalida_url_desatualizada
+2026-07-17|Atacadão|Cervejas|Brahma Duplo Malte 350ml|São Paulo|—|ERRO:pagina_invalida_url_desatualizada
+2026-07-17|Atacadão|Cervejas|Brahma Duplo Malte 269ml|São Paulo|—|ERRO:pagina_invalida_url_desatualizada
+2026-07-17|Atacadão|Cervejas|Stella Artois Long Neck 330ml|São Paulo|R$6.59|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Corona Extra Long Neck 330ml|São Paulo|—|ERRO:pagina_invalida_url_desatualizada
+2026-07-17|Atacadão|Cervejas|Budweiser Lata 350ml|São Paulo|R$3.49|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Budweiser Lata 269ml|São Paulo|R$3.79|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Amstel Lata 350ml|São Paulo|R$3.99|OK(rota10) [tentativa 2]
+2026-07-17|Atacadão|Cervejas|Amstel Lata 269ml|São Paulo|R$2.69|OK(rota10) [tentativa 2]
+2026-07-17|Atacadão|Cervejas|Spaten Puro Malte Lata 350ml|São Paulo|R$3.89|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Spaten Puro Malte Lata 269ml|São Paulo|R$2.89|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Original Lata 350ml|São Paulo|R$4.19|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Original Lata 269ml|São Paulo|R$3.49|OK(rota10)
+2026-07-17|Atacadão|Cervejas|Itaipava Lata 350ml|São Paulo|—|ERRO:produto_indisponivel
